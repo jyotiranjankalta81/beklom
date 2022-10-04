@@ -1,0 +1,208 @@
+
+import React, { useEffect, useState } from 'react';
+// import ReactDOM from 'react-dom';
+import ReactPaginate from 'react-paginate';
+import { Link, useNavigate } from 'react-router-dom'
+import '../pages/allpage.css'
+
+const items = [
+    {
+        id: '1',
+        path: "images/blogs/img1.png",
+        title: "4 July 2022",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '2',
+        path: "images/blogs/img1.png",
+        title: "5 July 2022",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '3',
+        path: "images/blogs/img1.png",
+        title: "6 July 2022",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '4',
+        title: "6 July 2022",
+        path: "images/blogs/img1.png",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '5',
+        title: "7 July 2022",
+        path: "images/blogs/img1.png",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '6',
+        title: "8 July 2022",
+        path: "images/blogs/img1.png",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '7',
+        title: "9 July 2022",
+        path: "images/blogs/img1.png",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '8',
+        title: "10 July 2022",
+        path: "images/blogs/img1.png",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+    {
+        id: '9',
+        title: "11 July 2022",
+        path: "images/blogs/img1.png",
+        question: "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        description: "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+
+    },
+]
+
+
+function Items({ currentItems }) {
+    const navigate = useNavigate()
+
+    const arr=['1','4','7','10','13','16','19','22','25','28','31','34','37','40','43','46','49']
+
+    return (
+        <>
+            {currentItems &&
+                currentItems.map((item, index) => {
+                    console.log(arr.includes(item.id))
+                    var a = "try"
+                    return arr.includes(item.id) ? (
+
+                        <div>
+                            <div className="row justify-content-evenly sec1-blogs-space">
+                                <div class="col-4">
+                                    <img src={item.path}  alt=""/>
+                                </div>
+                                <div class="col-4">
+                                    <p key={index}>{item.title}</p>
+                                    <p className="sec1-blogs-p">{item.question}</p>
+                                    <p className="sec1-blogs-p1">{item.description}</p>
+                                    <Link
+                                        to={`/blog-categories/${item.id}`}
+                                        onClick={() => {
+                                            navigate(`/blog-categories/${item.id}/`, {
+                                                state: { itemId: item.id }
+                                            })
+                                        }}
+                                        className='text-decoration text-violet font-weight-bold'
+                                    >
+                                        <button type="btn" className="btn btn-primary border-0">Continue reading</button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                        :
+                        (
+                            <div className="container ">
+                            {/* <div className="row"> */}
+                                 <div className="d-flex flex-row row-cols-2 ">
+                              <  div >
+                                   <img src={item.path}  alt=""/>
+                                    <p>{item.title}</p>
+                                    <p className="sec1-blogs-p">{item.question}</p>
+                                    <p className="sec1-blogs-p1">{item.description}</p>
+                            <button type="btn" className="btn btn-primary">Continue reading</button>
+                            </div> 
+                            </div>
+                             {/* </div> */}
+                             <div>
+                             </div> 
+                             </div>
+                        );
+                }
+                )
+            }
+            {/* <div className="row justify-content-evenly sec1-blogs-space sec1-blogs-margin"> */}
+            {/* <div className="col-4">
+                            <img src="images/blogs/img2.png" />
+                            <p>{item.title}2</p>
+                            <p className="sec1-blogs-p">{item.question}</p>
+                            <p className="sec1-blogs-p1">{item.description}</p>
+                            <button type="btn" className="btn btn-primary">Continue reading</button>
+
+                        </div> */}
+            {/* <div className="col-4">
+                            <img src="images/blogs/img3.png" />
+                            <p>{item.title}3</p>
+                            <p className="sec1-blogs-p">{item.question}</p>
+                            <p className="sec1-blogs-p1">{item.description}</p>
+                            <button type="btn" className="btn btn-primary">Continue reading</button>
+                        </div> */}
+            {/* </div> */}
+            {/* <h3>Item #{item.title}</h3> */}
+        </>
+    );
+}
+
+export default function Pagination({ itemsPerPage }) {
+    // We start with an empty list of items.
+    const [currentItems, setCurrentItems] = useState(null);
+    const [pageCount, setPageCount] = useState(0);
+    // Here we use item offsets; we could also use page offsets
+    // following the API or data you're working with.
+    const [itemOffset, setItemOffset] = useState(0);
+
+    useEffect(() => {
+        // Fetch items from another resources.
+        const endOffset = itemOffset + itemsPerPage;
+        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+        setCurrentItems(items.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(items.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage]);
+
+    // Invoke when user click to request another page.
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % items.length;
+        console.log(
+            `User requested page number ${event.selected}, which is offset ${newOffset}`
+        );
+        setItemOffset(newOffset);
+    };
+
+    return (
+        <>
+            <Items currentItems={currentItems} />
+            <div className='pagination-sec'>
+                <ReactPaginate
+                    breakLabel="..."
+                    pageRangeDisplayed={5}
+                    renderOnZeroPageCount={null}
+                    onPageChange={handlePageClick}
+                    pageCount={10}
+                    containerClassName={"paginationBttns"}
+                    activeLinkClassName={"paginationActive"}
+                //  marginPagesDisplayed={4}
+                //  pageRangeDisplayed={4} 
+                />
+            </div>
+        </>
+    );
+}
+

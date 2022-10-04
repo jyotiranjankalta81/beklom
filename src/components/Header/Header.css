@@ -1,0 +1,235 @@
+
+.section1-bg {
+    background-image: url(../../../public/images/home/bg.jpg);
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    background-size: 100% 100%;
+    /* border: 2px solid black; */
+  }
+  .section2-bg {
+    background-image: url(../../../public/images/blogs/blog-bg.png);
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    background-size: 100% 100%;
+    /* border: 2px solid black; */
+  }
+  .section3-bg {
+    background-image: url(../../../public/images/aboutus/about-header-bg.png);
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    background-size: 100% 100%;
+    /* border: 2px solid black; */
+  }
+  .section4-bg {
+    background-image: url(../../../public/images/home/bg.jpg);
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    background-size: 100% 100%;
+    /* border: 2px solid black; */
+  }
+  .section5-bg {
+    background-image: url(../../../public/images/aboutus/about-header-bg.png);
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    background-size: 100% 100%;
+    /* border: 2px solid black; */
+  }
+  .section6-bg {
+    background-image: url(../../../public/images/home/bg.jpg);
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    background-size: 100% 100%;
+    /* border: 2px solid black; */
+  }
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    /* border: 2px solid white; */
+  }
+  .home-h1-color {
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem;
+  }
+  .home button{
+    width: 10rem;
+    font-family: 'Kanit', sans-serif;
+    background: #3A82D7;
+    padding: .5rem;
+
+  }
+ .button-headerr1{
+  width: 10rem;
+    font-family: 'Kanit', sans-serif;
+    background: #3A82D7;
+    padding: 0.5rem;
+ }
+ .header-header-bg {
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  filter: brightness(50%);
+}
+
+.header_img_div {
+  width: 100%;
+  height: 45rem;
+  /* border: 2px solid white; */
+  position: relative
+}
+
+.header-dots-img {
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  z-index: 4;
+  /* border: 2px solid white; */
+}
+
+.header-dot2-img {
+  position: absolute;
+  bottom: 1rem;
+  z-index: 4;
+  /* border: 2px solid black; */
+}
+
+.header-title {
+  bottom: 1rem;
+}
+
+.text-block {
+  position: absolute;
+  top: 13rem;
+  color: white;
+  padding-left: 7rem;
+  /* border: 2px solid white; */
+  width: 100%;
+}
+
+.header-title-h1 {
+  /* bottom: 1rem; */
+  font-weight: 600;
+  font-family: 'Kanit', sans-serif;
+  color: #fff;
+  font-size: 3.2rem;
+
+}
+
+.header-title-detail {
+  /* position: absolute; */
+
+  font-weight: 600;
+  font-family: 'Kanit', sans-serif;
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 2.2rem;
+}
+
+.header-nav-box {
+  position: absolute;
+  background: #456BB47A;
+  height: 87px;
+  width: 70%;
+  margin-top: -204px;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  /* position: absolute; */
+  color: #fff;
+}
+
+@media only screen and (max-width:821px) {
+  .header_img_div {
+      width: 100%;
+      height: 40rem;
+      /* border: 2px solid white; */
+  }
+
+  .header-dots-img {
+      width: 15rem;
+  }
+
+  .header-dot2-img {
+      width: 20rem;
+  }
+
+
+  .header-title-h1 {
+      font-size: 3rem;
+  }
+
+  .header-title-detail {
+      font-size: 1.9rem;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  .header_img_div {
+      width: 100%;
+      height: 30rem;
+      /* border: 2px solid white; */
+  }
+
+  .header-title-h1 {
+      font-size: 2rem;
+      /* border: 2px solid white; */
+
+      width: 100%;
+  }
+
+  .header-title-detail {
+      font-size: 1.4rem;
+
+  }
+
+  .header-dots-img {
+      width: 10rem;
+  }
+
+  .header-dot2-img {
+      width: 13rem;
+      bottom: 10rem;
+  }
+
+  .header-title {
+      bottom: 1rem;
+      /* border: 2px solid white; */
+
+
+  }
+
+  .text-block {
+      /* border: 2px solid white; */
+      padding-left: 2rem;
+      top: 8rem;
+  }
+}
+
+  @media only screen and (max-width:500px){
+
+  .home-h1-color {
+    display: flex;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.Home_Baklom_button11{
+  margin-left: 0rem;
+}
+  }

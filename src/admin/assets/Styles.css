@@ -1,0 +1,605 @@
+.addusercontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    gap: 2%;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.addusercontainer .adminsidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: max-content;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3%;
+    background: #777C9B;
+    border-radius: 0px 60px 60px 0px;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.adminsidebar a {
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 4%;
+}
+
+.adminsidebar a:focus {
+    background: #0b1449;
+}
+
+.adminsidebar a:active {
+    background: #0b1449;
+}
+
+.adminsidebar img {
+    margin: 25% 0% 5% 0%;
+}
+
+.adminsidebar h3 {
+
+    font-family: 'Inter',sans-serif,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 30px;
+    color: #ffffff;
+}
+
+.adminsidebar h3:hover {
+    background: #AAB7CB;
+    color: #303939;
+    width: 100%;
+    text-align: center;
+}
+
+.adminsidebar a:hover {
+    background: #AAB7CB;
+    color: #303939;
+    width: 100%;
+    text-align: center;
+}
+
+.addusercontainer .adminbody {
+    display: flex;
+    flex-direction: column;
+    width: 76%;
+    height: 98vh;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.adminbody .adminnavbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+    height: 13vh;
+    padding: 1% 2%;
+    background: rgba(119, 124, 155, 0.8);
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.adminnavbar span {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.adminnavbar h2 {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.adminnavbar svg {
+    width: 3.75;
+    height: 3.75;
+}
+
+.adminbody .adduser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 72vh;
+    overflow-y: scroll;
+    margin: auto;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.adduser .addimage {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 13%;
+    align-items: center;
+    padding: 0% 5%;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.addimage h2 {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.addimage input {
+    border: 3px dashed #777C9B;
+    border-radius: 10px;
+    width: 40%;
+    padding: 2% 0%;
+}
+
+.addimage button {
+    background: #AAB7CB;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 1% 5%;
+}
+
+.adduser .addreview {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 11.5%;
+    align-items: center;
+    padding: 0% 5%;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.addreview h2 {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.addreview input {
+    border: 3px solid #456BB4;
+    border-radius: 10px;
+    width: 40%;
+    padding: 2% 0%;
+}
+
+.addreview button {
+    background: #AAB7CB;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 1% 5%;
+}
+
+.adduser .buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.buttons a .adduserbtn:hover {
+    background: #AAB7CB;
+    color: #000000;
+}
+
+.buttons a {
+    width: 20%;
+    text-decoration: none;
+}
+
+.buttons a .adduserbtn {
+    background: #9296AF;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    padding: 5% 0%;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+
+}
+
+.buttons a .viewuserbtn {
+    background: #9296AF;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+    width: 100%;
+    padding: 5% 0%;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.buttons a .viewuserbtn:hover {
+    background: #AAB7CB;
+    color: #000000;
+}
+
+.adduser .addbtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.adduser .addbtn button {
+    background: #9296AF;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+    padding: 1% 5%;
+    white-space: nowrap;
+}
+
+.adduser .inputfields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.inputfields label {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 30px;
+    text-align: start;
+    width: 50%;
+    color: #000000;
+    margin-bottom: 2%;
+}
+
+.inputfields input {
+    width: 50%;
+    height: 2.68rem;
+    border: 2px solid #557097;
+    border-radius: 10px;
+}
+
+.adduser .sections {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    height: 4rem;
+    background: #AAB7CB;
+    border-radius: 10px;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.sections a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    color: #263238;
+    border-radius: 11px 3px 3px 11px;
+    text-decoration: none;
+}
+
+.sections a h4 {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.sections a:hover {
+    background: #777C9B;
+    color: #FFFFFF;
+}
+
+.adduser .tables {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+}
+
+.tables table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.tables table td {
+    text-align: center;
+    border: 3px solid #455A64;
+    background: #F0F0F0;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    padding: 1%;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #4A4B4B;
+}
+
+.tables table th {
+    text-align: center;
+    border: 3px solid #455A64;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    z-index: 9;
+    padding: 2% 0%;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.tables table tr:first-child td {
+    border-top: 0;
+}
+
+.tables table tr td:first-child {
+    border-left: 0;
+}
+
+.tables table tr:last-child td {
+    border-bottom: 0;
+}
+
+.tables table tr td:last-child {
+    border-right: 0;
+}
+
+.tables table tr:first-child th {
+    border-top: 0;
+}
+
+.tables table tr th:first-child {
+    border-left: 0;
+}
+
+.tables table tr:last-child th {
+    border-bottom: 0;
+}
+
+.tables table tr th:last-child {
+    border-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:770px) {
+
+
+    .adminsidebar h3 {
+        font-size: 0.8rem;
+    }
+
+    .adminnavbar h2 {
+        font-size: 1.2rem;
+    }
+
+    .inputfields label {
+        font-size: 1.2rem;
+    }
+
+    .buttons a .viewuserbtn {
+        font-size: 0.9rem;
+    }
+
+    .buttons a .adduserbtn {
+        font-size: 0.9rem;
+    }
+
+
+    .sections a h4 {
+        font-size: 14px;
+    }
+
+
+    .tables table th {
+        font-size: 13px;
+    }
+
+    .tables table td {
+        font-size: 13px;
+    }
+
+    .adduser .addimage {
+        flex-wrap: wrap;
+        gap: 70%;
+    }
+
+    .addimage h2 {
+        font-size: 20px;
+    }
+
+    .adduser .addreview {
+        flex-wrap: wrap;
+        gap: 70%;
+    }
+
+    .addreview h2 {
+        font-size: 20px;
+    }
+
+
+    .addusercontainer .adminsidebar img {
+        width: 70%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:500px) {
+    .addusercontainer {
+        flex-wrap: wrap;
+    }
+
+    .addusercontainer .adminsidebar {
+        width: 100%;
+
+    }
+
+    .addusercontainer .adminbody {
+        width: 100%;
+    }
+
+
+    .addusercontainer .adminsidebar img {
+        width: 30%;
+    }
+
+
+
+    .adminsidebar h3 {
+        font-size: 1rem;
+    }
+
+    .adminnavbar h2 {
+        font-size: 1rem;
+    }
+
+    .inputfields label {
+        font-size: 1rem;
+    }
+
+    .buttons a .viewuserbtn {
+        font-size: 0.6rem;
+    }
+
+    .buttons a .adduserbtn {
+        font-size: 0.6rem;
+    }
+
+
+    .sections a h4 {
+        font-size: 10px;
+    }
+
+
+    .tables table th {
+        font-size: 9px;
+    }
+
+    .tables table td {
+        font-size: 9px;
+    }
+
+    .adduser .addimage {
+        flex-wrap: wrap;
+        gap: 70%;
+    }
+
+    .addimage h2 {
+        font-size: 15px;
+    }
+
+    .adduser .addreview {
+        flex-wrap: wrap;
+        gap: 70%;
+    }
+
+    .addreview h2 {
+        font-size: 15px;
+    }
+
+
+
+
+
+}

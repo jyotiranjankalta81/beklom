@@ -1,0 +1,454 @@
+.bg-our-services {
+    background-image: url(../../../public/images/services/ourservicesbg.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    /* height: 28rem; */
+    /* padding: 4% 0% 4% 5%; */
+    background-size: cover;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.flex-container>div {
+    background-color: #456BB4;
+    width: 230px;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2)
+}
+
+.our-services-section {
+    margin-top: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.our-services-h1 {
+    margin-top: 70px;
+    font-weight: 400;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+}
+
+.our-services-p {
+    padding: 225px;
+    margin-top: -190px;
+    font-weight: 500;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+}
+
+.swap-section {
+    display: flex;
+    flex-direction: row;
+}
+
+/* .swap-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 174px;
+} */
+
+
+
+.swap-img {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: -13em;
+}
+
+.swap-text {
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+
+.swap-text h3 {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.swap-text p {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+#services-cards {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 16rem;
+    margin: 10px;
+    align-items: initial;
+    text-align: center;
+    background: #557085;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+#services-cards svg {
+    width: 4rem;
+    height: 8.5rem;
+    position: relative;
+    bottom: 46%;
+    left: 35%;
+    z-index: 9;
+
+}
+#Rslide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100rem;
+}
+
+.carousel-item {
+    position: relative;
+    display: none;
+    float: center;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform .6s ease-in-out;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 5%;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+
+}
+
+.carousel-item .cardcont {
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.carousel-control-next-icon {
+    background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23fff%27%3e%3cpath d=%27M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e');
+    position: relative;
+    right: 55%;
+}
+
+
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+
+#services-cards img {
+    width: 3.1rem;
+    height: 3 rem;
+    position: relative;
+    bottom: 95%;
+    left: 40%;
+    z-index: 9;
+    padding: 4%;
+}
+
+
+#services-cards h4 {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: -65%;
+}
+
+#services-cards p {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-align: justify;
+    padding: 0% 5%;
+}
+
+.img-size {
+    height: 300px;
+    width: 300px;
+    margin-top: -100px;
+    margin-left: -50px
+}
+
+
+.popup1-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.popup2-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup-p {
+    color: #456BB4;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+
+.popup-p1 {
+    font-size: small;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+
+.pop-line {
+    width: 200px;
+    height: 12px;
+}
+
+.pop-mid {
+    width: 30px;
+    height: 30px;
+}
+
+.card1-img {
+    margin-left: -43px
+        /* margin-top: 95px;
+    margin-left: 120px */
+}
+
+.swap-text1 {
+    color: #fff;
+    font-weight: 500;
+    width: 194px;
+    margin-left: -78px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.swap-text2 {
+    color: #fff;
+    font-weight: 500;
+    margin-left: -30px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.swap-text3 {
+    color: #fff;
+    font-weight: 500;
+    width: 170px;
+    margin-top: 12px;
+    margin-left: -26px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.swap-text4 {
+    color: #fff;
+    font-weight: 500;
+    width: 170px;
+    height: 17px;
+    margin-left: -60px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.read-button {
+    margin-top: -15px;
+}
+
+/* ------------------Pagination------------------------ */
+/* dl,
+ol,
+ul {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+} */
+
+
+
+
+
+/* ------------Map Direction------------------- */
+.gm-err-content {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.gm-err-title {
+    margin: 0px;
+    margin-bottom: 0px;
+}
+
+.blog-count {
+    column-count: 2;
+}
+
+.blog-cat-img {
+    width: 34em;
+}
+
+.blog-cat-button {
+    margin-bottom: 1em;
+    margin-left: 8px;
+}
+
+.blog-cat-p {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+.blog-cat-title {
+    font-weight: 600;
+    font-size: 5px;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+.blog-cat-p1 {
+    font-size: 15px;
+    font-weight: 500;
+}
+.Blogs-class-btn {
+    margin-left: 0rem;
+    background: #3A82D7;
+    margin-top: 2rem;
+    height: 2.5rem;
+    width: 29%;
+    border: none;
+    font-family: 'Kanit',sans-serif;
+    width: 29%;
+    border-radius: 7px;
+    color: white;
+}
+
+@media only screen and (max-width:850px){
+    .blog-cat-img {
+        width: 100%;
+        
+    }
+    .blog-count {
+    
+        display: contents;
+    }
+    .sec2-blogs-center img {
+        display: none;
+    }
+    .sub-box {
+        display: flex;
+        margin-left: 5%;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.75rem;
+        color: #456BB4;
+        font-size: small;
+        font-family: 'Rubik', sans-serif;
+    }
+    .blog-box-size {
+        background: transparent;
+        width: 30rem;
+        margin: 0.93rem;
+       
+        border-radius: 0.31rem;
+    }
+    .blogs-sub-btn {
+        width: 12em;
+        margin-left: 9em;
+        font-family: 'Rubik', sans-serif;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width:500px){
+    .frequently-h2 {
+        font-weight: 500;
+        font-size: 20px;
+        font-family: 'Rubik', sans-serif;
+    }
+    .frequently-h2 {
+        font-weight: 500;
+        margin-top: -2rem;
+        font-family: 'Rubik', sans-serif;
+    }
+    #accodion {
+        flex-direction: column;
+        width: 100%;
+        list-style: none;
+        margin-left: -2rem;
+        margin-top: -1rem;
+    }
+#accodion label + input[type="radio"]:checked + .content {
+    max-height: 300px;
+    font-size: 14px;
+    width: 122%;
+}
+#accodion li label {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px;
+    font-family: 'Kanit', sans-serif;
+}
+.Blogs-class-btn{
+        width: 12em;
+        margin-left: 0rem;
+        font-family: 'Rubik', sans-serif;
+    }
+    .blog-box-size {
+        background: transparent;
+        width: 19rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.93rem;
+        border-radius: 0.31rem;
+    }
+    .form-control {
+        display: block;
+        width: 65%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+       
+    }
+    dl, ol, ul {
+        margin-top: 0;
+        margin-left: -8rem;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,34 @@
+
+.section1-bg2 {
+    background-image: url(../../../public/images/home/About\ US\ H.png);
+    
+    background-repeat: no-repeat;
+    height: 40rem;
+    width: 100%;
+    background-size: 100% 100%;
+    /* border: 2px solid black; */
+  }
+  /* .home-h1-color {
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+    font-size: 3rem;
+  } */
+  
+
+  @media only screen and (max-width:500px){
+
+    .home-h1-color {
+      display: flex;
+      color: #fff;
+      text-align: center;
+      font-weight: 500;
+      align-items: center;
+      font-family: 'Kanit', sans-serif;
+      font-size: 3rem;
+      padding: 1rem;
+  }
+  .Home_Baklom_button11{
+    margin-left: -5rem;
+  }
+    }

@@ -1,0 +1,162 @@
+import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import '../home/home.css'
+
+const Slider = () => {
+    return (
+        <>
+            <div className='container-fluid '>
+                <Carousel 
+                    showThumbs={true}
+                    showStatus={false}
+                    infiniteLoop
+                    useKeyboardArrows
+                    // transitionTime={1000}
+                    width="auto" 
+                >
+                    <div className="slide-holder ">
+
+                        <img src="images/home/about-img1.png" className="img-circle" />
+                   
+                        <div className="text-container ">
+                            <h2>Akash Singh</h2>
+                            <p >UI UX Designer</p>
+                            <p>
+                                Cloud computing is the on-demand availability of computer system resources,
+                                especially data storage and computing power,
+                                without direct active management by the user.
+                                Large clouds often have functions distributed over multiple locations,
+                                each location being a data center.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="slide-holder">
+                        <img src="images/home/about-img2.png"
+                     className="img-circle"   />
+                        <div className="text-container">
+                            <h2>Akash Singh</h2>
+                            <p>UI UX Designer</p>
+                            <p>
+                                Cloud computing is the on-demand availability of computer system resources,
+                                especially data storage and computing power,
+                                without direct active management by the user.
+                                Large clouds often have functions distributed over multiple locations,
+                                each location being a data center.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="slide-holder">
+                        <img
+                            src="images/home/about-img1.png"
+                       className="img-circle"  />
+                        <div className="text-container">
+                            <h2>Akash Singh</h2>
+                            <p>UI UX Designer</p>
+                            <p>
+                                Cloud computing is the on-demand availability of computer system resources,
+                                especially data storage and computing power,
+                                without direct active management by the user.
+                                Large clouds often have functions distributed over multiple locations,
+                                each location being a data center.
+                            </p>
+                        </div>
+                    </div>
+                </Carousel>
+            </div>
+        </>
+    )
+}
+
+export default Slider
+
+
+/* Carousel */
+.carousel.carousel-slider {
+    margin: 0px auto;
+    /* overflow: visible; */
+
+  }
+  
+  .carousel .slide {
+    color: white;
+    /* background: rgb(0, 0, 0); */
+  }
+
+
+  .carousel .slide-holder {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
+    width: 1000%;
+    text-align: initial !important;
+    height: 100%;
+  }
+  .carousel .slide img {
+    margin: 30px;
+    /* width: 35%; */
+    height: 200px;
+    object-fit:cover;
+    position:absolute;
+    
+    /* position:'' */
+  }
+  .carousel .slide iframe {
+    margin: 30px;
+    text-align: justify
+    /* width: 35%; */
+  }
+  .carousel .text-container {
+    padding: 75px;
+    /* padding:initial; */
+    text-align:center;
+    position: relative;
+  }
+  .center-top
+  {
+    margin-top: -98px;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .carousel .text-container h2 {
+    margin-top: 0px;
+  }
+  
+  .carousel .text-container p:last-child {
+    margin-bottom: 0px;
+  }
+  
+  .carousel .control-dots {
+    bottom: -40px;
+  }
+  
+  .carousel .thumbs-wrapper {
+    margin: 30px;
+  }
+  .carousel .thumb.selected
+  {
+    width:150px;
+    border-radius: 50%;
+    height:  83px;
+    border: 0px solid #fff  !important;
+    transition: transform 0.3s ease;
+
+  }
+  .carousel {
+    justify-content: center;
+    display: flex;
+    margin-top: -94px;
+}
+.img-circle{
+    width: 150px;
+    height: 83px;
+    border-radius: 50%;
+    border: 0px solid #fff  !important;
+}
+.carousel .thumb
+{
+    border: 0px solid #fff
+}
+ 
+  

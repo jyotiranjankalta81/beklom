@@ -1,0 +1,92 @@
+{ "data":[
+    {
+        "id": "1",
+        "path": "images/blogs/img1.png",
+        "title": "1 July 2022",
+        "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+  
+    },
+    {
+       " id": "2",
+        "path": "images/blogs/img1.png",
+        "title": "2 July 2022",
+        "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+        "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+  
+    },
+    {
+        " id": "3",
+         "path": "images/blogs/img1.png",
+         "title": "3 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "4",
+         "path": "images/blogs/img1.png",
+         "title": "4 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "5",
+         "path": "images/blogs/img1.png",
+         "title": "5 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "6",
+         "path": "images/blogs/img1.png",
+         "title": "6 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "7",
+         "path": "images/blogs/img1.png",
+         "title": "7 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "8",
+         "path": "images/blogs/img1.png",
+         "title": "8 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "9",
+         "path": "images/blogs/img1.png",
+         "title": "9 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "10",
+         "path": "images/blogs/img2.png",
+         "title": "8 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     },
+     {
+        " id": "11",
+         "path": "images/blogs/img3.png",
+         "title": "9 July 2022",
+         "question": "Which is the Best CMS Software to Build a Website for better outcomes ?",
+         "description": "Content Management Systems (CMS) is software that helps you create manage and modify the content of your website without any technical knowledge of coding and development."
+   
+     }
+    
+  ]
+}

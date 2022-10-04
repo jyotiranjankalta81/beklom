@@ -1,0 +1,390 @@
+/* 
+.navbar1{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 8rem;
+    position: fixed;
+    top: 0%;
+    background: #0c1e38;
+    z-index: 999;
+}
+.navbar2{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 8rem;
+    position: fixed;
+    top: 0%;
+    background: transparent;
+    z-index: 999;
+}
+.navbar-nav1{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    gap: 2rem;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+}
+.logo-media{
+    height: 100%;
+}
+.nav-item:hover{
+    border-bottom: 1px solid white;
+    
+}
+.nav-item a.active{
+    border-bottom: 1px solid white;
+}
+.nav-link{
+   
+    color: #FFFFFF;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.navbar-nav1 a {
+    
+    color: #FFFFFF;
+}
+ */
+.navbar1 {
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
+    /* padding: 1.5rem; */
+    width: 100%;
+    height: 8rem;
+    position: fixed;
+    top: 0%;
+    background: #121b27;
+    /* background: transparent; */
+    z-index: 999;
+}
+
+.navbar2 {
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    width: 100%;
+    height: 8rem;
+    position: fixed;
+    top: 0%;
+    background: transparent;
+    z-index: 999;
+}
+.nav-link{
+   
+    color: #FFFFFF;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.nav-link:hover{
+    border-bottom: 1px solid white;
+    
+}
+.Navbar_content_jobseeker {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-position: right top;
+    background-repeat: no-repeat;
+    /* opacity: 0.6; */
+}
+
+.special_fmn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.navbar_header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-position: right top; */
+    background-repeat: no-repeat;
+    /* background-image: url('../../../public/jobseeker/topheader.png'); */
+    background-image: linear-gradient(white, #e0f6f6);
+}
+
+.Navbar {
+    width: 100%;
+    /* border:2px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    /* padding-bottom: 1rem; */
+    z-index: 100;
+    /* transition: all 0.3s ease-in; */
+    background-color: #ffffff;
+
+    /* background-color: #5BCECD; */
+    /* background-image: url('../../Home/DreamJob/design.png'); */
+    /* background-position: right;
+      background-repeat: no-repeat; */
+}
+
+.Next_Page {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 2rem;
+    /* border: 3px solid green; */
+}
+
+.navbar a {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin: 0%;
+    cursor: pointer;
+}
+.navbar a.active{
+    border-bottom: 1px solid white;
+}
+
+.navbar img {
+    cursor: pointer;
+}
+.logo_backlon{
+    cursor: pointer;
+    width: 70%;
+}
+
+.createcard_maiN {
+    width: 84%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.mobile_menu_icon {
+    display: none;
+}
+
+.refercard_maiN {
+    width: 84%;
+}
+
+.combination_feedback_what_client {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #ECF9F9;
+}
+
+.combo_box {
+    width: 100%;
+    height: 250px;
+    background: white;
+    border-radius: 0% 0% 50% 50%;
+}
+
+
+
+@media only screen and (min-width: 1201px) and (max-width: 1300px) {
+    .navbar {
+        gap: 1.6rem;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .special_fmn {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1200px) {
+    .navbar {
+        gap: 1.5rem;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .navbar button {
+        width: 115%;
+        font-size: 18px;
+    }
+
+    .special_fmn {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1100px) {
+    .navbar {
+        gap: 1.3rem;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .navbar button {
+        width: 120%;
+        font-size: 16px;
+    }
+
+    .special_fmn {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1000px) {
+    .navbar {
+        gap: 1.1rem;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .navbar button {
+        width: 120%;
+        font-size: 12px;
+    }
+
+    .special_fmn {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 900px) {
+    .navbar {
+        gap: 0.8rem;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .navbar button {
+        width: 120%;
+        font-size: 12px;
+    }
+
+    .special_fmn {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width:201px) and (max-width:800px) {
+    .mobile_menu_icon {
+        display: block;
+        color: #ffffff;
+        border-radius: 7px;
+        border: 2px solid #161412;
+        font-size: 25px;
+        background-color: black;
+        margin-left: 1rem;
+    }
+    .navbar2{
+        background: transparent;
+        justify-content: unset;
+    }
+    .navbar1{
+        background-color: transparent;
+        justify-content: unset;
+        height: 4rem;
+    }
+
+
+
+    .navbar a {
+        display: none;
+    }
+
+    .Navbar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+
+    .navbarResponsive {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        width: 72%;
+        height: 70vh;
+        background: #557097;
+        gap: 2rem;
+        position: fixed;
+        top: 0;
+        padding-right: 1rem;
+        right: 0;
+    }
+
+    .navbarResponsive a {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 10px;
+        text-decoration: none;
+        text-align: end;
+        color: #FFFFFF;
+        margin: 0%;
+        cursor: pointer;
+    }
+
+    .navbarResponsive .special_fmn {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 10px;
+        /* text-decoration: none; */
+        color: black;
+        margin: 0%;
+        cursor: pointer;
+    }
+
+    .navbarResponsive button {
+        width: 130px;
+        height: 43px;
+        background: red;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 2rem;
+        color: #ffffff;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,269 @@
+.WhatClientSays {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* border: 2px solid red; */
+    background-image: url("../../../public/images/home/whatclientsay.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    height: 83vh;
+    /* opacity: 0.7; */
+}
+
+.carousel-root {
+    outline: none;
+    width: 100%;
+}
+
+.whatclientsays {
+    width: 90%;
+    /* margin-top: 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 3px solid green; */
+}
+
+.name_location {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    /* justify-content: center; */
+}
+
+.WhatClientSays-car {
+    /* width: 1043px; */
+    width: 80%;
+    /* background: #EEEEEE; */
+    /* box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25); */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 3px solid green; */
+    margin-bottom: 2rem;
+}
+
+.WhatClientSays-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    align-items: center;
+    /* border: 3px solid blue; */
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    /* background: #ecf9f9; */
+    gap: 1rem;
+}
+
+.entire_card {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* border: 3px solid yellow; */
+    gap: 1.5rem;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.carousel .control-dots {
+    bottom: 0;
+    /* background: #ecf9f9; */
+    margin: 0%;
+}
+
+.carousel .control-dots .dot {
+    background: #f7701d;
+    /* display: none; */
+}
+
+.carousel.carousel-slider .control-arrow {
+    top: 40%;
+    border-radius: 20px;
+    margin: 0rem 1rem 0rem 1rem;
+    visibility: visible;
+    background: #f7701d;
+    color: #FFFFFF;
+    height: 20%;
+    /* padding: 5px; */
+}
+
+.WhatClientSays-card .card-head-what {
+    /* width: 1043px; */
+    width: 100%;
+    height: 27.51px;
+    background: #f7701d;
+    margin-bottom: 0.5rem;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.What-Name {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 65px;
+    text-align: left;
+    /* padding-left: 3.5rem; */
+    /* gap: 1rem; */
+    color: #FFFFFF;
+}
+
+.WhatClientSays-card .What-loc {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 45px;
+    text-align: left;
+    margin-top: -2rem;
+    /* padding-left: 3.5rem; */
+    color: #FFFFFF;
+    /* color: rgba(96, 93, 93, 0.8); */
+}
+
+.what-message-1 {
+    margin-top: -1rem;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
+    color: #FFFFFF;
+    /* padding: 0rem 3.5rem 0rem 3.5rem; */
+    text-align: justify;
+    /* border: 2px solid red; */
+}
+
+.WhatClientSays-card .what-message-2 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-top: -1rem;
+    margin-bottom: 0.8rem;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+    .WhatClientSays {
+        background-image: none;
+        background: #557097;
+        height: 55vh;
+    }
+
+    .carousel.carousel-slider .control-arrow {
+        margin: 0rem 0rem 0rem 0rem;
+        background: #f7701d;
+        color: #FFFFFF;
+        height: 10%;
+        width: 10%;
+    }
+    .carousel-root {
+        outline: none;
+        width: 100%;
+    }
+
+    .WhatClientSays-car {
+        width: 100%;
+    }
+
+
+}
+
+@media only screen and (min-width: 380px) and (max-width: 580px) {
+    .WhatClientSays {
+        background-image: none;
+        background: #557097;
+        height: 80vh;
+    }
+
+    .carousel.carousel-slider .control-arrow {
+        margin: 0rem 0rem 0rem 0rem;
+        background: #f7701d;
+        color: #FFFFFF;
+        height: 10%;
+        width: 10%;
+    }
+
+    .WhatClientSays-Head h1 {
+        margin: 1rem;
+    }
+
+    .carousel-root {
+        outline: none;
+        width: 100%;
+    }
+
+    .WhatClientSays-car {
+        width: 100%;
+    }
+
+    .whatclientsays {
+        width: 98%;
+    }
+
+    .what-message-1 {
+        /* padding: 0rem 1.7rem 0rem 1.7rem; */
+        color: #FFFFFF;
+    }
+
+    .carousel.carousel-slider .control-arrow {
+        margin: 0rem;
+    }
+}
+
+@media only screen and (min-width: 201px) and (max-width: 380px) {
+    .WhatClientSays {
+        background-image: none;
+        background: #557097;
+        height: 75vh;
+    }
+    .name_location {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        /* justify-content: center; */
+    }
+
+    .carousel.carousel-slider .control-arrow {
+        margin: 0rem 0rem 0rem 0rem;
+        background: #f7701d;
+        color: #FFFFFF;
+        height: 10%;
+        width: 10%;
+    }
+
+    .WhatClientSays-Head h1 {
+        margin: 1rem;
+    }
+
+    .carousel-root {
+        outline: none;
+        width: 100%;
+    }
+
+    .WhatClientSays-car {
+        width: 100%;
+    }
+
+    .whatclientsays {
+        width: 98%;
+    }
+
+    .what-message-1 {
+        /* padding: 0rem 1.7rem 0rem 1.7rem; */
+        color: #FFFFFF;
+    }
+
+    .carousel.carousel-slider .control-arrow {
+        margin: 0rem;
+    }
+}

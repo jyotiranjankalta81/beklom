@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/* Navbar */
+.App{
+    width: 100%;
+    overflow: hidden;
+}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Kanit:wght@500&family=Kdam+Thmor+Pro&family=Montserrat:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&family=Mulish:ital,wght@0,200;0,400;1,200&family=Poppins:wght@300;400;500&family=Roboto:ital,wght@1,300&family=Titillium+Web:wght@900&family=Work+Sans:ital@0;1&display=swap');
+
+.link-font {
+    font-size: 500;
+    font-family: 'Rubik', sans-serif;
+    color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* logo */
+.logo {
+    margin-left: 150;
+    width: 130px;
+    
+}
+.nav-link:focus, .nav-link:hover{
+    color:#fff !important;
+}
+h3{
+    font-family: "Kanit",sans-serif;
+    font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+::-webkit-scrollbar {
+    width: 10px;
+    background: #c4c4c4;
+    border-radius: 10px;
+    /* margin: 0rem 1.5rem 0rem 0rem; */
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #a09f9f;
+    border-radius: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #a09f9f;
+    border-radius: 10px;
   }
-}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: grey;
+  }

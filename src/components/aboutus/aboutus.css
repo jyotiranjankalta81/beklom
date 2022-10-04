@@ -1,0 +1,467 @@
+.aboutpage-bg {
+    /* background-image: url(../../../public/images/aboutus//about-header-bg.png); */
+    background-repeat: no-repeat;
+    height: 730px;
+    width: 100%;
+    background-size: cover;
+}
+.About-img-vec11 {
+    width: 100%;
+    margin-top:  -5.5rem;
+}
+
+.about-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 7em;
+}
+.about-h1 {
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-size: 500;
+}
+.btn {
+    margin-top: 1.8rem;
+}
+
+.about-p {
+    font-weight: 600;
+    font-family: 'Rubik', sans-serif;
+    color: #000;
+    padding-left: 10em
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 3.75rem;
+    margin-top: 5rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4.06rem;
+    margin-bottom: 1.12rem;
+    margin-top: 4rem;
+}
+.baklom_Aboutuse_pic_section{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.baklom_Aboutuse_pic{
+    width: 70%;
+    height: 25rem;
+    margin-left: 16rem;
+    margin-top: 5rem;
+    border-radius: 1.25rem;
+}
+
+.our-team-section {
+    font-weight: 500;
+    color: #456BB4;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+    margin: 1.56rem;
+}
+
+.our-team-h1 {
+    font-weight: bold;
+    color: #456BB4;
+    margin-left: 4.18rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+.feature-img {
+    margin-top: 3.12rem;
+    margin-bottom: 3.75rem;
+    width: 100%;
+    height: 35.43rem;
+}
+
+.img1-class {
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.img1-class:hover {
+    transform: scale(1.1);
+}
+
+.img-all {
+    margin-bottom: -100;
+    position: relative;
+}
+
+/* .img-position {
+    margin-top: -25em;
+    margin: 25px;
+} */
+
+.img1 {
+    margin-top: -62em;
+}
+
+.img2 {
+    margin-top: -50em;
+}
+
+.img3 {
+    margin-top: -59em;
+    margin-left: 100px;
+}
+
+
+.img2-position1 {
+    margin-bottom: -33em
+}
+
+.feature-circle {
+    margin-top: 0.43rem;
+    margin-left: 0.5rem;
+    background: #557097;
+    border-color: black;
+    border-radius: 50%;
+    width: 11.87rem;
+    height: 11.87rem;
+    position: absolute;
+    border-color: #fff;
+}
+
+.rectangle-circle {
+    position: absolute;
+}
+
+.feature-box {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border: 2px solid;
+    width: 12.5rem;
+    height: 3.75rem;
+    border-radius: 0.62rem;
+    border-color: #fff;
+
+}
+
+.box-center {
+    margin-left: 2.37rem;
+    color: #fff;
+    font-weight: 500;
+
+}
+
+.feature-title {
+    margin-top: 4.68rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+.right-box1 {
+    margin-right: 38em;
+    margin-top: -10em;
+    background-color: #557097;
+    position: absolute
+}
+
+.right-box2 {
+    margin-top: 8em;
+    margin-right: 37em;
+    background-color: #557097;
+    position: absolute
+}
+
+.left-box1 {
+    margin-left: 38.6em;
+    margin-top: -11em;
+    background-color: #557097;
+    position: absolute
+}
+
+.left-box2 {
+    margin-left: 38em;
+    margin-top: 8em;
+    background-color: #557097;
+    position: absolute
+}
+
+.top-box {
+
+    margin-top: -23em;
+    background-color: #557097;
+    position: absolute
+}
+
+.down-box {
+
+    margin-bottom: -24em;
+    background-color: #557097;
+    position: absolute
+}
+
+.arrow1 {
+    position: absolute;
+    margin-right: 18em;
+    margin-top: -8em
+}
+
+.arrow2 {
+    position: absolute;
+    margin-bottom: -122px;
+    margin-right: 17em
+}
+
+.arrow3 {
+    position: absolute;
+    margin-left: 19em;
+    margin-top: -8em
+}
+
+.arrow4 {
+    position: absolute;
+    margin-bottom: -7.62rem;
+    margin-left: 18em
+}
+
+.arrow5 {
+    position: absolute;
+    margin-top: -16em;
+}
+
+.arrow6 {
+    position: absolute;
+    margin-bottom: -16.9em
+}
+
+.our-team-direction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-map1 {
+    margin-right: 1.5rem;
+}
+.img-detail-box
+{
+    height: 2.18rem;
+    width: 6.25rem;
+    border-radius: 5%;
+    background-color: #456BB4;
+}
+.img-detail-text{
+    color: rgb(255, 255, 255);
+    text-overflow: clip;
+    overflow: hidden;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2px;
+}
+.img-detail-text1{
+    color: rgb(255, 255, 255);
+    text-overflow: clip;
+    overflow: hidden;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -0.93rem;
+}
+.img-detail-img1{
+   margin-bottom: -18em;
+   position: relative;
+}
+.img-detail-img1:hover {
+    transform: scale(1.1);
+}
+.img-detail-img2:hover {
+    transform: scale(1.1);
+}
+.img-box1-swap{
+    /* margin-bottom: -20em; */
+    position: relative;
+ }
+.img-box2-swap{
+    /* margin-bottom: -27em; */
+    position: relative;
+}
+
+.img-detail-img2{
+    margin-bottom: -25em;
+    position: relative;
+ }
+ .img-box-show1
+ {
+    color: #fff;
+    text-overflow:clip;
+    position: absolute;
+    margin-top: 13em;
+ }
+ .img-box-show2
+ {
+    color: #fff;
+    text-overflow:clip;
+    position: absolute;
+    margin-top: 16em;
+ }
+.img-title{
+    animation: fade-in-down 5s ;
+}
+.About_i{
+    height: 7rem;
+}
+@keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-11.25rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+  @media only screen and (max-width:770px){
+    .aboutpage-bg {
+        background-image: url(../../../public/images/aboutus//about-header-bg.png);
+        background-repeat: no-repeat;
+        height: 45.62rem;
+        width: 100%;
+        background-size: cover;
+    }
+    .about-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 7em;
+    }
+    
+    .about-h1 {
+        color: #fff;
+        font-family: 'Rubik', sans-serif;
+        font-size: 500;
+    }
+    .btn {
+        margin-top: 1.8rem;
+    }
+    .About-img-vec11 {
+   display: none;
+    }
+    .about-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 3.75rem;
+        margin-top: 5rem;
+        margin-left: -6rem;
+    }
+    .about-p {
+        font-weight: 600;
+        font-family: 'Rubik', sans-serif;
+        color: #000;
+        padding-left: 10em
+    }
+    .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 13.37rem;
+        margin-bottom: 1.12rem;
+        margin-top: 4rem;
+    }
+    .about-content_Baklom{
+        width: 14rem;
+        margin-left: -15rem;
+    }
+    .about-content_Baklom1{
+        width: 1rem;
+        height: 1rem;
+    }
+    .about-content_Baklom2{
+        width: 14rem;
+        margin-left: 0rem;
+    }
+    .baklom_Aboutuse_pic_section{
+        display: flex;
+        align-items: center;
+        align-content: center;
+    }
+    .baklom_Aboutuse_pic {
+        width: 100%;
+        height: 14rem;
+        margin-left: 0rem;
+        margin-top: 5rem;
+        border-radius: 20px;
+    }
+    .div-img-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: -31em;
+        margin-right: 0rem;
+    }
+  } 
+  @media only screen and (max-width:500px){
+    
+    .about-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+        text-align: justify;
+        margin-left: -6rem;
+    }
+    .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 14.37rem;
+        margin-bottom: 1.12rem;
+        margin-top: 4rem;
+    }
+    .our-team-section {
+        font-weight: 500;
+        color: #456BB4;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Rubik', sans-serif;
+        margin: 1.56rem;
+        margin-left: -1rem;
+    }
+    .baklom_Aboutuse_pic_section {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        width: 29rem;
+        margin-left: 1rem;
+    }
+    .About_i{
+        
+            height: 5rem;
+            margin-left: 0rem;
+        } 
+    .About_i1{
+        height: 5rem;
+    }
+    .About_i2{
+        height: 5rem;
+    }
+    .About_i3{
+        height: 5rem;
+    }
+  }
