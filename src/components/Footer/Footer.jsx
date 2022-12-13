@@ -4,7 +4,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import CallIcon from '@mui/icons-material/Call'
 import MailIcon from '@mui/icons-material/Mail'
 import { Link } from 'react-router-dom'
-import PlainInput from '../../UtilComponents/inputs/PlainInput'
+import { PlainInput } from '../../UtilComponents/inputs/PlainInput'
 import { Button } from '@mui/material'
 
 function Footer () {
@@ -68,7 +68,7 @@ function Footer () {
             <div className='subscribe_mail'>
               <h3>Subscribe to Newsletter</h3>
               <div className='input_subscribe'>
-                <PlainInput placeholder='Email' />
+                <PlainInput />
                 <Button
                   sx={{
                     width: '30%',

@@ -1,0 +1,105 @@
+.tech_container {
+  width: 100%;
+  background: linear-gradient(268.67deg, #3b85d7 6.95%, #ffffff 92.78%);
+  height: 81vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.tech_main_container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.left_main_container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.left_main_container h3 {
+  margin: 0%;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+
+  color: #142335;
+}
+.left_main_container p {
+  margin: 0%;
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+
+  color: #1c2947;
+}
+.right_main_container {
+  height: 70vh;
+  width: 40%;
+}
+.right_main_container img {
+  width: 100%;
+  height: 100%;
+}
+.technology {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  row-gap: 2rem;
+  justify-content: space-between;
+}
+.tech_cards {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 1px solid #3b85d7;
+  background: #ffffff;
+}
+.tech_card {
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+
+  color: #142335;
+}
+.work_force {
+  background: #9e5f60;
+  border-radius: 5px;
+  width: 8px;
+  height: 100%;
+}
+.contact_center {
+  background: #ea6491;
+  border-radius: 5px;
+  width: 8px;
+  height: 100%;
+}
+.customer_success {
+  background: #e39033;
+  border-radius: 5px;
+  width: 8px;
+  height: 100%;
+}
+.cyber_security {
+  background: #59cffb;
+  border-radius: 5px;
+  width: 8px;
+  height: 100%;
+}

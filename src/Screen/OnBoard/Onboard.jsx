@@ -2,6 +2,9 @@ import React from 'react'
 import './Onboard.css'
 import DraftsIcon from '@mui/icons-material/Drafts'
 import CallIcon from '@mui/icons-material/Call'
+import { OnBoardInput } from '../../UtilComponents/inputs/PlainInput'
+import PlainTextArea from '../../UtilComponents/inputs/PlainTextArea'
+// import OnBoardInput from '../../UtilComponents/inputs/PlainInput'
 
 const Onboard = () => {
   return (
@@ -51,6 +54,14 @@ const Onboard = () => {
           </div>
           <div className='form_section'>
             <h3>Hey!there:</h3>
+            <div className='input_section'>
+              <OnBoardInput label='Name:' />
+              <OnBoardInput label='Contact No:' />
+              <OnBoardInput label='Email Address:' />
+              <OnBoardInput label='Select Address Type:' />
+            </div>
+            <PlainTextArea label='Enter Your message' />
+            <div className='btn btn--primary'>Submit</div>
           </div>
         </div>
       </div>

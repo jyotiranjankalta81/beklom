@@ -13,11 +13,12 @@ body {
   border: none;
 }
 .btn--primary {
-  background: #9dc164;
-  padding: 0.8rem 2rem;
+  background: #ff7448;
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
   font-size: 1rem;
   color: #fff;
-  border-radius: 6px;
   cursor: pointer;
   width: max-content;
 }

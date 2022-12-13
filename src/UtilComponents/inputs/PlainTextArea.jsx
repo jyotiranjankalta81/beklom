@@ -17,7 +17,7 @@ export default function PlainTextArea ({
         name={name}
         onChange={onChange}
         {...validation}
-        className='plain-input'
+        className='plain-input-textarea'
       ></textarea>
       {errors && (
         <span className='input-error'>

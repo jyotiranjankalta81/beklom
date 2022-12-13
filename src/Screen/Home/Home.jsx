@@ -1,12 +1,17 @@
 import React from 'react'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
+import TopHeader from '../../components/TopHeaer/TopHeader'
 import Onboard from '../OnBoard/Onboard'
+import Tech from '../Tech/Tech'
+import WhyChoose from '../WhyChoose/WhyChoose'
 
 const Home = () => {
   return (
     <>
-      <Header />
+      <TopHeader />
+      <WhyChoose />
+      <Tech />
       <Onboard />
       <Footer />
     </>
