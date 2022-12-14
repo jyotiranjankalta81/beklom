@@ -91,7 +91,7 @@ function Navbar () {
             <NavLink to='/' className='services'>
               <li>ABOUT US</li>
             </NavLink>
-            <NavLink to='/faqs' className='faqs'>
+            <NavLink to='/services' className='faqs'>
               <li>SERVICES</li>
             </NavLink>
             <NavLink to='/blogs' className='blogs'>

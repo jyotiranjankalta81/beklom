@@ -120,3 +120,28 @@
   row-gap: 1rem;
   justify-content: space-between;
 }
+@media only screen and (max-width: 1028px) {
+  .onboard_content {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .inside_heading h3 {
+    padding: 0.2rem 0.7rem;
+    font-size: unset;
+  }
+  .onboard_content {
+    width: 90%;
+    flex-direction: column;
+    justify-content: unset;
+    gap: 2rem;
+  }
+  .lets_touch_content {
+    width: 100%;
+    gap: 0.7rem;
+  }
+  .form_section {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}

@@ -26,9 +26,6 @@ function Footer () {
                 referrerpolicy='no-referrer-when-downgrade'
               ></iframe>
             </section>
-            {/* <div className='footer_img'>
-              <img src='/Images/Footer/FooterPrimary.png' alt='' srcset='' />
-            </div> */}
           </div>
           <div className='footer_content_sections'>
             <div className='link_contacts'>
@@ -59,16 +56,13 @@ function Footer () {
                 </div>
               </div>
             </div>
-            {/* <div className='footer_img'>
-              <img src='/Images/Footer/FooterSecondary.png' alt='' srcset='' />
-            </div> */}
             <br />
           </div>
           <div className='footer_content_section'>
             <div className='subscribe_mail'>
               <h3>Subscribe to Newsletter</h3>
               <div className='input_subscribe'>
-                <PlainInput />
+                <PlainInput label='Email:' />
                 <Button
                   sx={{
                     width: '30%',
@@ -84,12 +78,9 @@ function Footer () {
                 </Button>
               </div>
             </div>
-            {/* <div className='footer_img'>
-              <img src='/Images/Footer/FooterTertairy.png' alt='' srcset='' />
-            </div> */}
           </div>
         </div>
-        <div className='footer_main_container'>
+        <div className='footer_main_containers'>
           <div className='footer_content_section'>
             <div className='footer_img'>
               <img src='/Images/Footer/FooterPrimary.png' alt='' srcset='' />

@@ -66,3 +66,14 @@
   align-items: flex-end;
   justify-content: center;
 }
+@media only screen and (max-width: 450px) {
+  .choose_main_container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .far_right_container {
+    display: none;
+  }
+}

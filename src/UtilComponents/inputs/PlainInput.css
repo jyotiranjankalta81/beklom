@@ -48,6 +48,7 @@
 @media only screen and (max-width: 500px) {
   .plain-input-wrapper span {
     font-size: 0.9rem;
+    color: #000000;
   }
   .plain-input {
     font-size: 0.9rem;

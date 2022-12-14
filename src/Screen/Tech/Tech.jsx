@@ -18,51 +18,24 @@ const Tech = () => {
               your ideal customer targets.
             </p>
             <div className='technology'>
-              <div className='tech_cards' style={{ border: 'none' }}>
-                <div
-                  className='tech_card'
-                  style={{ background: '#7FD7F8', border: 'none' }}
-                >
-                  Customer Services
-                  <ArrowCircleRightOutlinedIcon />
-                </div>
+              <div className='button_slide slide_right_services'>
+                Customer Services <ArrowCircleRightOutlinedIcon />
               </div>
-              <div className='tech_cards'>
-                <div className='customer_success'></div>
-                <div className='tech_card'>
-                  Customer Success
-                  <ArrowCircleRightOutlinedIcon />
-                </div>
+              <div className='button_slide slide_right_success'>
+                Customer Success <ArrowCircleRightOutlinedIcon />
               </div>
-              <div className='tech_cards'>
-                <div className='work_force'></div>
-                <div className='tech_card'>
-                  Workforce Management Consultancy
-                  <ArrowCircleRightOutlinedIcon />
-                </div>
+              <div className='button_slide slide_right_workforce'>
+                Workforce Management Consultancy
+                <ArrowCircleRightOutlinedIcon />
               </div>
-              <div className='tech_cards'>
-                <div className='contact_center'></div>
-                <div className='tech_card'>
-                  Contact Center Consultancy
-                  <ArrowCircleRightOutlinedIcon />
-                </div>
+              <div className='button_slide slide_right_contact'>
+                Contact Center Consultancy <ArrowCircleRightOutlinedIcon />
               </div>
-              <div className='tech_cards'>
-                <div className='cyber_security'></div>
-                <div className='tech_card'>
-                  Cyber Security Consulting
-                  <ArrowCircleRightOutlinedIcon />
-                </div>
+              <div className='button_slide slide_right_Cyber'>
+                Cyber Security Consulting <ArrowCircleRightOutlinedIcon />
               </div>
-              <div className='tech_cards' style={{ border: 'none' }}>
-                <div
-                  className='tech_card'
-                  style={{ background: '#7CBD5A', border: 'none' }}
-                >
-                  Website Developement
-                  <ArrowCircleRightOutlinedIcon />
-                </div>
+              <div className='button_slide slide_right_website'>
+                Website Developement <ArrowCircleRightOutlinedIcon />
               </div>
             </div>
           </div>

@@ -9,7 +9,6 @@
 }
 .mail_intro_container {
   width: 90%;
-  border: 2px solid yellow;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,7 +16,6 @@
 }
 .left_intro {
   width: 45%;
-  border: 2px solid green;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -46,7 +44,9 @@
 }
 .right_intro {
   width: 45%;
-  border: 2px solid red;
+}
+.right_intro img {
+  width: 100%;
 }
 .get_started {
   width: 40%;
@@ -55,4 +55,7 @@
   align-items: center;
   justify-content: center;
   background: #373537;
+  color: #ffffff;
+  padding: 1rem;
+  box-shadow: 5px 5px #3f6888;
 }
