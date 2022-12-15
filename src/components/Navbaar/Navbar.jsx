@@ -97,6 +97,9 @@ function Navbar () {
             <NavLink to='/blogs' className='blogs'>
               <li>FAQ</li>
             </NavLink>
+            <NavLink to='/contact-us' className='blogs'>
+              <li>Contact Us</li>
+            </NavLink>
             <NavLink to='/trackform' className='contactus'>
               <li>BLOGS</li>
             </NavLink>

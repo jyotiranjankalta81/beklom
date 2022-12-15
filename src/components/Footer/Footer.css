@@ -116,6 +116,7 @@
   .footer_container {
     padding-top: 21%;
     background-size: 100% 50%;
+    height: auto;
   }
   .footer_main_container {
     display: flex;

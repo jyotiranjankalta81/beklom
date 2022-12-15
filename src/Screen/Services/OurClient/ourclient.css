@@ -33,3 +33,22 @@
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 1028px) {
+  .client_card {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    row-gap: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .client_card {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: unset;
+    gap: 1.5rem;
+  }
+}

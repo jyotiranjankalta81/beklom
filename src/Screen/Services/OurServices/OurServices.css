@@ -41,3 +41,32 @@
   text-transform: capitalize;
   color: rgba(20, 35, 53, 0.8);
 }
+@media only screen and (max-width: 1028px) {
+  .small_cards {
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .small_cards {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+  .service_card {
+    width: 150px;
+    height: 150px;
+    align-items: center;
+  }
+  .service_card img {
+    width: 40px;
+    height: 40px;
+  }
+  .service_card p {
+    font-size: 13px;
+    line-height: 15px;
+  }
+}

@@ -103,3 +103,16 @@
   margin: 0%;
   color: rgba(0, 0, 0, 0.65);
 }
+@media only screen and (max-width: 1028px) {
+  .industry_cards {
+    grid-template-columns: 45% 45%;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .industry_cards {
+    width: 95%;
+    grid-template-columns: 95%;
+    justify-content: unset;
+  }
+}
