@@ -31,13 +31,51 @@
   justify-content: space-between;
 }
 .right_contact_form {
-  width: 50%;
-  border: 1px solid red;
+  width: 60%;
   display: flex;
-  flex-wrap: wrap;
-  /* grid-template-columns: 45% 45%; */
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  /* row-gap: 1rem; */
+  padding: 2rem;
+}
+.top_right_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.grid_input-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  justify-content: space-between;
+  row-gap: 1.5rem;
+  border: none;
+}
+.middle_right_form {
+  /* border: 2px solid yellowgreen; */
+  width: 100%;
+}
+.last_form_section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.sumit_contact_form {
+  border: none;
+  width: auto;
+  padding: 1rem 2.5rem;
+  background: #3b85d7;
+  border-radius: 10px;
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+
+  color: #ffffff;
 }
 .top_contact_section {
   padding-right: 2rem;

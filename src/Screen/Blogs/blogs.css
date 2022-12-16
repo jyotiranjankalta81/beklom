@@ -1,0 +1,160 @@
+.blogs_container {
+  width: 100%;
+  height: auto;
+  margin: 5% 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.blogs_card_container {
+  width: 90%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: space-evenly;
+  row-gap: 1.8rem;
+}
+.blog_card_container {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.img_section_blog {
+  width: 100%;
+}
+.img_section_blog img {
+  width: 100%;
+}
+.blog_contetnt_section {
+  width: 100%;
+  padding: 1rem;
+}
+.blog_tag {
+  /* width: auto; */
+  width: fit-content;
+  background-size: cover;
+  padding: 1.7% 5%;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #17c762;
+  background: #c7ffe0;
+  border-radius: 20px;
+}
+.blog_contetnt_section h3 {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0%;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: capitalize;
+
+  color: #142335;
+}
+.describe_blog {
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: capitalize;
+  color: #6a6a6a;
+}
+.describe_blog span {
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #3b85d7;
+}
+.blog_user_section {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+.subscribe_blog {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 65vh;
+  background: linear-gradient(268.88deg, #3b85d7 0.85%, #ffffff 81.15%);
+  margin-bottom: 5%;
+}
+.subscribe {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  background-image: url(../../../public/Images/Home/subscribemap.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.subscribe_right_container {
+  width: 50%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.7rem;
+}
+.subscribe_left_container {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.subscribe_right_container h2 {
+  margin: 0%;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+  color: #142335;
+}
+.subscribe_right_container p {
+  margin: 0%;
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+  color: #142335;
+}
+.input_box {
+  width: 100%;
+}
+.input_box input[type="email"] {
+  border: none;
+  outline: none;
+  background: #ffffff;
+  border-radius: 50px;
+  width: 80%;
+  background-image: url("../../../public/Images/Home/subscribeicon.png");
+  background-position: 100% 100%;
+  height: 45px;
+  padding: 0.8rem;
+  background-repeat: no-repeat;
+}
+.input_box input::placeholder {
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #aaa4a4;
+}

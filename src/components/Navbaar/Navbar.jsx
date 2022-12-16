@@ -100,7 +100,7 @@ function Navbar () {
             <NavLink to='/contact-us' className='blogs'>
               <li>Contact Us</li>
             </NavLink>
-            <NavLink to='/trackform' className='contactus'>
+            <NavLink to='/blogs' className='contactus'>
               <li>BLOGS</li>
             </NavLink>
             <NavLink to='/order-now' className='ordernow'>

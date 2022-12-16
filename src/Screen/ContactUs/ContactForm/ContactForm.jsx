@@ -3,7 +3,7 @@ import './ContactForm.css'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import CallIcon from '@mui/icons-material/Call'
 import MailIcon from '@mui/icons-material/Mail'
-import TextField from '@mui/material/TextField'
+import { OneLineInput } from '../../../UtilComponents/inputs/PlainInput'
 const ContactForm = () => {
   return (
     <>
@@ -49,31 +49,26 @@ const ContactForm = () => {
             </div>
           </div>
           <div className='right_contact_form'>
-            <TextField
-              id='standard-basic'
-              label='Standard'
-              variant='standard'
-            />
-            <TextField
-              id='standard-basic'
-              label='Standard'
-              variant='standard'
-            />
-            <TextField
-              id='standard-basic'
-              label='Standard'
-              variant='standard'
-            />
-            <TextField
-              id='standard-basic'
-              label='Standard'
-              variant='standard'
-            />
-            <TextField
-              id='standard-basic'
-              label='Standard'
-              variant='standard'
-            />
+            <div className='top_right_form'>
+              <div className='grid_input-row'>
+                <OneLineInput
+                  label='Full Name'
+                  placeholder='Enter First Name'
+                />
+                <OneLineInput label='Last Name' placeholder='Enter Last Name' />
+                <OneLineInput label='Phone' placeholder='Enter Phone' />
+                <OneLineInput label='E-mail' placeholder='Enter E-mail' />
+              </div>
+              <div className='middle_right_form'>
+                <OneLineInput
+                  label='Message'
+                  placeholder='Write your message '
+                />
+              </div>
+            </div>
+            <div className='last_form_section'>
+              <button className='sumit_contact_form'>Send Message</button>
+            </div>
           </div>
         </div>
       </div>
