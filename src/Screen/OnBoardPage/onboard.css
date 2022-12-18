@@ -62,3 +62,23 @@
   grid-template-columns: 30% 30% 30%;
   justify-content: space-between;
 }
+.file_section {
+  /* border: 2px solid green; */
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 65% 30%;
+  /* border: 2px solid black; */
+  align-items: flex-end;
+}
+.file_upload_btn {
+  background: #e6f1fd;
+  border: 1px dashed #456bb4;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0.9rem 2.5rem;
+  cursor: pointer;
+}

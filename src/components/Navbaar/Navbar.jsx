@@ -88,13 +88,13 @@ function Navbar () {
             className={isMobile ? 'nav-links nav-links-mobile' : 'nav-links'}
             onClick={() => setIsMobile(false)}
           >
-            <NavLink to='/' className='services'>
+            <NavLink to='/about' className='services'>
               <li>ABOUT US</li>
             </NavLink>
             <NavLink to='/services' className='faqs'>
               <li>SERVICES</li>
             </NavLink>
-            <NavLink to='/blogs' className='blogs'>
+            <NavLink to='/faq' className='blogs'>
               <li>FAQ</li>
             </NavLink>
             <NavLink to='/contact-us' className='blogs'>
