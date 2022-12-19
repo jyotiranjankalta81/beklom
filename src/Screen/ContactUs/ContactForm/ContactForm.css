@@ -141,3 +141,43 @@
   background: #015b93;
   border-radius: 90% 15% 5% 15%;
 }
+@media only screen and (max-width: 1028px) {
+  .contact_form_container {
+    height: auto;
+  }
+  .contact_form_main_container {
+    width: 95%;
+    padding: 0.9rem;
+  }
+  .right_inside_sectionn {
+    width: 65px;
+    height: 65px;
+  }
+  .right_contact_form {
+    justify-content: unset;
+    gap: 1.5rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .contact_form_container {
+    margin: 10% 0%;
+  }
+  .contact_form_main_container {
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 95%;
+  }
+  .left_contact_form {
+    width: 100%;
+  }
+  .right_contact_form {
+    width: 100%;
+  }
+  .right_inside_sectionn {
+    width: 80px;
+    height: 80px;
+  }
+  .last_form_section {
+    margin-top: 1.7rem;
+  }
+}

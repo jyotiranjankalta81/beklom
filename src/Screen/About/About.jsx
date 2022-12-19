@@ -1,4 +1,9 @@
 import React from 'react'
+import Footer from '../../components/Footer/Footer'
+import AboutSection from './AboutSection/AboutSection'
+import CustomerReviews from './CustomerReview/CustomerReviews'
+import OurTeam from './OurTeam/OurTeam'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -12,13 +17,19 @@ const About = () => {
               grow your business. Does this seem like something you're
               interested in? Start your onboarding process today!.
             </p>
-            <div className='get_started'>GET STARTED</div>
+            <Link to='/getstarted' className='Link_btn'>
+              <div className='get_started'>GET STARTED</div>
+            </Link>
           </div>
           <div className='right_intro'>
-            <img src='/Images/Services/aboutrightbg.png' alt='' />
+            <img src='/Images/About/aboutrightbg.png' alt='' />
           </div>
         </div>
       </div>
+      <AboutSection />
+      <OurTeam />
+      <CustomerReviews />
+      <Footer />
     </>
   )
 }

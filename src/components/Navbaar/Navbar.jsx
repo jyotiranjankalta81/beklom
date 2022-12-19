@@ -103,7 +103,7 @@ function Navbar () {
             <NavLink to='/blogs' className='contactus'>
               <li>BLOGS</li>
             </NavLink>
-            <NavLink to='/order-now' className='ordernow'>
+            <NavLink to='/onboard' className='ordernow'>
               <li>Get In Touch</li>
             </NavLink>
           </ul>

@@ -1,6 +1,7 @@
 import React from 'react'
 import ContactForm from './ContactForm/ContactForm'
 import Footer from '../../components/Footer/Footer'
+import { Link } from 'react-router-dom'
 
 const ContactUs = () => {
   return (
@@ -13,7 +14,9 @@ const ContactUs = () => {
               Let’s talk about your website or projects. Send us a message and
               wewill be in touch within one business day
             </p>
-            <div className='get_started'>GET STARTED</div>
+            <Link to='/getstarted' className='Link_btn'>
+              <div className='get_started'>GET STARTED</div>
+            </Link>
           </div>
           <div className='right_intro'>
             <img src='/Images/Services/servicerightbg.png' alt='' />

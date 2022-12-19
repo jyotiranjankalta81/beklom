@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Card1.css'
 
 const Card1 = () => {
@@ -15,7 +16,9 @@ const Card1 = () => {
               grow your business. Does this seem like something you're
               interested in? Start your onboarding process today!.
             </p>
-            <div className='get_started'>GET STARTED</div>
+            <Link to='/getstarted' className='Link_btn'>
+              <div className='get_started'>GET STARTED</div>
+            </Link>
           </div>
           <div className='right_intro'>
             <img src='/Images/Home/topheaderbg.png' alt='' />

@@ -43,3 +43,28 @@
 .submit_get_started_form {
   width: 100%;
 }
+@media only screen and (max-width: 1028px) {
+  .form_container {
+    align-items: center;
+  }
+  .form_get_started {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .form_container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main_form_container {
+    width: 98;
+  }
+  .main_form_container p {
+    text-align: justify;
+  }
+  .form_get_started {
+    width: 98%;
+    padding: 1.7rem;
+  }
+}

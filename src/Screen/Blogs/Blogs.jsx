@@ -3,6 +3,7 @@ import './blogs.css'
 import BlogsData from '../../JSONCollection/blogs'
 import BlogsCard from './BlogsCard/BlogsCard'
 import Footer from '../../components/Footer/Footer'
+import { Link } from 'react-router-dom'
 
 const Blogs = () => {
   return (
@@ -16,7 +17,9 @@ const Blogs = () => {
               grow your business. Does this seem like something you're
               interested in? Start your onboarding process today!.
             </p>
-            <div className='get_started'>GET STARTED</div>
+            <Link to='/getstarted' className='Link_btn'>
+              <div className='get_started'>GET STARTED</div>
+            </Link>
           </div>
           <div className='right_intro'>
             <img src='/Images/Home/blogsrightbg.png' alt='' />
