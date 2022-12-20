@@ -84,7 +84,7 @@
   align-items: flex-start;
   gap: 1rem;
 }
-.top_contact_section h3 {
+/* .top_contact_section h3 {
   margin: 0%;
   font-family: "Red Hat Display", sans-serif;
   font-style: normal;
@@ -92,7 +92,7 @@
   font-size: 25px;
   line-height: 33px;
   color: #142335;
-}
+} */
 .top_contact_section p {
   margin: 0%;
   font-family: "Segoe UI", sans-serif;
@@ -178,6 +178,9 @@
     height: 80px;
   }
   .last_form_section {
-    margin-top: 1.7rem;
+    margin-top: 0.7rem;
+  }
+  .sumit_contact_form {
+    padding: 0.7rem 1.5rem;
   }
 }

@@ -14,7 +14,7 @@ const Onboard = () => {
           <div className='inside_header'>
             <img src='/Images/Home/LeftArrow.png' alt='bg' />
           </div>
-          <div className='inside_header'>
+          <div className='inside_headers'>
             <div className='inside_heading'>
               <h3>Get Onboard</h3>
             </div>

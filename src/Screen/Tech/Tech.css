@@ -19,16 +19,15 @@
   align-items: flex-start;
   gap: 1.5rem;
 }
-.left_main_container h3 {
+/* .left_main_container h3 {
   margin: 0%;
   font-family: "Red Hat Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 40px;
-
   color: #142335;
-}
+} */
 .left_main_container p {
   margin: 0%;
   font-family: "Segoe UI", sans-serif;
@@ -112,6 +111,7 @@
   }
   .right_main_container {
     width: 100%;
+    height: auto;
   }
   .right_main_container img {
     width: 100%;

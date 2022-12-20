@@ -83,6 +83,7 @@
   .our_team_container {
     height: auto;
     margin-top: 2rem;
+    align-items: center;
   }
   .our_team_main_container {
     width: 100%;
@@ -109,7 +110,7 @@
     align-items: center;
   }
   .left_container_our_team {
-    width: 70%;
+    width: 75%;
   }
   .right_container_our_team {
     width: 100%;

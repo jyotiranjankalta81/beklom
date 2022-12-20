@@ -9,9 +9,9 @@ const OurClient = () => {
           <div className='inside_header'>
             <img src='/Images/Home/LeftArrow.png' alt='bg' />
           </div>
-          <div className='inside_header'>
+          <div className='inside_headers'>
             <div className='inside_head'>
-              <h2>Our Client</h2>
+              <h1>Our Client</h1>
             </div>
           </div>
           <div className='inside_header'>

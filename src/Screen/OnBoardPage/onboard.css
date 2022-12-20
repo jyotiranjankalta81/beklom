@@ -8,14 +8,6 @@
 .right_intros {
   height: 100%;
 }
-.left_intros h2 {
-  font-family: "Red Hat Display", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 42px;
-  color: #142335;
-}
 .left_intros p {
   font-family: "Segoe UI" sans-serif;
   font-style: normal;

@@ -8,7 +8,7 @@ const FAQ = () => {
       <div className='intro_container'>
         <div className='mail_intro_container'>
           <div className='left_intro'>
-            <h2>FAQ</h2>
+            <h1>FAQ</h1>
             <p>
               Leading Resource for Recruitment in Technical and Non-Technical
               backgrounds !

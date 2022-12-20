@@ -106,7 +106,6 @@
     padding: 0.5rem;
     text-align: justify;
     font-size: 14px;
-    border: 2px solid yellow;
     width: 90%;
   }
   .title {
@@ -114,6 +113,11 @@
   }
   .title_heading {
     font-size: 14px;
+  }
+  .content.show {
+    font-size: 12px;
+    line-height: 20px;
+    padding: 1rem 1rem;
   }
   .questionno {
     margin: 0rem 0.5rem 0rem 0.5rem;

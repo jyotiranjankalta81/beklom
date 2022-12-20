@@ -4,14 +4,24 @@ import BlogsData from '../../JSONCollection/blogs'
 import BlogsCard from './BlogsCard/BlogsCard'
 import Footer from '../../components/Footer/Footer'
 import { Link } from 'react-router-dom'
+import ReactPaginate from 'react-paginate'
 
 const Blogs = () => {
+  const [pageNumber, setPageNumber] = React.useState(0)
+
+  const blogsPerPage = 6
+  const pagesVisited = pageNumber * blogsPerPage
+
+  const pageCount = Math.ceil(BlogsData?.length / blogsPerPage)
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+  }
   return (
     <>
       <div className='intro_container'>
         <div className='mail_intro_container'>
           <div className='left_intro'>
-            <h2>Blogs</h2>
+            <h1>Blogs</h1>
             <p>
               Beklom Technologies has the greatest tools and people to help you
               grow your business. Does this seem like something you're
@@ -28,10 +38,25 @@ const Blogs = () => {
       </div>
       <div className='blogs_container'>
         <div className='blogs_card_container'>
-          {BlogsData.map((BlogList, index) => (
-            <BlogsCard key={index} {...BlogList} />
-          ))}
+          {BlogsData.slice(pagesVisited, pagesVisited + blogsPerPage).map(
+            (BlogList, index) => (
+              <BlogsCard key={index} {...BlogList} />
+            )
+          )}
         </div>
+      </div>
+      <div className='Blogs-Carousel-Track'>
+        <ReactPaginate
+          previousLabel={'Prev'}
+          nextLabel={'Next'}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={'paginationBttns'}
+          previousLinkClassName={'previousBttn'}
+          nextLinkClassName={'nextBttn'}
+          disabledClassName={'paginationDisabled'}
+          activeClassName={'paginationActive'}
+        />
       </div>
       <br />
       <BlogSubscribe />
@@ -50,7 +75,7 @@ function BlogSubscribe () {
           <img src='/Images/Home/subscribeleft.png' alt='' />
         </div>
         <div className='subscribe_right_container'>
-          <h2>STAY TUNED</h2>
+          <h1>STAY TUNED</h1>
           <p>
             Subscribe to our newsletter and never miss our Tech, latest news,
             etc.

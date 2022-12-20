@@ -16,26 +16,6 @@
   align-items: flex-start;
   gap: 1.5rem;
 }
-.choose_main_container h1 {
-  margin: 0%;
-  font-family: "Red Hat Display", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 42px;
-
-  color: #142335;
-}
-.choose_right_container h2 {
-  margin: 0%;
-  font-family: "Red Hat Display", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 42px;
-
-  color: #142335;
-}
 .choose_right_container p {
   font-family: "Segoe UI", sans-serif;
   font-style: normal;

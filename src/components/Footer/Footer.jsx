@@ -30,7 +30,7 @@ function Footer () {
           <div className='footer_content_sections'>
             <div className='link_contacts'>
               <div className='links_section'>
-                <h3>Links</h3>
+                <h6>Links</h6>
                 <div className='contacts_data'>
                   <p>Terms &amp; Conditations</p>
                   <p>Privacy Policy</p>
@@ -39,7 +39,7 @@ function Footer () {
                 </div>
               </div>
               <div className='get_in_touch_section'>
-                <h3>Get In Touch</h3>
+                <h6>Get In Touch</h6>
                 <div className='contacts_data'>
                   <div className='contacts_via'>
                     <CallIcon sx={{ color: '#3B85D7' }} />
@@ -60,7 +60,7 @@ function Footer () {
           </div>
           <div className='footer_content_section'>
             <div className='subscribe_mail'>
-              <h3>Subscribe to Newsletter</h3>
+              <h6>Subscribe to Newsletter</h6>
               <div className='input_subscribe'>
                 <PlainInput label='Email:' />
                 <Button

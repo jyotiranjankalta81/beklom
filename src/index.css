@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 body {
   margin: 0;
   font-family: "Red Hat Display", sans-serif;
@@ -22,3 +22,85 @@ body {
   cursor: pointer;
   width: max-content;
 }
+@media only screen and (max-width: 580px) {
+  h1 {
+    font-size: 27px;
+    line-height: 37px;
+  }
+  h2 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  h3 {
+    font-size: 23px;
+    line-height: 32px;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  h5 {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  h6 {
+    font-size: 13px;
+    line-height: 19px;
+  }
+}
+h1 {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+  text-transform: capitalize;
+  color: #000000;
+  margin: 0%;
+}
+h2 {
+  margin: 0%;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  color: #142335;
+}
+h3 {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 37px;
+  margin: 0%;
+  color: #142335;
+}
+h4 {
+  margin: 0%;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 33px;
+  color: #142335;
+}
+h5 {
+  margin: 0%;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+  line-height: 29px;
+  color: #142335;
+}
+h6 {
+  margin: 0%;
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #525151;
+} */

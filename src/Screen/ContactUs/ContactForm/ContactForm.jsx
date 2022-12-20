@@ -11,7 +11,7 @@ const ContactForm = () => {
         <div className='contact_form_main_container'>
           <div className='left_contact_form'>
             <div className='top_contact_section'>
-              <h3>Contact Information</h3>
+              <h4>Contact Information</h4>
               <p>
                 Fill up the form and our Team will get back to you within 24
                 hours.

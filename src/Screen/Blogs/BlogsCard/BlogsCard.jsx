@@ -12,7 +12,7 @@ const BlogsCard = props => {
         </div>
         <div className='blog_contetnt_section'>
           <p className='blog_tag'>{props.tag}</p>
-          <h3>{props.title}</h3>
+          <h6>{props.title}</h6>
           <p className='describe_blog'>
             {props.descripation}
             <span>Read More</span>

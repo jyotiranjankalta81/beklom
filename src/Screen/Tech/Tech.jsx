@@ -8,7 +8,7 @@ const Tech = () => {
       <div className='tech_container'>
         <div className='tech_main_container'>
           <div className='left_main_container'>
-            <h3>Learn what Beklom Technologies can do for you.....</h3>
+            <h2>Learn what Beklom Technologies can do for you.....</h2>
             <p>
               Your ideal customer profile, strategic social media management,
               lead generation based on pain points, email and cold call copy,

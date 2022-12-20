@@ -11,7 +11,7 @@ const About = () => {
       <div className='intro_container'>
         <div className='mail_intro_container'>
           <div className='left_intro'>
-            <h2>About us</h2>
+            <h1>About us</h1>
             <p>
               Beklom Technologies has the greatest tools and people to help you
               grow your business. Does this seem like something you're

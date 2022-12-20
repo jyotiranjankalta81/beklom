@@ -24,7 +24,7 @@
   flex-direction: column;
   gap: 1.5rem;
 }
-.about_right_container h3 {
+/* .about_right_container h3 {
   font-family: "Red Hat Display", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -33,7 +33,7 @@
   text-transform: capitalize;
   color: #000000;
   margin: 0%;
-}
+} */
 .about_right_container p {
   font-family: "Segoe UI", sans-serif;
   font-style: normal;

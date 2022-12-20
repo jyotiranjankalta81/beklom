@@ -6,7 +6,7 @@ const OurServices = () => {
   return (
     <>
       <div className='our_service_container'>
-        <h3>Our Services</h3>
+        <h1>Our Services</h1>
         <div className='small_cards'>
           {CardData.map(value => (
             <div className='service_card'>

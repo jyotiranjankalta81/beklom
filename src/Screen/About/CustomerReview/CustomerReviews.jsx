@@ -10,7 +10,7 @@ const CustomerReviews = () => {
       <div className='customer_reviews_contetn'>
         <div className='customer_review_main_container'>
           <h1>Customer Reviews</h1>
-          <h3>What our customer say about Beklom</h3>
+          <h5>What our customer say about Beklom</h5>
           <div className='WhatClientSays'>
             <Carousel
               infiniteLoop={true}

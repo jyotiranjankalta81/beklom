@@ -103,7 +103,7 @@
   flex-direction: column;
   gap: 1.5rem;
 }
-.links_section h3,
+/* .links_section h3,
 .subscribe_mail h3,
 .get_in_touch_section h3 {
   font-style: normal;
@@ -111,7 +111,7 @@
   font-size: 18px;
   line-height: 24px;
   color: #525151;
-}
+} */
 @media only screen and (max-width: 1028px) {
   .footer_container {
     padding-top: 21%;

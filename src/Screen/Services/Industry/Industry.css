@@ -5,7 +5,7 @@
   align-items: center;
   margin-top: 4.5%;
 }
-.serve_insustry h3 {
+/* .serve_insustry h3 {
   font-family: "Red Hat Display" sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -14,7 +14,7 @@
   text-transform: capitalize;
 
   color: #000000;
-}
+} */
 .industry_cards {
   width: 90%;
   display: grid;

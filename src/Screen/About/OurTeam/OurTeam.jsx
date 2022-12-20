@@ -17,7 +17,7 @@ const OurTeam = () => {
   return (
     <>
       <div className='our_team_container'>
-        <h2>Our Team</h2>
+        <h1>Our Team</h1>
         <div className='our_team_main_container'>
           <div className='left_container_our_team'>
             <div className='accordion'>

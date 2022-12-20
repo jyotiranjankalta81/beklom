@@ -10,7 +10,7 @@ const AboutSection = () => {
             <img src='/Images/About/aboutleftbg.png' alt='' />
           </div>
           <div className='about_right_container'>
-            <h3>About</h3>
+            <h1>About</h1>
             <p>
               Call us now to check how we can help you expand your business and
               save money at the same time. (770) 400 - 0401 is our number and we
