@@ -27,16 +27,6 @@
   align-items: center;
   justify-content: center;
 }
-/* .inside_heading h3 {
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  font-weight: 500;
-  font-size: 22px;
-  text-align: center;
-  line-height: 29px;
-  color: #ffffff;
-  background: #3b85d7;
-  border-radius: 5px;
-} */
 .onboard_content {
   width: 80%;
   display: flex;
