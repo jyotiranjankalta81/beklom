@@ -22,7 +22,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-
   color: #0d1e27;
   margin: 0%;
 }
@@ -55,5 +54,14 @@
   }
   .far_right_container {
     display: none;
+  }
+  .choose_right_container p {
+    font-family: "Segoe UI", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 17px;
+    color: #0d1e27;
+    margin: 0%;
   }
 }

@@ -62,6 +62,8 @@
   }
   .main_form_container p {
     text-align: justify;
+    font-size: 15px;
+    line-height: 23px;
   }
   .form_get_started {
     width: 98%;

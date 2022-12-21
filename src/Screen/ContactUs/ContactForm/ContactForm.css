@@ -84,15 +84,6 @@
   align-items: flex-start;
   gap: 1rem;
 }
-/* .top_contact_section h3 {
-  margin: 0%;
-  font-family: "Red Hat Display", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 33px;
-  color: #142335;
-} */
 .top_contact_section p {
   margin: 0%;
   font-family: "Segoe UI", sans-serif;
@@ -111,6 +102,12 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  font-family: "Segoe UI";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
 }
 .bottom_contact_section {
   width: 100%;
@@ -182,5 +179,13 @@
   }
   .sumit_contact_form {
     padding: 0.7rem 1.5rem;
+  }
+  .top_contact_section p {
+    font-size: 11px;
+    line-height: 17px;
+  }
+  .middle_contact_section p {
+    font-size: 13px;
+    line-height: 20px;
   }
 }

@@ -187,10 +187,18 @@
     justify-content: center;
     padding: 1.2rem;
   }
+  .subscribe_right_container p {
+    font-size: 17px;
+    line-height: 25px;
+  }
   .blogs_container {
     align-items: center;
   }
   .blogs_card_container {
     grid-template-columns: 95%;
+  }
+  .input_box input[type="email"] {
+    /* width: 100%; */
+    border: 1px solid #3b85d7;
   }
 }

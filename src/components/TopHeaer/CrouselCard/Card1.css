@@ -31,7 +31,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-
   color: #142335;
 }
 .right_intro {
@@ -81,5 +80,11 @@
   }
   .get_started {
     width: 60%;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .left_intro p {
+    font-size: 14px;
+    line-height: 20px;
   }
 }

@@ -14,7 +14,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-
   color: #142335;
 }
 .onboard_form_container {
@@ -103,5 +102,13 @@
   .file_section {
     grid-template-columns: 100%;
     row-gap: 1.5rem;
+  }
+  .left_intros p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .onboard_form_main_container p {
+    font-size: 27px;
+    line-height: 38px;
   }
 }

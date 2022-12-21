@@ -127,7 +127,7 @@
     flex-wrap: wrap;
   }
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 580px) {
   .footer_container {
     background-size: 100% 50%;
     margin-bottom: 5%;
@@ -159,5 +159,9 @@
   .get_in_touch_section h3,
   .links_section h3 {
     margin: 1.5% 0%;
+  }
+  .contacts_data p {
+    font-size: 7px;
+    line-height: 12px;
   }
 }

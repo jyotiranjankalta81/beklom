@@ -70,11 +70,17 @@
     padding: 2rem 0rem;
     gap: 1.5rem;
   }
-  .small_card {
-    width: 90%;
-  }
   .review_header {
     position: relative;
     top: -50px;
+  }
+  .review_header p {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .small_card p {
+    font-size: 9px;
+    text-align: justify;
+    line-height: 15px;
   }
 }

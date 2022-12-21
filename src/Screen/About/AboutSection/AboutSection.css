@@ -24,16 +24,6 @@
   flex-direction: column;
   gap: 1.5rem;
 }
-/* .about_right_container h3 {
-  font-family: "Red Hat Display", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 42px;
-  text-transform: capitalize;
-  color: #000000;
-  margin: 0%;
-} */
 .about_right_container p {
   font-family: "Segoe UI", sans-serif;
   font-style: normal;
@@ -75,6 +65,7 @@
     align-items: center;
   }
   .about_right_container p {
-    text-align: justify;
+    font-size: 15px;
+    line-height: 23px;
   }
 }
