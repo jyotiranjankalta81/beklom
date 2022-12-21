@@ -54,6 +54,7 @@
     display: flex;
     flex-direction: column;
     height: auto;
+    align-items: center;
   }
   .about_left_container {
     flex-direction: column;
@@ -61,7 +62,7 @@
     width: 100%;
   }
   .about_right_container {
-    width: 100%;
+    width: 95%;
     align-items: center;
   }
   .about_right_container p {

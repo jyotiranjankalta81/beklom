@@ -103,6 +103,9 @@
     grid-template-columns: 100%;
     row-gap: 1.5rem;
   }
+  .left_intros {
+    width: 100%;
+  }
   .left_intros p {
     font-size: 13px;
     line-height: 20px;

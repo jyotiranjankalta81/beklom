@@ -80,4 +80,7 @@
     font-size: 0.9rem;
     max-height: 6rem;
   }
+  .one-line-input::placeholder {
+    font-size: 12px;
+  }
 }
