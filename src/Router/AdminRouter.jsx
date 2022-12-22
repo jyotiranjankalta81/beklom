@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux'
 import { getallorder, getblog } from '../Redux/features/adminSlice'
 import { getBlog } from '../Redux/features/commonSlice'
 import Services from '../components/Services/Services'
+import AdminLogin from '../Screen/Admin/AdminLogin/AdminLogin'
+import AdminLayout from '../components/Admin/AdminLayout/AdminLayout'
+import ContactUs from '../Screen/Admin/ContactUs/ContactUs'
 
 export default function AdminRouter () {
   const dispatch = useDispatch()
@@ -16,8 +19,9 @@ export default function AdminRouter () {
 
   return (
     <Routes>
-      <Route path='/admin-panel' element={<Services />}>
-        <Route path='dashboard' element={<Services />} />
+      <Route path='/admin-panel' element={<AdminLayout />}>
+        <Route path='adminLogin' element={<AdminLogin />} />
+        <Route path='contact-us' element={<ContactUs />} />
       </Route>
     </Routes>
   )

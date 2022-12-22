@@ -35,7 +35,14 @@ function Footer () {
                   <p>Terms &amp; Conditations</p>
                   <p>Privacy Policy</p>
                   <p>Partner with us</p>
-                  <p>Admin Login</p>
+                  <p>
+                    <Link
+                      to='/admin-panel'
+                      style={{ listStyle: 'none', textDecoration: 'none' }}
+                    >
+                      Admin Login
+                    </Link>
+                  </p>
                 </div>
               </div>
               <div className='get_in_touch_section'>

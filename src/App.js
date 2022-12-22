@@ -8,6 +8,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetAuthNotification, selectAuthErrorStatus, selectAuthMessage } from './Redux/features/authenticationSlice';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthRouter } from './Router/AuthRouter';
 
 function App() {
   const location = useLocation()
@@ -20,7 +21,10 @@ function App() {
     window.scrollTo(0, 0)
     if (location.pathname.split('/').includes('admin-panel')) {
       setAdmin(true);
-    } else {
+    } else if (location.pathname.split('/').includes('auth')) {
+      setAdmin(true);
+    }
+    else {
       setAdmin(false);
     }
   }, [location])
@@ -56,6 +60,7 @@ function App() {
         !isAdmin &&
         <Navbar />
       }
+      <AuthRouter />
       <MainRouter />
       <AdminRouter />
     </div>
