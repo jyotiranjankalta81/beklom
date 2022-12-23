@@ -5,21 +5,13 @@
   align-items: center;
   margin-top: 2%;
 }
-/* .our_service_container h3 {
-  font-family: "Red Hat Display", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 42px;
-  text-transform: capitalize;
-  color: #000000;
-} */
 .small_cards {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 90%;
+  margin-top: 1.7rem;
 }
 .service_card {
   padding: 1.5rem;

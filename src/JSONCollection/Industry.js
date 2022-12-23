@@ -1,5 +1,3 @@
-import { color } from "@mui/system";
-
 export default [
     {
         image: "/Images/Services/ecommerce.png",

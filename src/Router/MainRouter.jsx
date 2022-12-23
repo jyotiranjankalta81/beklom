@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import About from '../Screen/About/About'
-import AdminLogin from '../Screen/Admin/AdminLogin/AdminLogin'
 import Blogs from '../Screen/Blogs/Blogs'
 import ContactUs from '../Screen/ContactUs/ContactUs'
 import FAQ from '../Screen/FAQ/FAQ'
@@ -22,7 +21,6 @@ export default function MainRouter () {
         <Route exact path='/getstarted' element={<GetStarted />} />
         <Route exact path='/onboard' element={<OnBoardPage />} />
         <Route exact path='/faq' element={<FAQ />} />
-        {/* <Route exact path='/adminLogin' element={<AdminLogin />} /> */}
       </Routes>
     </Fragment>
   )

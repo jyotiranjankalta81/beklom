@@ -23,6 +23,7 @@ function Footer () {
                 src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15258072.40570261!2d82.75252935!3d20.98801345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a272531e0101161%3A0x86b40035be7b9641!2sGurushree%20Minerals%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1660806423162!5m2!1sen!2sin'
                 allowfullscreen=''
                 loading='lazy'
+                title='Beklom Technologies Inc. 4 McHugh Rd, Ajax, ON - L1Z 0M8'
                 referrerpolicy='no-referrer-when-downgrade'
               ></iframe>
             </section>
@@ -38,7 +39,8 @@ function Footer () {
                   <p>
                     <Link
                       to='/admin-panel'
-                      style={{ listStyle: 'none', textDecoration: 'none' }}
+                      // style={{ listStyle: 'none', textDecoration: 'none' }}
+                      className='Link_btn'
                     >
                       Admin Login
                     </Link>
@@ -69,7 +71,10 @@ function Footer () {
             <div className='subscribe_mail'>
               <h6>Subscribe to Newsletter</h6>
               <div className='input_subscribe'>
-                <PlainInput label='Email:' />
+                <label htmlFor=''>
+                  Email:
+                  <PlainInput />
+                </label>
                 <Button
                   sx={{
                     width: '30%',

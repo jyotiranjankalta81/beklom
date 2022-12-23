@@ -1,10 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-// import * as api from '../../Axios/axiosInstance'
 import * as api from "../../API/ApiEndPoint"
-import axiosInstance from '../../API/axiosInstance'
 import { serverInstance } from '../../API/ServerInstance'
 
-export const getBlog = createAsyncThunk('main/blogs', async ({ }, { rejectWithValue }) => {
+export const getBlog = createAsyncThunk('main/blogs', async ({ data }, { rejectWithValue }) => {
     try {
         let response = await serverInstance('main/blogs', 'GET');
         return response.data
@@ -15,7 +13,7 @@ export const getBlog = createAsyncThunk('main/blogs', async ({ }, { rejectWithVa
     }
 })
 
-export const getComments = createAsyncThunk('comments/getComment', async ({ }, { rejectWithValue }) => {
+export const getComments = createAsyncThunk('comments/getComment', async ({ data }, { rejectWithValue }) => {
     try {
         let response = await api.getComment()
         return response.data

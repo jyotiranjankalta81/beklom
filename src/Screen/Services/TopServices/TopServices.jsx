@@ -1,5 +1,6 @@
 import React from 'react'
 import './TopServices.css'
+import { Link } from 'react-router-dom'
 
 const TopServices = () => {
   return (
@@ -13,7 +14,9 @@ const TopServices = () => {
               grow your business. Does this seem like something you're
               interested in? Start your onboarding process today!.
             </p>
-            <div className='get_started'>GET STARTED</div>
+            <Link to='/getstarted' className='Link_btn'>
+              <div className='get_started'>GET STARTED</div>
+            </Link>
           </div>
           <div className='right_intro'>
             <img src='/Images/Services/servicerightbg.png' alt='' />

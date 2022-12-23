@@ -5,9 +5,11 @@ const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'firstName', headerName: 'First name', width: 130 },
   { field: 'lastName', headerName: 'Last name', width: 130 },
+  { field: 'Email', headerName: 'Email', width: 130 },
+  { field: 'Message', headerName: 'Message', width: 130 },
   {
     field: 'age',
-    headerName: 'Age',
+    headerName: 'Phone',
     type: 'number',
     width: 90
   },

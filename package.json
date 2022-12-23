@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "axios": "^1.2.0",
     "chart.js": "^4.0.1",
+    "ckeditor5": "^35.4.0",
     "feather-icons-react": "^0.5.0",
     "firebase": "^9.15.0",
     "json-server": "^0.17.1",

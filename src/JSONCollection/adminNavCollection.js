@@ -14,11 +14,11 @@ export default [
     },
     {
         title: "Blog Pages",
-        link: '/admin-panel/blogs-pages'
+        link: '/admin-panel/blogpages'
     },
     {
-        title: "Partner With Us",
-        link: '/admin-panel/partner-us'
+        title: "On Boarding",
+        link: '/admin-panel/on-boarding'
     },
     {
         title: "Contact Us",

@@ -5,22 +5,13 @@
   align-items: center;
   margin-top: 4.5%;
 }
-/* .serve_insustry h3 {
-  font-family: "Red Hat Display" sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 42px;
-  text-transform: capitalize;
-
-  color: #000000;
-} */
 .industry_cards {
   width: 90%;
   display: grid;
   grid-template-columns: 30% 30% 30%;
   row-gap: 2rem;
   justify-content: space-between;
+  margin-top: 1.7rem;
 }
 .industry_card-ecommerce {
   display: flex;

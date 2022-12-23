@@ -1,56 +1,16 @@
 import React, { useState } from 'react'
 import './Navbar.css'
-import logo from '../Images/gcmslogo.png'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import FeatherIcon from 'feather-icons-react'
-import { useSelector } from 'react-redux'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import CallIcon from '@mui/icons-material/Call'
 import MailIcon from '@mui/icons-material/Mail'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import Avatar from '@mui/material/Avatar'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import Divider from '@mui/material/Divider'
-import IconButton from '@mui/material/IconButton'
-import Tooltip from '@mui/material/Tooltip'
-import PersonAdd from '@mui/icons-material/PersonAdd'
-import Settings from '@mui/icons-material/Settings'
-import Logout from '@mui/icons-material/Logout'
-import GridViewIcon from '@mui/icons-material/GridView'
 
 function Navbar () {
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const open = Boolean(anchorEl)
-  const navigate = useNavigate()
-  const handleDashboard = () => {
-    navigate('/admin-panel/dashboard')
-  }
-
-  const addUserAccount = () => {
-    navigate('/user-register')
-  }
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
   const [isMobile, setIsMobile] = useState(false)
-
-  const { token, role } = useSelector(state => state.auth)
-
-  const logoutsession = () => {
-    var content = window.confirm('Do you really want to logout') // The "hello" means to show the following text
-    if (content === true) {
-      localStorage.clear()
-      window.location.reload()
-    }
-  }
 
   return (
     <>
