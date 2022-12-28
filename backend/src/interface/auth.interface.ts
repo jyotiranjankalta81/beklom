@@ -11,8 +11,6 @@ export interface UserAttributes {
     ID?: number;
     USERROLE: number;
     USERNAME: string;
-    F_NAME: string;
-    L_NAME: string;
     EMAIL: String;
     PASSWORD: String;
     EMAILSTATUS: Boolean;

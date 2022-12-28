@@ -22,14 +22,6 @@ UserInstance.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        F_NAME: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        L_NAME: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         EMAIL: {
             type: DataTypes.STRING,
             allowNull: false,

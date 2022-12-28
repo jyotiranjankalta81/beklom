@@ -1,113 +1,107 @@
 import * as React from 'react'
+import Box from '@mui/material/Box'
 import { DataGrid } from '@mui/x-data-grid'
-
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'tag', headerName: 'Tag', width: 130 },
-  { field: 'firstName', headerName: 'Title', width: 130 },
-  { field: 'desc', headerName: 'Descripation', width: 130 },
-  {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 90
-  },
-  {
-    field: 'fullName',
-    headerName: 'Creater name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: params =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`
-  }
-]
-
-const rows = [
-  {
-    id: 1,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Snow',
-    firstName: 'Jon',
-    age: 35
-  },
-  {
-    id: 2,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Lannister',
-    firstName: 'Cersei',
-    age: 42
-  },
-  {
-    id: 3,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Lannister',
-    firstName: 'Jaime',
-    age: 45
-  },
-  {
-    id: 4,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Stark',
-    firstName: 'Arya',
-    age: 16
-  },
-  {
-    id: 5,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Targaryen',
-    firstName: 'Daenerys',
-    age: null
-  },
-  {
-    id: 6,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Melisandre',
-    firstName: null,
-    age: 150
-  },
-  {
-    id: 7,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Clifford',
-    firstName: 'Ferrara',
-    age: 44
-  },
-  {
-    id: 8,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Frances',
-    firstName: 'Rossini',
-    age: 36
-  },
-  {
-    id: 9,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Roxie',
-    firstName: 'Harvey',
-    age: 65
-  }
-]
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
+import DeleteIcon from '@mui/icons-material/Delete'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import axiosInstance, { imageBacked } from '../../../../API/axiosInstance'
+import { toast } from 'react-toastify'
 
 export default function BlogsTable () {
+  const { blogs } = useSelector(state => state.admin)
+  console.log(blogs)
+  const [rows, setrow] = React.useState([])
+
+  React.useEffect(() => {
+    if (blogs?.length !== 0) {
+      const datas = []
+      blogs.forEach((data, index) => {
+        datas.push({
+          id: index + 1,
+          HEADING: data.HEADING,
+          CONTENT: data.CONTENT,
+          IMAGE: imageBacked + data.IMAGE
+        })
+      })
+      setrow(datas)
+    }
+  }, [blogs])
+
+  const columns = [
+    {
+      field: 'id',
+      headerName: 'SI No'
+    },
+    {
+      field: 'HEADING',
+      headerName: 'Title',
+      width: 250,
+      editable: true
+    },
+    {
+      field: 'CONTENT',
+      headerName: 'Content',
+      width: 250,
+      editable: true
+    },
+    {
+      field: 'IMAGE',
+      headerName: 'Image',
+      width: 200,
+      renderCell: params => imagecell(params),
+      editable: true
+    },
+    {
+      headerName: 'Actions',
+      renderCell: params => actionElement(params)
+    }
+  ]
+
+  const imagecell = params => (
+    <div className='action-wrapper'>
+      <img src={imageBacked + params.row.IMAGE} alt='' srcset='' />
+    </div>
+  )
+
+  const handleDelete = params => {
+    if (window.confirm('Do You really want to delete blog') === true) {
+      axiosInstance
+        .delete('main/mycreate-blog?BLOG_ID=' + params.row.id)
+        .then(res => {
+          if (res.data.success) {
+            toast.success(res.data.message)
+            // window.location.reload();
+          }
+        })
+    }
+  }
+
+  const handleedit = params => {}
+
+  const actionElement = params => (
+    <div className='action-wrapper'>
+      {/* <RemoveRedEyeIcon
+        onClick={() => handleedit(params)}
+        className="action-icon"
+      /> */}
+      <DeleteIcon
+        onClick={() => handleDelete(params)}
+        className='action-icon'
+      />
+    </div>
+  )
+
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <Box sx={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        // checkboxSelection
+        disableSelectionOnClick
+        experimentalFeatures={{ newEditingApi: true }}
       />
-    </div>
+    </Box>
   )
 }

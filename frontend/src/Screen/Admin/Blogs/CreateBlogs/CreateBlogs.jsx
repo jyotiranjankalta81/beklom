@@ -4,6 +4,8 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import { PlainInput } from '../../../../UtilComponents/inputs/PlainInput'
 import Button from '@mui/material/Button'
 import './CreateBlogs.css'
+import axiosInstance from '../../../../API/axiosInstance'
+import { toast } from 'react-toastify'
 
 const MailSendingTemplate = ({ onchnage }) => {
   return (
@@ -44,6 +46,16 @@ const CreateBlogPost = () => {
     formdata.append('HEADING', isheading)
     formdata.append('CONTENT', iscontent)
     formdata.append('IMAGE', isFile)
+    axiosInstance.post('main/create-blog', formdata).then(res => {
+      if (res.data.success == 1) {
+        toast.success(res.data.message)
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000)
+      } else {
+        toast.error(res.data.message)
+      }
+    })
   }
 
   return (

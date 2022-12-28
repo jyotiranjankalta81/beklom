@@ -12,8 +12,9 @@ const initialState = {
 
 export const userLogin = createAsyncThunk('authentication/login', async (data, { rejectWithValue }) => {
     try {
-        let response = await serverInstance('user/login', 'POST', data.formData)
+        let response = await serverInstance('user/login', 'POST', data)
         return response
+        // console.log(data)
     } catch (err) {
         return rejectWithValue(err.response.data)
     }

@@ -47,6 +47,8 @@ class AuthControllerClass {
 
 
     LoginUser = catchAsync(async (req: Request, res: Response) => {
+        // console.log(req.body);
+        // return false
         try {
             const checkuser: any = await UserService.GetuserbyEmail(req.body.EMAIL as string);
             if (!checkuser)

@@ -22,7 +22,7 @@ mainrouter.get("/patner-with-us", AdminController.get_partnerus);
 mainrouter.post("/extra-request", AdminController.Extra_requests);
 mainrouter.post("/process-log", AdminController.Process_log);
 
-mainrouter.post('/create-blog', auth(), AdminController.create_blog)
+mainrouter.post('/create-blog', AdminController.create_blog)
 mainrouter.get('/blogs', AdminController.get_blogs)
 mainrouter.get('/mycreate-blog', auth(), AdminController.my_create_blog)
 mainrouter.delete('/mycreate-blog', auth(), AdminController.delete_my_create_blog);
