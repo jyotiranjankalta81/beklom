@@ -14,19 +14,19 @@ ContactusInstance.init(
             allowNull: false,
             autoIncrement: true
         },
-        FULLNAME: {
+        FIRSTNAME: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        LASTNAME: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        PHONE: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         EMAIL: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        SUBJECT: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        TRACKINGID: {
             type: DataTypes.STRING,
             allowNull: false,
         },

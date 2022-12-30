@@ -17,6 +17,7 @@ import moment from 'moment';
 import { sequelizeDB } from '../db/db-connection';
 import { QueryTypes } from 'sequelize';
 import { uploadconsent } from '../template/uploadconsent';
+import { GetOnBoardHomeInstance } from '../model/getonboardhome.model';
 dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 
@@ -24,10 +25,10 @@ class mainServiceClass {
     create_contactus = async (req: Request) => {
         const result = await ContactusInstance.create(
             {
-                FULLNAME: req.body.FULLNAME,
+                FIRSTNAME: req.body.FIRSTNAME,
+                LASTNAME: req.body.LASTNAME,
+                PHONE: req.body.PHONE,
                 EMAIL: req.body.EMAIL,
-                SUBJECT: req.body.SUBJECT,
-                TRACKINGID: req.body.TRACKINGID,
                 MESSAGE: req.body.MESSAGE,
             }
         )
@@ -46,6 +47,18 @@ class mainServiceClass {
         return result;
 
     }
+    get_onboard_home = async (req: Request) => {
+        const result = await GetOnBoardHomeInstance.create({
+            NAME: req.body.NAME,
+            EMAIL: req.body.EMAIL,
+            CONTACTUS: req.body.CONTACTUS,
+            ADDRESS: req.body.ADDRESS,
+            MESSAGE: req.body.MESSAGE,
+    })
+        return result
+}
+
+
 
     create_patner = async (req: Request) => {
         const result = await PartnerusInstance.create(

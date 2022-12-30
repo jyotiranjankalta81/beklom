@@ -16,6 +16,7 @@ export const getblog = createAsyncThunk('main/mycreate-blog', async ({ }, { reje
     try {
         let response = await serverInstance('main/mycreate-blog', 'GET')
         return response
+        // console.log(response)
     } catch (err) {
         return rejectWithValue(err.response.data)
     }

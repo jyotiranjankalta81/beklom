@@ -37,6 +37,16 @@ export const postContactDetail = createAsyncThunk('contact/postcontact', async (
     }
 })
 
+export const onboardhome = createAsyncThunk('onboardhome/getonboardhome', async ({ formdata, toast }, { rejectWithValue }) => {
+    try {
+        let response = await serverInstance('main/get-onboard-home', 'POST', formdata)
+        toast.success(response.data.message)
+        return response.data
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+    }
+})
+
 export const postPartnerDetails = createAsyncThunk('partner-us/postpartner-us', async ({ data, toast }, { rejectWithValue }) => {
     try {
         let response = await api.postPartnerDetails(data);
@@ -62,7 +72,9 @@ const commonSlice = createSlice({
         },
         getAllComments: (state, action) => {
             state.comments = action.payload
-        }
+        },
+
+
     },
     extraReducers: (builder) => {
         builder
@@ -120,6 +132,20 @@ const commonSlice = createSlice({
                 state.error = true;
                 state.message = action.payload.message
             })
+            .addCase(onboardhome.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(onboardhome.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.message = action.payload.message
+            })
+            .addCase(onboardhome.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload.message
+            })
+
     }
 })
 

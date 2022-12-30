@@ -13,7 +13,7 @@ export default function AdminRouter () {
     <Routes>
       <Route element={<ProtectedRoutes role='1' />}>
         <Route path='/admin-panel' element={<AdminLayout />}>
-          <Route path='adminLogin' element={<AdminLogin />} />
+          {/* <Route path='adminLogin' element={<AdminLogin />} /> */}
           <Route path='contact-us' element={<ContactUs />} />
           <Route path='blogpages' element={<ManagePages />} />
           <Route path='on-boarding' element={<OnBoardingTable />} />

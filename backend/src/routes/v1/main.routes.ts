@@ -7,6 +7,7 @@ export const mainrouter = express.Router();
 
 mainrouter.post("/contact-us", MainController.create_contactus);
 mainrouter.post("/partner-us", MainController.create_patner);
+mainrouter.post("/get-onboard-home",MainController.get_onboard_home);
 mainrouter.post("/check-status", MainController.check_status);
 mainrouter.post("/create-order", auth(), MainController.create_order);
 mainrouter.put("/upload-constant", auth(), MainController.uploadConstant);
@@ -22,8 +23,8 @@ mainrouter.get("/patner-with-us", AdminController.get_partnerus);
 mainrouter.post("/extra-request", AdminController.Extra_requests);
 mainrouter.post("/process-log", AdminController.Process_log);
 
-mainrouter.post('/create-blog', AdminController.create_blog)
-mainrouter.get('/blogs', AdminController.get_blogs)
+mainrouter.post('/create-blog',auth(), AdminController.create_blog)
+mainrouter.get('/blogs',auth(), AdminController.get_blogs)
 mainrouter.get('/mycreate-blog', auth(), AdminController.my_create_blog)
 mainrouter.delete('/mycreate-blog', auth(), AdminController.delete_my_create_blog);
 mainrouter.get('/dashboard-details', auth(), AdminController.dashboard_details);

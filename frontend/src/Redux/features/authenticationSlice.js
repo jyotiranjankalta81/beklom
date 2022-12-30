@@ -12,7 +12,7 @@ const initialState = {
 
 export const userLogin = createAsyncThunk('authentication/login', async (data, { rejectWithValue }) => {
     try {
-        let response = await serverInstance('user/login', 'POST', data)
+        let response = await serverInstance('user/login', 'POST', data.formdata)
         return response
         // console.log(data)
     } catch (err) {
@@ -52,7 +52,8 @@ export const authenticationSlice = createSlice({
                 state.sessionID = action.payload.data.sessionid
                 localStorage.setItem("token", JSON.stringify(action.payload.data.tokens));
                 localStorage.setItem("user_role", action.payload.data.userrole);
-                window.location.reload();
+                action.meta.arg.navigate('/admin-panel');
+                // window.location.reload();
             })
             .addCase(userLogin.rejected, (state, action) => {
                 state.loading = false;

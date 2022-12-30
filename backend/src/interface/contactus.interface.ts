@@ -1,8 +1,8 @@
 export interface contactusinterface {
     CONTACTUS_ID ?: number;
-    FULLNAME: string;
+    FIRSTNAME: string;
+    LASTNAME: string;
+    PHONE:number;
     EMAIL: string;
-    SUBJECT: string;
-    TRACKINGID: string | any;
     MESSAGE: string;
 }

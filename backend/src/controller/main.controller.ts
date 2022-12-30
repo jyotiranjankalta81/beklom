@@ -25,6 +25,17 @@ class MainControllerClass {
             return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
         }
     });
+    get_onboard_home = catchAsync(async (req: Request, res: Response) => {
+        // console.log(req.body);
+        // return false;
+        try{
+            const getdata = await mainService.get_onboard_home(req);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: getdata });
+        }
+        catch(error){
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    });
 
     check_status = catchAsync(async (req: Request, res: Response) => {
         try {

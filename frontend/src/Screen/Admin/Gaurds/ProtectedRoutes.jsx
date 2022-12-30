@@ -12,6 +12,6 @@ export default function ProtectedRoutes ({ role }) {
   return token && userRole == role ? (
     <Outlet />
   ) : (
-    <Navigate to='/login' replace />
+    <Navigate to='/auth/adminLogin' replace />
   )
 }

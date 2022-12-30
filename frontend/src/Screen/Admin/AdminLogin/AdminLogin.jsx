@@ -18,7 +18,7 @@ const AdminLogin = () => {
 
   const onFormSubmit = e => {
     e.preventDefault()
-    dispatch(userLogin(formdata, navigate))
+    dispatch(userLogin({ formdata, navigate }))
   }
 
   const handleFieldChange = e => {

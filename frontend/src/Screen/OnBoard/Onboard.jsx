@@ -4,9 +4,33 @@ import DraftsIcon from '@mui/icons-material/Drafts'
 import CallIcon from '@mui/icons-material/Call'
 import { OnBoardInput } from '../../UtilComponents/inputs/PlainInput'
 import PlainTextArea from '../../UtilComponents/inputs/PlainTextArea'
+import { useForm } from 'react-hook-form'
+import { useDispatch } from 'react-redux'
+import { onboardhome } from '../../Redux/features/commonSlice'
+import { toast } from 'react-toastify'
 // import OnBoardInput from '../../UtilComponents/inputs/PlainInput'
 
+let initialState = {
+  NAME: '',
+  EMAIL: '',
+  CONTACT_US: '',
+  ADDRESS: '',
+  MESSAGE: ''
+}
+
 const Onboard = () => {
+  const [formdata, setFormdata] = React.useState(initialState)
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm()
+  const dispatch = useDispatch()
+
+  const onSubmit = formdata => {
+    dispatch(onboardhome({ formdata, toast }))
+  }
   return (
     <>
       <div className='onboard_container'>
@@ -54,14 +78,60 @@ const Onboard = () => {
           </div>
           <div className='form_section'>
             <h3>Hey!there:</h3>
-            <div className='input_section'>
-              <OnBoardInput label='Name:' />
-              <OnBoardInput label='Contact No:' />
-              <OnBoardInput label='Email Address:' />
-              <OnBoardInput label='Select Address Type:' />
-            </div>
-            <PlainTextArea label='Enter Your message' />
-            <div className='btn btn--primary'>Submit</div>
+            <form className='input_section' onSubmit={handleSubmit(onSubmit)}>
+              <OnBoardInput
+                label='Name:'
+                errors={errors}
+                name='NAME'
+                validation={{
+                  ...register('NAME', { required: 'Name is required' })
+                }}
+              />
+              <OnBoardInput
+                label='Contact No:'
+                type='number'
+                name='CONTACT_US'
+                errors={errors}
+                validation={{
+                  ...register('CONTACT_US', {
+                    required: 'Contact is required'
+                  })
+                }}
+              />
+              <OnBoardInput
+                label='Email Address:'
+                name='EMAIL'
+                type='email'
+                errors={errors}
+                validation={{
+                  ...register('EMAIL', { required: 'Email is required' })
+                }}
+              />
+              <OnBoardInput
+                label='Select Address Type:'
+                name='ADDRESS'
+                errors={errors}
+                validation={{
+                  ...register('ADDRESS', { required: 'Address is required' })
+                }}
+              />
+            </form>
+            <PlainTextArea
+              label='Enter Your message'
+              name='MESSAGE'
+              errors={errors}
+              validation={{
+                ...register('MESSAGE', {
+                  required: 'Message Field is required'
+                })
+              }}
+            />
+            <button
+              className='btn btn--primary'
+              onClick={handleSubmit(onSubmit)}
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>

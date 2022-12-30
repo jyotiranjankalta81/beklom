@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axiosInstance, { imageBacked } from '../../../../API/axiosInstance'
 import { toast } from 'react-toastify'
+import { getblog } from '../../../../Redux/features/adminSlice'
 
 export default function BlogsTable () {
   const { blogs } = useSelector(state => state.admin)
@@ -14,6 +15,7 @@ export default function BlogsTable () {
   const [rows, setrow] = React.useState([])
 
   React.useEffect(() => {
+    getblog()
     if (blogs?.length !== 0) {
       const datas = []
       blogs.forEach((data, index) => {
