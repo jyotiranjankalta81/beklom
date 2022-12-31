@@ -23,7 +23,7 @@ ContactusInstance.init(
             allowNull: false,
         },
         PHONE: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         EMAIL: {

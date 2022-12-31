@@ -4,8 +4,52 @@ import { OneLineInput } from '../../UtilComponents/inputs/PlainInput'
 import Button from '@mui/material/Button'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import './onboard.css'
+import { useForm } from 'react-hook-form'
+import { useDispatch } from 'react-redux'
+import { getInTouch } from '../../Redux/features/commonSlice'
+import { toast } from 'react-toastify'
 
 const OnBoardPage = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm()
+
+  // let initialState = {
+  //   FIRSTNAME: '',
+  //   LASTNAME: '',
+  //   EMAIL: '',
+  //   ABOUT: '',
+  //   BODY_FILE: ''
+  // }
+
+  // const [formdata, setFormdata] = React.useState(initialState)
+  // const {FIRSTNAME,LASTNAME,EMAIL,ABOUT} = formdata.......
+
+  const dispatch = useDispatch()
+  const [firstName, setFirstName] = React.useState('')
+  const [lastName, setLastName] = React.useState('')
+  const [email, setEmail] = React.useState('')
+  const [about, setAbout] = React.useState('')
+  const [bodyFile, setBodyFile] = React.useState(null)
+
+  const handleOnClickSubmit = e => {
+    const formData = new FormData()
+    formData.append('FIRSTNAME', firstName)
+    formData.append('LASTNAME', lastName)
+    formData.append('EMAIL', email)
+    formData.append('ABOUT', about)
+    formData.append('BODY_FILE', bodyFile)
+    console.log(bodyFile)
+    console.log([...formData])
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`)
+    }
+    dispatch(getInTouch(formData))
+  }
+
   return (
     <>
       <div className='intro_container'>
@@ -27,14 +71,60 @@ const OnBoardPage = () => {
           <p>Please fill the folowing details !</p>
           <div className='onboard_form_content'>
             <div className='onboard_input_section'>
-              <OneLineInput label='First Name' placeholder='Enter First Name' />
-              <OneLineInput label='Last Name' placeholder='Enter Last Name' />
-              <OneLineInput label='Email' placeholder='Enter Email' />
+              <OneLineInput
+                label='First Name'
+                placeholder='Enter First Name'
+                name='FIRSTNAME'
+                onChange={e => setFirstName(e.target.value)}
+                // errors={errors}
+                // validation={{
+                //   ...register('FIRSTNAME', {
+                //     required: 'First Name is required'
+                //   })
+                // }}
+              />
+              <OneLineInput
+                label='Last Name'
+                placeholder='Enter Last Name'
+                name='LASTNAME'
+                onChange={e => setLastName(e.target.value)}
+                // errors={errors}
+                // validation={{
+                //   ...register('LASTNAME', {
+                //     required: 'Last Name is required'
+                //   })
+                // }}
+              />
+              <OneLineInput
+                label='Email'
+                placeholder='Enter Email'
+                type='email'
+                name='EMAIL'
+                onChange={e => setEmail(e.target.value)}
+                // errors={errors}
+                // validation={{
+                //   ...register('EMAIL', {
+                //     required: 'Email is required',
+                //     pattern: {
+                //       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                //       message: 'Invalid email address'
+                //     }
+                //   })
+                // }}
+              />
             </div>
             <div className='file_section'>
               <OneLineInput
                 label='About Your Self'
                 placeholder='Write about your self'
+                onChange={e => setAbout(e.target.value)}
+                name='ABOUT'
+                // errors={errors}
+                // validation={{
+                //   ...register('ABOUT', {
+                //     required: 'About is required'
+                //   })
+                // }}
               />
               <Button
                 sx={{
@@ -54,22 +144,37 @@ const OnBoardPage = () => {
                 variant='outlined'
                 component='label'
               >
-                <CloudUploadIcon sx={{ color: '#456bb4' }} />
-                Drag and Drop or Browse File
+                <CloudUploadIcon
+                  sx={{
+                    color: bodyFile ? 'green' : '#456bb4'
+                  }}
+                />
+
+                {bodyFile ? bodyFile.name : 'Drag and Drop or Browse File'}
                 <input
                   hidden
                   accept='image/*'
                   multiple
                   type='file'
-                  // onChange={(e) => onChangeText("CV", e.target.files[0])}
-                  name='CV'
+                  name='BODY_FILE'
+                  onChange={e => setBodyFile(e.target.files[0])}
+                  // validation={{
+                  //   ...register('BODY_FILE', {
+                  //     required: 'Body File is required'
+                  //   })
+                  // }}
                 />
               </Button>
             </div>
             <br />
             <br />
             <div className='submit_get_started_form'>
-              <button className='sumit_contact_form'>Send Message </button>
+              <button
+                className='sumit_contact_form'
+                onClick={handleOnClickSubmit}
+              >
+                Send Message
+              </button>
             </div>
           </div>
         </div>

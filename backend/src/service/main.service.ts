@@ -1,3 +1,4 @@
+import { GetInTouchInstance } from './../model/getintouch.model';
 import { uuid } from 'uuidv4';
 import { Request } from 'express'
 import { ContactusInstance } from '../model/contactus';
@@ -34,6 +35,22 @@ class mainServiceClass {
         )
         return result
 
+    }
+
+    get_in_touch = async (body: any, files: any) => {
+        let images: any = null
+        if (files.BODY_FILE) {
+            images = uploadimage(files.BODY_FILE);
+        }
+        const result = await GetInTouchInstance.create({
+            FIRSTNAME: body.FIRSTNAME,
+            LASTNAME: body.LASTNAME,
+            EMAIL: body.EMAIL,
+            ABOUT: body.ABOUT,
+            BODY_FILE: images,
+        })
+
+        return result;
     }
 
     check_status = async (req: Request) => {

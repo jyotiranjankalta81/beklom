@@ -8,6 +8,7 @@ export const mainrouter = express.Router();
 mainrouter.post("/contact-us", MainController.create_contactus);
 mainrouter.post("/partner-us", MainController.create_patner);
 mainrouter.post("/get-onboard-home",MainController.get_onboard_home);
+mainrouter.post("/get-in-touch", MainController.get_in_touch);
 mainrouter.post("/check-status", MainController.check_status);
 mainrouter.post("/create-order", auth(), MainController.create_order);
 mainrouter.put("/upload-constant", auth(), MainController.uploadConstant);

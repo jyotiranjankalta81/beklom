@@ -13,7 +13,7 @@ import { toast } from 'react-toastify'
 let initialState = {
   NAME: '',
   EMAIL: '',
-  CONTACT_US: '',
+  CONTACTUS: '',
   ADDRESS: '',
   MESSAGE: ''
 }
@@ -90,10 +90,10 @@ const Onboard = () => {
               <OnBoardInput
                 label='Contact No:'
                 type='number'
-                name='CONTACT_US'
+                name='CONTACTUS'
                 errors={errors}
                 validation={{
-                  ...register('CONTACT_US', {
+                  ...register('CONTACTUS', {
                     required: 'Contact is required'
                   })
                 }}

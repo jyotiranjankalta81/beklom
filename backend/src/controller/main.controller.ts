@@ -16,6 +16,21 @@ class MainControllerClass {
             return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
         }
     });
+    get_in_touch = catchAsync(async (req: Request, res: Response) => {
+        // console.log(req);
+        // console.log(req.files);
+        console.log(req.body);
+        return false
+
+        try {
+            const blog = await mainService.get_in_touch(req.body, req.files);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Your Message send successfully", data: blog });
+        } catch (error) {
+            console.log(error);
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
 
     create_patner = catchAsync(async (req: Request, res: Response) => {
         try {
@@ -26,8 +41,6 @@ class MainControllerClass {
         }
     });
     get_onboard_home = catchAsync(async (req: Request, res: Response) => {
-        // console.log(req.body);
-        // return false;
         try{
             const getdata = await mainService.get_onboard_home(req);
             return res.status(httpStatus.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: getdata });

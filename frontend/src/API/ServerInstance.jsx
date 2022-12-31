@@ -5,6 +5,7 @@ if (localStorage.getItem('token')) {
   token = JSON.parse(localStorage.getItem('token')).access.token
 }
 let headers = {
+  Accept: 'application/json, text/plain, */*',
   'Content-Type': 'application/json',
   Authorization: `Bearer ${token}`
 }
