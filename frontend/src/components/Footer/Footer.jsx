@@ -94,7 +94,7 @@ function Footer () {
               <img src='/Images/Footer/FooterPrimary.png' alt='' srcset='' />
             </div>
           </div>
-          <div className='footer_content_sections'>
+          <div className='footer_content_sectionsss'>
             <div className='footer_img'>
               <img src='/Images/Footer/FooterSecondary.png' alt='' srcset='' />
             </div>

@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { onboardhome } from '../../Redux/features/commonSlice'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 // import OnBoardInput from '../../UtilComponents/inputs/PlainInput'
 
 let initialState = {
@@ -40,7 +41,11 @@ const Onboard = () => {
           </div>
           <div className='inside_headers'>
             <div className='inside_heading'>
-              <h3>Get Onboard</h3>
+              <h3>
+                <Link to='/onboard' className='Link_btn'>
+                  Get Onboard
+                </Link>
+              </h3>
             </div>
           </div>
           <div className='inside_header'>

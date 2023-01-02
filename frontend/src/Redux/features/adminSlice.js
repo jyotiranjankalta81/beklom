@@ -1,5 +1,6 @@
 /* eslint-disable no-empty-pattern */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import axiosInstance from '../../API/axiosInstance'
 import { serverInstance } from '../../API/ServerInstance'
 
 
@@ -14,7 +15,7 @@ export const getallorder = createAsyncThunk('main/get-All-order', async ({ }, { 
 
 export const getblog = createAsyncThunk('main/mycreate-blog', async ({ }, { rejectWithValue }) => {
     try {
-        let response = await serverInstance('main/mycreate-blog', 'GET')
+        let response = await axiosInstance('main/mycreate-blog', 'GET')
         return response
         // console.log(response)
     } catch (err) {
@@ -54,7 +55,11 @@ const adminSlice = createSlice({
                 state.loading = false;
                 state.error = true;
                 state.message = action.payload?.message
-            }).addCase(getblog.fulfilled, (state, action) => {
+            })
+            .addCase(getblog.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getblog.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = !action.payload;
                 state.message = action.payload.message

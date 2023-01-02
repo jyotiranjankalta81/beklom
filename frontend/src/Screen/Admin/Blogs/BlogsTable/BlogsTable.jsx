@@ -7,15 +7,42 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axiosInstance, { imageBacked } from '../../../../API/axiosInstance'
 import { toast } from 'react-toastify'
-import { getblog } from '../../../../Redux/features/adminSlice'
+import { getblog, getBlogs } from '../../../../Redux/features/adminSlice'
+import { getAllBlog } from '../../../../Redux/features/commonSlice'
+import { useDispatch } from 'react-redux'
 
 export default function BlogsTable () {
+  const dispatch = useDispatch()
   const { blogs } = useSelector(state => state.admin)
   console.log(blogs)
   const [rows, setrow] = React.useState([])
 
   React.useEffect(() => {
-    getblog()
+    dispatch(getblog())
+    // getAllBlog()
+    // getBlogs()
+  }, [])
+
+  const handleSubmit = () => {
+    axiosInstance.get('main/mycreate-blog').then(res => {
+      if (res.data.success == 1) {
+        toast.success(res.data.message)
+        // setTimeout(() => {
+        //   window.location.reload()
+        console.log(res.data)
+        // }, 3000)
+      } else {
+        toast.error(res.data.message)
+      }
+    })
+
+    // dispatch(getblog())
+  }
+
+  React.useEffect(() => {
+    // getblog()
+    // getAllBlog()
+    // getBlogs()
     if (blogs?.length !== 0) {
       const datas = []
       blogs.forEach((data, index) => {
@@ -96,6 +123,7 @@ export default function BlogsTable () {
 
   return (
     <Box sx={{ height: 400, width: '100%' }}>
+      <button onClick={handleSubmit}>getdata</button>
       <DataGrid
         rows={rows}
         columns={columns}

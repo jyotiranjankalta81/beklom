@@ -2,9 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import * as api from "../../API/ApiEndPoint"
 import { serverInstance } from '../../API/ServerInstance'
 
-export const getBlog = createAsyncThunk('main/blogs', async ({ }, { rejectWithValue }) => {
+export const getBlog = createAsyncThunk('main/blogs', async ({ data }, { rejectWithValue }) => {
     try {
-        let response = await serverInstance('main/blogs', 'GET');
+        let response = await serverInstance('main/blog', 'GET');
         // return response.data
         console.log(response.data)
 

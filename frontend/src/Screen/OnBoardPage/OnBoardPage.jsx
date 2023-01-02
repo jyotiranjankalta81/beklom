@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { getInTouch } from '../../Redux/features/commonSlice'
 import { toast } from 'react-toastify'
+import axiosInstance from '../../API/axiosInstance'
 
 const OnBoardPage = () => {
   const {
@@ -47,7 +48,18 @@ const OnBoardPage = () => {
     for (let [key, value] of formData.entries()) {
       console.log(`${key}: ${value}`)
     }
-    dispatch(getInTouch(formData))
+    axiosInstance.post('main/get-in-touch', formData).then(res => {
+      if (res.data.success == 1) {
+        toast.success(res.data.message)
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000)
+      } else {
+        toast.error(res.data.message)
+      }
+      console.log(res.data)
+    })
+    // dispatch(getInTouch(formData))
   }
 
   return (

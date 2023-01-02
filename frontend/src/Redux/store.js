@@ -9,7 +9,7 @@ import { persistReducer } from 'redux-persist'
 const reducers = combineReducers({
     auth: authReducer,
     commons: commonReducer,
-    admin:adminReducer
+    admin: adminReducer
 })
 
 const persistConfig = {

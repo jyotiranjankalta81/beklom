@@ -57,15 +57,18 @@ function Navbar () {
             <NavLink to='/faq' className='blogs'>
               <li>FAQ</li>
             </NavLink>
-            <NavLink to='/contact-us' className='blogs'>
+            {/* <NavLink to='/contact-us' className='blogs'>
               <li>Contact Us</li>
-            </NavLink>
+            </NavLink> */}
             <NavLink to='/blogs' className='contactus'>
               <li>BLOGS</li>
             </NavLink>
-            <NavLink to='/onboard' className='ordernow'>
+            <NavLink to='/contact-us' className='ordernow'>
               <li>Get In Touch</li>
             </NavLink>
+            {/* <NavLink to='/onboard' className='ordernow'>
+              <li>Get In Touch</li>
+            </NavLink> */}
           </ul>
           <button
             className='mobile-menu-icon'

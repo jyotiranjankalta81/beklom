@@ -17,11 +17,6 @@ class MainControllerClass {
         }
     });
     get_in_touch = catchAsync(async (req: Request, res: Response) => {
-        // console.log(req);
-        // console.log(req.files);
-        console.log(req.body);
-        return false
-
         try {
             const blog = await mainService.get_in_touch(req.body, req.files);
             return res.status(httpStatus.CREATED).send({ success: true, message: "Your Message send successfully", data: blog });
