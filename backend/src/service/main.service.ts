@@ -1,4 +1,5 @@
-import { GetInTouchInstance } from './../model/getintouch.model';
+import { GetStartedInstance } from './../model/getstarted.model';
+import {OnBoardingInstance } from '../model/onboarding.model';
 import { uuid } from 'uuidv4';
 import { Request } from 'express'
 import { ContactusInstance } from '../model/contactus';
@@ -36,13 +37,30 @@ class mainServiceClass {
         return result
 
     }
+    get_started = async (req: Request) => {
+        const result = await GetStartedInstance.create(
+            {
+                FIRSTNAME: req.body.FIRSTNAME,
+                LASTNAME: req.body.LASTNAME,
+                EMAIL: req.body.EMAIL,
+                PHONE: req.body.PHONE,
+            }
+        )
+        return result
+
+    }
+    get_Started = async (req: Request) => {
+        const result = await GetStartedInstance.findAll()
+        return result
+
+    }
 
     get_in_touch = async (body: any, files: any) => {
         let images: any = null
         if (files.BODY_FILE) {
             images = uploadimage(files.BODY_FILE);
         }
-        const result = await GetInTouchInstance.create({
+        const result = await OnBoardingInstance.create({
             FIRSTNAME: body.FIRSTNAME,
             LASTNAME: body.LASTNAME,
             EMAIL: body.EMAIL,

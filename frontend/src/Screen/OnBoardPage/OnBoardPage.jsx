@@ -57,9 +57,7 @@ const OnBoardPage = () => {
       } else {
         toast.error(res.data.message)
       }
-      console.log(res.data)
     })
-    // dispatch(getInTouch(formData))
   }
 
   return (

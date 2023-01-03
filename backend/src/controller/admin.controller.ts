@@ -38,6 +38,24 @@ class AdminControllerClass {
         }
     }
     );
+    get_in_touch_home = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const contacts = await AdminService.get_in_touch_home();
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: contacts });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+    get_onboarding = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const contacts = await AdminService.get_onboarding();
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: contacts });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
     get_partnerus = catchAsync(async (req: Request, res: Response) => {
         try {
             const partners = await AdminService.get_partnerus();
@@ -146,6 +164,8 @@ class AdminControllerClass {
 
         const reqheader: any = req.header("authorization");
         const header: any = jwt_decode(reqheader)
+        // console.log(header)
+        // return false;
         try {
             const blog = await AdminService.my_create_blog(header);
             return res.status(httpStatus.CREATED).send({ success: true, message: "blog created successsfuly successfully", data: blog });

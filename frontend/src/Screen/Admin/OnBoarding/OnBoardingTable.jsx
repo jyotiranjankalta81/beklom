@@ -1,113 +1,144 @@
 import * as React from 'react'
+import Box from '@mui/material/Box'
 import { DataGrid } from '@mui/x-data-grid'
-
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'tag', headerName: 'FirstName', width: 130 },
-  { field: 'firstName', headerName: 'LastName', width: 130 },
-  { field: 'desc', headerName: 'Email', width: 130 },
-  {
-    field: 'age',
-    headerName: 'About',
-    type: 'number',
-    width: 130
-  },
-  {
-    field: 'fullName',
-    headerName: 'Creater name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: params =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`
-  }
-]
-
-const rows = [
-  {
-    id: 1,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Snow',
-    firstName: 'Jon',
-    age: 35
-  },
-  {
-    id: 2,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Lannister',
-    firstName: 'Cersei',
-    age: 42
-  },
-  {
-    id: 3,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Lannister',
-    firstName: 'Jaime',
-    age: 45
-  },
-  {
-    id: 4,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Stark',
-    firstName: 'Arya',
-    age: 16
-  },
-  {
-    id: 5,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Targaryen',
-    firstName: 'Daenerys',
-    age: null
-  },
-  {
-    id: 6,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Melisandre',
-    firstName: null,
-    age: 150
-  },
-  {
-    id: 7,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Clifford',
-    firstName: 'Ferrara',
-    age: 44
-  },
-  {
-    id: 8,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Frances',
-    firstName: 'Rossini',
-    age: 36
-  },
-  {
-    id: 9,
-    tag: 'Cyber Security',
-    desc: 'this blog on cyber security.',
-    lastName: 'Roxie',
-    firstName: 'Harvey',
-    age: 65
-  }
-]
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
+import DeleteIcon from '@mui/icons-material/Delete'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import axiosInstance, { imageBacked } from '../../../API/axiosInstance'
+import { toast } from 'react-toastify'
+import {
+  getblog,
+  getInTouchHome,
+  getOnBoarding
+} from '../../../Redux/features/adminSlice'
+import { useDispatch } from 'react-redux'
 
 export default function OnBoardingTable () {
+  const dispatch = useDispatch()
+  const { onboarding } = useSelector(state => state.admin)
+  React.useEffect(() => {
+    dispatch(getOnBoarding())
+  }, [])
+  const [rows, setrow] = React.useState([])
+  React.useEffect(() => {
+    if (onboarding?.length !== 0) {
+      const datas = []
+      onboarding.forEach((data, index) => {
+        datas.push({
+          id: index + 1,
+          FIRSTNAME: data.FIRSTNAME,
+          LASTNAME: data.LASTNAME,
+          EMAIL: data.EMAIL,
+          ABOUT: data.ABOUT,
+          BODY_FILE: imageBacked + data.BODY_FILE
+        })
+      })
+      setrow(datas)
+    }
+  }, [onboarding])
+
+  const columns = [
+    {
+      field: 'id',
+      headerName: 'SI No',
+      headerClassName: 'super-app-theme--header'
+    },
+    {
+      field: 'FIRSTNAME',
+      headerName: 'First Name',
+      headerClassName: 'super-app-theme--header',
+      width: 220,
+      editable: true
+    },
+    {
+      field: 'LASTNAME',
+      headerName: 'Last Name',
+      headerClassName: 'super-app-theme--header',
+      width: 220,
+      editable: true
+    },
+    {
+      field: 'EMAIL',
+      headerName: 'Email',
+      headerClassName: 'super-app-theme--header',
+      width: 220,
+      editable: true
+    },
+    {
+      field: 'ABOUT',
+      headerName: 'About',
+      headerClassName: 'super-app-theme--header',
+      width: 150,
+      editable: true
+    },
+    {
+      field: 'BODY_FILE',
+      headerName: 'Image',
+      headerClassName: 'super-app-theme--header',
+      renderCell: params => imagecell(params),
+      width: 250,
+      editable: true
+    },
+    {
+      headerName: 'Actions',
+      headerClassName: 'super-app-theme--header',
+      renderCell: params => actionElement(params)
+    }
+  ]
+  const imagecell = params => {
+    return (
+      <div className='action-wrapper'>
+        <img src={imageBacked + params.row.BODY_FILE} alt='' srcset='' />
+      </div>
+    )
+  }
+  const handleDelete = params => {
+    if (window.confirm('Do You really want to delete blog') === true) {
+      axiosInstance
+        .delete('main/mycreate-blog?BLOG_ID=' + params.row.id)
+        .then(res => {
+          if (res.data.success) {
+            toast.success(res.data.message)
+            // window.location.reload();
+          }
+        })
+    }
+  }
+
+  const handleedit = params => {}
+
+  const actionElement = params => (
+    <div className='action-wrapper'>
+      {/* <RemoveRedEyeIcon
+        onClick={() => handleedit(params)}
+        className="action-icon"
+      /> */}
+      <DeleteIcon
+        onClick={() => handleDelete(params)}
+        className='action-icon'
+      />
+    </div>
+  )
+
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <Box
+      sx={{
+        height: 400,
+        width: '100%',
+        '& .super-app-theme--header': {
+          backgroundColor: '#CADEF5'
+        }
+      }}
+    >
       <DataGrid
         rows={rows}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        // checkboxSelection
+        disableSelectionOnClick
+        experimentalFeatures={{ newEditingApi: true }}
       />
-    </div>
+    </Box>
   )
 }

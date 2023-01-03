@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import adminNavCollection from '../../../../JSONCollection/adminNavCollection'
-// import adminLogo from '../../../Assets/gcmslogo.png'
 import './AdminSideNavigation.css'
 
 export default function AdminSideNavigation ({ closeNav }) {

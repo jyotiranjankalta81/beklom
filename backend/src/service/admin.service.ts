@@ -43,7 +43,28 @@ class AdminServiceClass {
 
     get_contactus = async () => {
         const result = await sequelizeDB.query(
-            'SELECT  `CONTACTUS_ID`,`FULLNAME`, `EMAIL`, `SUBJECT`, `TRACKINGID`, `MESSAGE`, `createdAt` FROM `tbl_contactus`',
+            'SELECT  `CONTACTUS_ID`,`FIRSTNAME`,`LASTNAME`, `PHONE`, `EMAIL`, `MESSAGE`, `createdAt` FROM `tbl_contactus`',
+            {
+                nest: true,
+                type: QueryTypes.SELECT,
+            }
+        )
+        return result;
+    }
+
+    get_in_touch_home = async () => {
+        const result = await sequelizeDB.query(
+            'SELECT  `OBH_ID`,`NAME`, `EMAIL`, `CONTACTUS`, `ADDRESS`, `MESSAGE`, `createdAt` FROM `tbl_get_onboard_home`',
+            {
+                nest: true,
+                type: QueryTypes.SELECT,
+            }
+        )
+        return result;
+    }
+    get_onboarding = async () => {
+        const result = await sequelizeDB.query(
+            'SELECT  `OB_ID`,`FIRSTNAME`,LASTNAME, `EMAIL`, `ABOUT`, `BODY_FILE`, `createdAt` FROM `tbl_onboarding`',
             {
                 nest: true,
                 type: QueryTypes.SELECT,

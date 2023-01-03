@@ -2,18 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import * as api from "../../API/ApiEndPoint"
 import { serverInstance } from '../../API/ServerInstance'
 
-export const getBlog = createAsyncThunk('main/blogs', async ({ data }, { rejectWithValue }) => {
-    try {
-        let response = await serverInstance('main/blog', 'GET');
-        // return response.data
-        console.log(response.data)
-
-    } catch (err) {
-        return rejectWithValue(err.response.data)
-
-    }
-})
-
 export const getComments = createAsyncThunk('comments/getComment', async ({ data }, { rejectWithValue }) => {
     try {
         let response = await api.getComment()
@@ -75,16 +63,12 @@ export const postPartnerDetails = createAsyncThunk('partner-us/postpartner-us', 
 const commonSlice = createSlice({
     name: "blog",
     initialState: {
-        blog: [],
         comments: [],
         loading: false,
         error: false,
         message: " "
     },
     reducers: {
-        getAllBlog: (state, action) => {
-            state.blog = action.payload
-        },
         getAllComments: (state, action) => {
             state.comments = action.payload
         },
@@ -93,20 +77,6 @@ const commonSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(getBlog.pending, (state) => {
-                state.loading = true;
-            })
-            .addCase(getBlog.fulfilled, (state, action) => {
-                state.loading = false;
-                state.error = !action.payload;
-                state.message = action.payload.message
-                state.blog = action.payload;
-            })
-            .addCase(getBlog.rejected, (state, action) => {
-                state.loading = false;
-                state.error = true;
-                state.message = action.payload?.message
-            })
             .addCase(getComments.pending, (state) => {
                 state.loading = true;
             })

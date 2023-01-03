@@ -1,77 +1,167 @@
 /* eslint-disable no-empty-pattern */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axiosInstance from '../../API/axiosInstance'
-import { serverInstance } from '../../API/ServerInstance'
 
 
-export const getallorder = createAsyncThunk('main/get-All-order', async ({ }, { rejectWithValue }) => {
+export const getblog = createAsyncThunk('main/mycreate-blog', async (data, { rejectWithValue }) => {
     try {
-        let response = await serverInstance('main/get-All-order', 'GET')
+        let response = await axiosInstance.get('main/mycreate-blog')
         return response
     } catch (err) {
+        console.log(err);
         return rejectWithValue(err.response.data)
+
     }
 })
 
-export const getblog = createAsyncThunk('main/mycreate-blog', async ({ }, { rejectWithValue }) => {
+export const getInTouchHome = createAsyncThunk('main/get-in-touch-home', async (data, { rejectWithValue }) => {
     try {
-        let response = await axiosInstance('main/mycreate-blog', 'GET')
+        let response = await axiosInstance.get('main/get-in-touch-home')
         return response
-        // console.log(response)
     } catch (err) {
         return rejectWithValue(err.response.data)
+
+    }
+})
+
+export const contactUs = createAsyncThunk('main/contact-us', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/contact-us')
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
+    }
+})
+
+export const getOnBoarding = createAsyncThunk('main/get-on-boarding', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/get-onboarding')
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
+    }
+})
+
+export const getStarted = createAsyncThunk('main/get-started', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/get-started')
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
     }
 })
 
 const adminSlice = createSlice({
     name: "udata",
     initialState: {
-        orderlist: [],
         blogs: [],
+        getintouchhome: [],
+        contacts: [],
+        onboarding: [],
+        getstarted: [],
         loading: false,
         error: false,
         message: " "
     },
     reducers: {
-        getAllOrders: (state, action) => {
-            state.orderlist = action.payload
-        },
         getBlogs: (state, action) => {
             state.blogs = action.payload
-        }
+        },
+        getInTouchhome: (state, action) => {
+            state.getintouchhome = action.payload
+        },
+        getContactUs: (state, action) => {
+            state.contacts = action.payload
+        },
+        getOnboarding: (state, action) => (
+            state.onboarding = action.payload
+        ),
+        getGetStarted: (state, action) => (
+            state.getstarted = action.payload
+        )
+
     },
     extraReducers: (builder) => {
         builder
-            .addCase(getallorder.pending, (state) => {
-                state.loading = true;
-            })
-            .addCase(getallorder.fulfilled, (state, action) => {
-                state.loading = false;
-                state.error = !action.payload;
-                state.message = action.payload.message
-                state.orderlist = action.payload.data;
-            })
-            .addCase(getallorder.rejected, (state, action) => {
-                state.loading = false;
-                state.error = true;
-                state.message = action.payload?.message
-            })
             .addCase(getblog.pending, (state) => {
                 state.loading = true;
             })
             .addCase(getblog.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = !action.payload;
-                state.message = action.payload.message
-                state.blogs = action.payload.data;
+                state.blogs = action.payload.data.data;
+                state.message = action.payload.data.message;
             })
             .addCase(getblog.rejected, (state, action) => {
                 state.loading = false;
                 state.error = true;
                 state.message = action.payload?.message
             })
+            .addCase(getInTouchHome.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getInTouchHome.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.getintouchhome = action.payload.data.data;
+                state.message = action.payload.data.message;
+            })
+            .addCase(getInTouchHome.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            })
+            .addCase(contactUs.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(contactUs.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.contacts = action.payload.data.data;
+                state.message = action.payload.data.message;
+            })
+            .addCase(contactUs.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            })
+            .addCase(getOnBoarding.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(getOnBoarding.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.onboarding = action.payload.data.data;
+                state.message = action.payload.data.message;
+            })
+            .addCase(getOnBoarding.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            })
+            .addCase(getStarted.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(getStarted.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.getstarted = action.payload.data.data;
+                state.message = action.payload.data.message;
+            })
+            .addCase(getStarted.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            })
+
     }
 })
 
-export const { getAllOrders, getBlogs } = adminSlice.actions
+export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted } = adminSlice.actions
 export default adminSlice.reducer

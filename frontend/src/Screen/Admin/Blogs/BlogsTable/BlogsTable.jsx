@@ -14,35 +14,13 @@ import { useDispatch } from 'react-redux'
 export default function BlogsTable () {
   const dispatch = useDispatch()
   const { blogs } = useSelector(state => state.admin)
-  console.log(blogs)
   const [rows, setrow] = React.useState([])
 
   React.useEffect(() => {
     dispatch(getblog())
-    // getAllBlog()
-    // getBlogs()
   }, [])
 
-  const handleSubmit = () => {
-    axiosInstance.get('main/mycreate-blog').then(res => {
-      if (res.data.success == 1) {
-        toast.success(res.data.message)
-        // setTimeout(() => {
-        //   window.location.reload()
-        console.log(res.data)
-        // }, 3000)
-      } else {
-        toast.error(res.data.message)
-      }
-    })
-
-    // dispatch(getblog())
-  }
-
   React.useEffect(() => {
-    // getblog()
-    // getAllBlog()
-    // getBlogs()
     if (blogs?.length !== 0) {
       const datas = []
       blogs.forEach((data, index) => {
@@ -60,38 +38,45 @@ export default function BlogsTable () {
   const columns = [
     {
       field: 'id',
-      headerName: 'SI No'
+      headerName: 'SI No',
+      headerClassName: 'super-app-theme--header'
     },
     {
       field: 'HEADING',
       headerName: 'Title',
-      width: 250,
+      headerClassName: 'super-app-theme--header',
+      width: 220,
       editable: true
     },
     {
       field: 'CONTENT',
       headerName: 'Content',
+      headerClassName: 'super-app-theme--header',
       width: 250,
       editable: true
     },
     {
       field: 'IMAGE',
       headerName: 'Image',
-      width: 200,
+      headerClassName: 'super-app-theme--header',
+      width: 250,
       renderCell: params => imagecell(params),
       editable: true
     },
     {
       headerName: 'Actions',
+      headerClassName: 'super-app-theme--header',
       renderCell: params => actionElement(params)
     }
   ]
 
-  const imagecell = params => (
-    <div className='action-wrapper'>
-      <img src={imageBacked + params.row.IMAGE} alt='' srcset='' />
-    </div>
-  )
+  const imagecell = params => {
+    return (
+      <div className='action-wrapper'>
+        <img src={imageBacked + params.row.IMAGE} alt='' srcset='' />
+      </div>
+    )
+  }
 
   const handleDelete = params => {
     if (window.confirm('Do You really want to delete blog') === true) {
@@ -122,8 +107,15 @@ export default function BlogsTable () {
   )
 
   return (
-    <Box sx={{ height: 400, width: '100%' }}>
-      <button onClick={handleSubmit}>getdata</button>
+    <Box
+      sx={{
+        height: 400,
+        width: '100%',
+        '& .super-app-theme--header': {
+          backgroundColor: '#CADEF5'
+        }
+      }}
+    >
       <DataGrid
         rows={rows}
         columns={columns}

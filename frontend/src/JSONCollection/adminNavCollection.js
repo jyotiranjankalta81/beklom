@@ -5,12 +5,12 @@ export default [
         link: "/admin-panel/dashboard"
     },
     {
-        title: "Manage Applies",
-        link: '/admin-panel/manage-users'
-    },
-    {
         title: "Get Started",
         link: '/admin-panel/get-started'
+    },
+    {
+        title: "Get In Touch",
+        link: '/admin-panel/get-in-touch'
     },
     {
         title: "Blog Pages",
