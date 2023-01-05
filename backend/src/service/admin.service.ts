@@ -13,7 +13,12 @@ import { OrderInstance } from "../model/order.model";
 import { UserInstance } from "../model/user.model";
 import { EmailInstance } from "../model/emaillog.model";
 import { ContactusInstance } from "../model/contactus";
-
+import { SubscribeInstance } from "../model/subscribe.model";
+import{OnBoardingInstance} from "../model/onboarding.model";
+import { GetStartedInstance } from "../model/getstarted.model";
+import { GetOnBoardHomeInstance } from "../model/getonboardhome.model";
+import { Section1Instance } from "../model/section1.model";
+import { Section2Instance } from "../model/Section2.model";
 
 
 
@@ -123,12 +128,43 @@ class AdminServiceClass {
             IMAGE: images,
             HEADING: body.HEADING,
             CONTENT: body.CONTENT,
+            TAGS: body.TAGS,
             LIKE: 0,
             ADDED_BY: 1,
         })
 
         return result;
     }
+
+    section1 = async (body: any,files: any) => {
+        let images: any = null
+        if (files.IMAGE) {
+            images = uploadimage(files.IMAGE);
+        }
+        const result = await Section1Instance.create({
+            IMAGE: images,
+            TITLE: body.TITLE,
+            CONTENT: body.CONTENT,
+            NAME: body.NAME,
+            ADDED_BY: 1,
+
+        })
+
+        return result;
+    }
+
+    section2 = async (body:any) => {
+        const result = await Section2Instance.create({
+            HEADING: body.HEADING,
+            TITLE: body.TITLE,
+            CONTENT: body.CONTENT,
+            NAME: body.NAME,
+            ADDED_BY: 1,
+        })
+
+        return result;
+    }
+
 
     my_create_blog = async (header: any) => {
         const result = await BlogsInstance.findAll({
@@ -140,15 +176,46 @@ class AdminServiceClass {
         return result;
     }
 
-    delete_contact = async (CONTACTUS_ID: any) => {
+    delete_contact = async (header: any) => {
         const result = await ContactusInstance.destroy({
             where: {
-                CONTACTUS_ID: CONTACTUS_ID
+                CONTACTUS_ID: parseInt(header.CONTACTUS_ID)
             }
         })
 
         return result;
     }
+
+    delete_onboarding = async (header: any) => {
+        const result = await OnBoardingInstance.destroy({
+            where: {
+                OB_ID: parseInt(header.OB_ID)
+            }
+        })
+
+        return result;
+    }
+
+    delete_Started = async (header: any) => {
+        const result = await GetStartedInstance.destroy({
+            where: {
+                GS_ID: parseInt(header.GS_ID)
+            }
+        })
+
+        return result;
+    }
+
+    delete_in_touch_home = async (header: any) => {
+        const result = await GetOnBoardHomeInstance.destroy({
+            where: {
+                OBH_ID: parseInt(header.OBH_ID)
+            }
+        })
+
+        return result;
+    }
+
 
 
     get_registerUser = async () => {
@@ -171,6 +238,15 @@ class AdminServiceClass {
         const result = await BlogsInstance.destroy({
             where: {
                 BLOG_ID: parseInt(header.BLOG_ID)
+            }
+        });
+        return result;
+    }
+
+    delete_subscribe = async (header: any) => {
+        const result = await SubscribeInstance.destroy({
+            where: {
+                SB_ID: parseInt(header.SB_ID)
             }
         });
         return result;

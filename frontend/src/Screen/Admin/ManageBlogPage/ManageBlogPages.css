@@ -1,3 +1,21 @@
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.admin-tabs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  background: #88cc1bcc;
+  color: #fff !important;
+}
+.css-1aquho2-MuiTabs-indicator {
+  display: none;
+}
 .addusercontainer {
   display: flex;
   flex-direction: row;

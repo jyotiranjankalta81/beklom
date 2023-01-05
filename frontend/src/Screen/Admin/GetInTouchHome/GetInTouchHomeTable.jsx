@@ -15,6 +15,9 @@ export default function GetInTouchHomeTable () {
   const { getintouchhome } = useSelector(state => state.admin)
   const [rows, setrow] = React.useState([])
   React.useEffect(() => {
+    dispatch(getInTouchHome())
+  }, [])
+  React.useEffect(() => {
     if (getintouchhome?.length !== 0) {
       const datas = []
       getintouchhome.forEach((data, index) => {
@@ -80,13 +83,16 @@ export default function GetInTouchHomeTable () {
   ]
 
   const handleDelete = params => {
-    if (window.confirm('Do You really want to delete blog') === true) {
+    if (window.confirm('Do You really want to delete this row') === true) {
       axiosInstance
-        .delete('main/mycreate-blog?BLOG_ID=' + params.row.id)
+        .delete('main/get-in-touch-home?OBH_ID=' + params.row.id)
         .then(res => {
           if (res.data.success) {
             toast.success(res.data.message)
             // window.location.reload();
+            setTimeout(() => {
+              window.location.reload()
+            }, 3000)
           }
         })
     }

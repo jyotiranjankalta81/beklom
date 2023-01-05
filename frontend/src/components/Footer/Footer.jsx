@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import './Footer.css'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import CallIcon from '@mui/icons-material/Call'
@@ -6,8 +6,32 @@ import MailIcon from '@mui/icons-material/Mail'
 import { Link } from 'react-router-dom'
 import { PlainInput } from '../../UtilComponents/inputs/PlainInput'
 import { Button } from '@mui/material'
+import { useForm } from 'react-hook-form'
+import axiosInstance from '../../../src/API/axiosInstance'
+import { toast } from 'react-toastify'
 
 function Footer () {
+  const [formdata, setFormdata] = React.useState({
+    EMAIL: ''
+  })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm()
+  const onSubmit = data => {
+    axiosInstance.post('main/subscribe', data).then(res => {
+      if (res.data.success == 1) {
+        toast.success(res.data.message)
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000)
+      } else {
+        toast.error(res.data.message)
+      }
+    })
+  }
+
   return (
     <>
       <div className='footer_container'>
@@ -66,25 +90,42 @@ function Footer () {
           <div className='footer_content_section'>
             <div className='subscribe_mail'>
               <h6>Subscribe to Newsletter</h6>
-              <div className='input_subscribe'>
+              <form
+                className='input_subscribe'
+                onSubmit={handleSubmit(onSubmit)}
+              >
                 <label htmlFor=''>
                   Email:
-                  <PlainInput />
+                  <PlainInput
+                    placeholder='e.g beklom@gmail.com'
+                    name='EMAIL'
+                    errors={errors}
+                    validation={{
+                      ...register('EMAIL', {
+                        required: 'Email is required',
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: 'Invalid Email'
+                        }
+                      })
+                    }}
+                  />
                 </label>
                 <Button
                   sx={{
-                    width: '30%',
+                    width: '37%',
                     textTransform: 'none',
                     color: '#FFFFFF',
-                    backgroundColor: '#3B85D7',
+                    backgroundColor: '#456BB4',
                     '&:hover': {
-                      backgroundColor: '#3B85D7'
+                      backgroundColor: '#456BB4'
                     }
                   }}
+                  onClick={handleSubmit(onSubmit)}
                 >
                   Subscribe
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </div>

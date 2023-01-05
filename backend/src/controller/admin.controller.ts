@@ -141,6 +141,28 @@ class AdminControllerClass {
     }
     );
 
+    section1 = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const section1 = await AdminService.section1(req.body, req.files);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: section1 });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+    section2 = catchAsync(async (req: Request, res: Response) => {
+        console.log(req.body);
+        try {
+            const section2 = await AdminService.section2(req.body);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: section2 });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+
 
     dashboard_details = catchAsync(async (req: Request, res: Response) => {
         try {
@@ -179,14 +201,51 @@ class AdminControllerClass {
 
 
     delete_contact = catchAsync(async (req: Request, res: Response) => {
+        const header: any = req.query;
         try {
-            const blog = await AdminService.delete_contact(req.query.CONTACTUS_ID);
+            const blog = await AdminService.delete_contact(header);
             return res.status(httpStatus.CREATED).send({ success: true, message: "Contact deleted successfully", data: blog });
         } catch (error) {
             return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
         }
     }
     );
+
+    delete_onboarding = catchAsync(async (req: Request, res: Response) => {
+        const header: any = req.query;
+        try {
+            const blog = await AdminService.delete_onboarding(header);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Onboarding deleted successfully", data: blog });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+    delete_Started = catchAsync(async (req: Request, res: Response) => {
+        const header: any = req.query;
+        try {
+            const blog = await AdminService.delete_Started(header);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Started deleted successfully", data: blog });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+    delete_in_touch_home = catchAsync(async (req: Request, res: Response) => {
+        const header: any = req.query;
+        try {
+            const blog = await AdminService.delete_in_touch_home(header);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "In touch home deleted successfully", data: blog });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+
+
 
     get_registerUser = catchAsync(async (req: Request, res: Response) => {
         try {
@@ -219,6 +278,17 @@ class AdminControllerClass {
     }
     );
 
+    delete_subscribe = catchAsync(async (req: Request, res: Response) => {
+        const header: any = req.query;
+        console.log(header)
+        try {
+            const blog = await AdminService.delete_subscribe(header);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Subscribe deleted successfully", data: blog });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
 
     notes_applied = catchAsync(async (req: Request, res: Response) => {
         const reqheader: any = req.header("authorization");

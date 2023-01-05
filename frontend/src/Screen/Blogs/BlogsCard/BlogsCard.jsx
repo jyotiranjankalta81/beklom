@@ -3,18 +3,18 @@ import React from 'react'
 import '../blogs.css'
 
 const BlogsCard = props => {
-  console.log(props)
+  console.log(props.IMAGE)
   return (
     <>
       <div className='blog_card_container'>
         <div className='img_section_blog'>
-          <img src={props.img} alt='' />
+          <img crossorigin='anonymous' src={props.IMAGE} alt='' />
         </div>
         <div className='blog_contetnt_section'>
-          <p className='blog_tag'>{props.tag}</p>
-          <h6>{props.title}</h6>
+          <p className='blog_tag'>{props.TAGS}</p>
+          <h6>{props.HEADING}</h6>
           <p className='describe_blog'>
-            {props.descripation}
+            {props.CONTENT}
             <span>Read More</span>
           </p>
         </div>

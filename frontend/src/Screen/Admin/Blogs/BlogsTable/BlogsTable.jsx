@@ -28,6 +28,7 @@ export default function BlogsTable () {
           id: index + 1,
           HEADING: data.HEADING,
           CONTENT: data.CONTENT,
+          TAGS: data.TAGS,
           IMAGE: imageBacked + data.IMAGE
         })
       })
@@ -44,6 +45,13 @@ export default function BlogsTable () {
     {
       field: 'HEADING',
       headerName: 'Title',
+      headerClassName: 'super-app-theme--header',
+      width: 220,
+      editable: true
+    },
+    {
+      field: 'TAGS',
+      headerName: 'Tag',
       headerClassName: 'super-app-theme--header',
       width: 220,
       editable: true
@@ -86,6 +94,9 @@ export default function BlogsTable () {
           if (res.data.success) {
             toast.success(res.data.message)
             // window.location.reload();
+            setTimeout(() => {
+              window.location.reload()
+            }, 3000)
           }
         })
     }

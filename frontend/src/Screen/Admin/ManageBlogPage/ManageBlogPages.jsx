@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import BlogsTable from '../Blogs/BlogsTable/BlogsTable'
 import CreateBlogPost from '../Blogs/CreateBlogs/CreateBlogs'
+import './ManageBlogPages.css'
 
 function TabPanel (props) {
   const { children, value, index, ...other } = props
@@ -40,7 +41,7 @@ function a11yProps (index) {
   }
 }
 
-export default function ManagePages () {
+export default function ManageBlogPages () {
   const [value, setValue] = React.useState(0)
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -56,14 +57,39 @@ export default function ManagePages () {
             variant='scrollable'
             scrollButtons='auto'
             aria-label='scrollable auto tabs example'
+            textColor='inherit'
             sx={{
               fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
-              //   bgcolor: '#F7FAF3'
-              backgroundColor: '#F7FAF3'
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '2.4rem'
             }}
           >
-            <Tab label='View Blogs' {...a11yProps(0)} />
-            <Tab label='Create Blogs' {...a11yProps(1)} />
+            <Tab
+              label='View Blogs'
+              sx={{
+                color: '#FFFFFF',
+                textTransform: 'none',
+                fontWeight: 'bold',
+                borderRadius: '10px',
+                backgroundColor: '#3B85D7',
+                border: '5px solid #FFFFFF'
+              }}
+              {...a11yProps(0)}
+            />
+            <Tab
+              label='Create Blogs'
+              sx={{
+                color: '#FFFFFF',
+                textTransform: 'none',
+                fontWeight: 'bold',
+                borderRadius: '10px',
+                backgroundColor: '#3B85D7',
+                border: '5px solid #FFFFFF'
+              }}
+              {...a11yProps(1)}
+            />
           </Tabs>
         </div>
       </div>

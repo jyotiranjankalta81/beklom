@@ -6,7 +6,9 @@ const WhyChoose = () => {
     <>
       <div className='choose_container'>
         <div className='choose_main_container'>
-          <div className='choose_left_container'></div>
+          <div className='choose_left_container'>
+            <img src='/Images/Home/whychooseusleft.png' alt='' />
+          </div>
           <div className='choose_right_container'>
             <h1> Why Choose Us</h1>
             <h2>

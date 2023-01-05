@@ -1,18 +1,46 @@
 import React from 'react'
 import './blogs.css'
-import BlogsData from '../../JSONCollection/blogs'
+// import BlogsData from '../../JSONCollection/blogs'
 import BlogsCard from './BlogsCard/BlogsCard'
 import Footer from '../../components/Footer/Footer'
 import { Link } from 'react-router-dom'
 import ReactPaginate from 'react-paginate'
+import { useSelector } from 'react-redux'
+import { getblog } from '../../Redux/features/adminSlice'
+import { useDispatch } from 'react-redux'
+import axiosInstance, { imageBacked } from '../../API/axiosInstance'
 
 const Blogs = () => {
+  const dispatch = useDispatch()
+  const { blogs } = useSelector(state => state.admin)
+  const [rows, setrow] = React.useState([])
+
+  React.useEffect(() => {
+    dispatch(getblog())
+  }, [])
+
+  React.useEffect(() => {
+    if (blogs?.length !== 0) {
+      const datas = []
+      blogs.forEach((data, index) => {
+        datas.push({
+          id: index + 1,
+          HEADING: data.HEADING,
+          CONTENT: data.CONTENT,
+          TAGS: data.TAGS,
+          IMAGE: imageBacked + data.IMAGE
+        })
+      })
+      setrow(datas)
+    }
+  }, [blogs])
+
   const [pageNumber, setPageNumber] = React.useState(0)
 
   const blogsPerPage = 6
   const pagesVisited = pageNumber * blogsPerPage
 
-  const pageCount = Math.ceil(BlogsData?.length / blogsPerPage)
+  const pageCount = Math.ceil(rows?.length / blogsPerPage)
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
@@ -38,11 +66,11 @@ const Blogs = () => {
       </div>
       <div className='blogs_container'>
         <div className='blogs_card_container'>
-          {BlogsData.slice(pagesVisited, pagesVisited + blogsPerPage).map(
-            (BlogList, index) => (
+          {rows
+            .slice(pagesVisited, pagesVisited + blogsPerPage)
+            .map((BlogList, index) => (
               <BlogsCard key={index} {...BlogList} />
-            )
-          )}
+            ))}
         </div>
       </div>
       <div className='Blogs-Carousel-Track'>

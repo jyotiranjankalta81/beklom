@@ -76,13 +76,16 @@ export default function GetStarted () {
   ]
 
   const handleDelete = params => {
-    if (window.confirm('Do You really want to delete blog') === true) {
+    if (window.confirm('Do You really want to delete this row') === true) {
       axiosInstance
-        .delete('main/mycreate-blog?BLOG_ID=' + params.row.id)
+        .delete('main/delete-get-started?GS_ID=' + params.row.id)
         .then(res => {
           if (res.data.success) {
             toast.success(res.data.message)
             // window.location.reload();
+            setTimeout(() => {
+              window.location.reload()
+            }, 3000)
           }
         })
     }

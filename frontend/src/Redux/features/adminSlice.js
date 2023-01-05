@@ -54,6 +54,16 @@ export const getStarted = createAsyncThunk('main/get-started', async (data, { re
     }
 })
 
+export const Subscribe = createAsyncThunk('main/subscribe', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.post('main/subscribe', data)
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
+    }
+})
+
 const adminSlice = createSlice({
     name: "udata",
     initialState: {
@@ -62,6 +72,7 @@ const adminSlice = createSlice({
         contacts: [],
         onboarding: [],
         getstarted: [],
+        subscribed: [],
         loading: false,
         error: false,
         message: " "
@@ -81,6 +92,9 @@ const adminSlice = createSlice({
         ),
         getGetStarted: (state, action) => (
             state.getstarted = action.payload
+        ),
+        getSubscribe: (state, action) => (
+            state.subscribed = action.payload
         )
 
     },
@@ -159,9 +173,27 @@ const adminSlice = createSlice({
                 state.error = true;
                 state.message = action.payload?.message
             })
+            .addCase(Subscribe.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(Subscribe.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.subscribed = action.payload.data.data;
+                state.message = action.payload.data.message;
+            }
+            )
+            .addCase(Subscribe.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            }
+            )
+
 
     }
 })
 
-export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted } = adminSlice.actions
+export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe } = adminSlice.actions
 export default adminSlice.reducer

@@ -3,12 +3,15 @@ import './Onboard.css'
 import DraftsIcon from '@mui/icons-material/Drafts'
 import CallIcon from '@mui/icons-material/Call'
 import { OnBoardInput } from '../../UtilComponents/inputs/PlainInput'
-import PlainTextArea from '../../UtilComponents/inputs/PlainTextArea'
+import PlainTextArea, {
+  OnBoardTextArea
+} from '../../UtilComponents/inputs/PlainTextArea'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { onboardhome } from '../../Redux/features/commonSlice'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
+import axiosInstance from '../../API/axiosInstance'
 // import OnBoardInput from '../../UtilComponents/inputs/PlainInput'
 
 let initialState = {
@@ -30,7 +33,17 @@ const Onboard = () => {
   const dispatch = useDispatch()
 
   const onSubmit = formdata => {
-    dispatch(onboardhome({ formdata, toast }))
+    // dispatch(onboardhome({ formdata, toast }))
+    axiosInstance.post('main/get-onboard-home', formdata).then(res => {
+      if (res.data.success == 1) {
+        toast.success(res.data.message)
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000)
+      } else {
+        toast.error(res.data.message)
+      }
+    })
   }
   return (
     <>
@@ -121,7 +134,7 @@ const Onboard = () => {
                 }}
               />
             </form>
-            <PlainTextArea
+            <OnBoardTextArea
               label='Enter Your message'
               name='MESSAGE'
               errors={errors}

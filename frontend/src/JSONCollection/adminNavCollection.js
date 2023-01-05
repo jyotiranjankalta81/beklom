@@ -1,8 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default [
     {
-        title: "Dashboard",
-        link: "/admin-panel/dashboard"
+        title: "Manage Page",
+        link: "/admin-panel/manage-pages"
     },
     {
         title: "Get Started",

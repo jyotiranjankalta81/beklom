@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { contactDetails } from '../../../Redux/features/commonSlice'
 import { toast } from 'react-toastify'
+import axiosInstance from '../../../API/axiosInstance'
 
 let initialState = {
   FIRSTNAME: '',
@@ -27,7 +28,17 @@ const ContactForm = () => {
   } = useForm()
   const dispatch = useDispatch()
   const onSubmit = formdata => {
-    dispatch(contactDetails({ formdata, toast }))
+    // dispatch(contactDetails({ formdata, toast }))
+    axiosInstance.post('main/contact-us', formdata).then(res => {
+      if (res.data.success == 1) {
+        toast.success(res.data.message)
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000)
+      } else {
+        toast.error(res.data.message)
+      }
+    })
   }
   return (
     <>
@@ -68,7 +79,9 @@ const ContactForm = () => {
                 </div>
               </div>
               <div className='right_bottom_contact'>
-                <div className='right_inside_sectionn'></div>
+                <div className='right_inside_sectionn'>
+                  <img src='/Images/Contact/MailGif.gif' alt='' />
+                </div>
               </div>
             </div>
           </div>

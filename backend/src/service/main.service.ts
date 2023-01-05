@@ -20,6 +20,7 @@ import { sequelizeDB } from '../db/db-connection';
 import { QueryTypes } from 'sequelize';
 import { uploadconsent } from '../template/uploadconsent';
 import { GetOnBoardHomeInstance } from '../model/getonboardhome.model';
+import { SubscribeInstance } from '../model/subscribe.model';
 dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 
@@ -49,6 +50,21 @@ class mainServiceClass {
         return result
 
     }
+    subscribe = async (req: Request) => {
+        const result = await SubscribeInstance.create(
+            {
+                EMAIL: req.body.EMAIL,
+            }
+        )
+        return result
+
+    }
+    get_subscribe = async (req: Request) => {
+        const result = await SubscribeInstance.findAll()
+        return result
+
+    }
+    
     get_Started = async (req: Request) => {
         const result = await GetStartedInstance.findAll()
         return result

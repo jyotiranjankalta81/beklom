@@ -26,6 +26,10 @@ BlogsInstance.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        TAGS: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
         LIKE: {
             type: DataTypes.INTEGER,
             allowNull: false,

@@ -18,17 +18,6 @@ const OnBoardPage = () => {
     formState: { errors }
   } = useForm()
 
-  // let initialState = {
-  //   FIRSTNAME: '',
-  //   LASTNAME: '',
-  //   EMAIL: '',
-  //   ABOUT: '',
-  //   BODY_FILE: ''
-  // }
-
-  // const [formdata, setFormdata] = React.useState(initialState)
-  // const {FIRSTNAME,LASTNAME,EMAIL,ABOUT} = formdata.......
-
   const dispatch = useDispatch()
   const [firstName, setFirstName] = React.useState('')
   const [lastName, setLastName] = React.useState('')
@@ -86,24 +75,12 @@ const OnBoardPage = () => {
                 placeholder='Enter First Name'
                 name='FIRSTNAME'
                 onChange={e => setFirstName(e.target.value)}
-                // errors={errors}
-                // validation={{
-                //   ...register('FIRSTNAME', {
-                //     required: 'First Name is required'
-                //   })
-                // }}
               />
               <OneLineInput
                 label='Last Name'
                 placeholder='Enter Last Name'
                 name='LASTNAME'
                 onChange={e => setLastName(e.target.value)}
-                // errors={errors}
-                // validation={{
-                //   ...register('LASTNAME', {
-                //     required: 'Last Name is required'
-                //   })
-                // }}
               />
               <OneLineInput
                 label='Email'
@@ -111,16 +88,6 @@ const OnBoardPage = () => {
                 type='email'
                 name='EMAIL'
                 onChange={e => setEmail(e.target.value)}
-                // errors={errors}
-                // validation={{
-                //   ...register('EMAIL', {
-                //     required: 'Email is required',
-                //     pattern: {
-                //       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                //       message: 'Invalid email address'
-                //     }
-                //   })
-                // }}
               />
             </div>
             <div className='file_section'>
@@ -129,12 +96,6 @@ const OnBoardPage = () => {
                 placeholder='Write about your self'
                 onChange={e => setAbout(e.target.value)}
                 name='ABOUT'
-                // errors={errors}
-                // validation={{
-                //   ...register('ABOUT', {
-                //     required: 'About is required'
-                //   })
-                // }}
               />
               <Button
                 sx={{
@@ -168,11 +129,6 @@ const OnBoardPage = () => {
                   type='file'
                   name='BODY_FILE'
                   onChange={e => setBodyFile(e.target.files[0])}
-                  // validation={{
-                  //   ...register('BODY_FILE', {
-                  //     required: 'Body File is required'
-                  //   })
-                  // }}
                 />
               </Button>
             </div>

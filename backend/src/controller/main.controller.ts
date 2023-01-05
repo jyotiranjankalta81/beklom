@@ -32,6 +32,26 @@ class MainControllerClass {
             return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
         }
     });
+    
+    subscribe = catchAsync(async (req: Request, res: Response) => {
+        console.log(req.body);
+        try {
+            const insertcollection = await mainService.subscribe(req);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: insertcollection });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    });
+    get_subscribe = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const blog = await mainService.get_subscribe(req.body);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Your Message send successfully", data: blog });
+        } catch (error) {
+            console.log(error);
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
     get_in_touch = catchAsync(async (req: Request, res: Response) => {
         try {
             const blog = await mainService.get_in_touch(req.body, req.files);
