@@ -64,6 +64,16 @@ export const Subscribe = createAsyncThunk('main/subscribe', async (data, { rejec
     }
 })
 
+export const Section1 = createAsyncThunk('main/section1', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/section1', data)
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
+    }
+})
+
 const adminSlice = createSlice({
     name: "udata",
     initialState: {
@@ -73,6 +83,7 @@ const adminSlice = createSlice({
         onboarding: [],
         getstarted: [],
         subscribed: [],
+        section1: [],
         loading: false,
         error: false,
         message: " "
@@ -95,7 +106,11 @@ const adminSlice = createSlice({
         ),
         getSubscribe: (state, action) => (
             state.subscribed = action.payload
+        ),
+        getSection1: (state, action) => (
+            state.section1 = action.payload
         )
+
 
     },
     extraReducers: (builder) => {
@@ -190,10 +205,28 @@ const adminSlice = createSlice({
                 state.message = action.payload?.message
             }
             )
+            .addCase(Section1.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(Section1.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.section1 = action.payload.data.data;
+                state.message = action.payload.data.message;
+            }
+            )
+
+            .addCase(Section1.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            }
+            )
 
 
     }
 })
 
-export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe } = adminSlice.actions
+export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe, getSection1 } = adminSlice.actions
 export default adminSlice.reducer

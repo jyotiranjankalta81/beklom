@@ -13,6 +13,7 @@ let initialStates = {
   NAME: ''
 }
 const Section2 = props => {
+  console.log(props)
   const [formdata, setFormdata] = React.useState(initialStates)
   const {
     register,
@@ -25,7 +26,6 @@ const Section2 = props => {
     console.log(props)
     var data = props.datas[0].name
     formdata.NAME = data
-    console.log(formdata)
     // return false
 
     axiosInstance.post(`main/${props.datas[0].link}`, formdata).then(res => {

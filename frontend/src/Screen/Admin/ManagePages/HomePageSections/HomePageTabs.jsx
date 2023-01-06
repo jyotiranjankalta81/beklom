@@ -5,8 +5,8 @@ import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import '../ManagePages.css'
-import HomeSection2 from './Section2/Section2'
-import HomeSection3 from './Section3/Section3'
+import HomeSection2 from './HomeSection2/HomeSection2'
+import HomeSection3 from './HomeSection3/HomeSection3'
 import HomeSection1 from './HomeSection1/HomeSection1'
 
 function TabPanel (props) {

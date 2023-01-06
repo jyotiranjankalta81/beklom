@@ -11,10 +11,10 @@ export interface UserAttributes {
     ID?: number;
     USERROLE: number;
     USERNAME: string;
-    EMAIL: String;
-    PASSWORD: String;
-    EMAILSTATUS: Boolean;
-    ISDELETED: Boolean;
+    EMAIL: string;
+    PASSWORD: string;
+    EMAILSTATUS: boolean;
+    ISDELETED: boolean;
 }
 
 export interface jwttoken {

@@ -151,8 +151,19 @@ class AdminControllerClass {
     }
     );
 
+    get_section1 = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const section1 = await AdminService.get_section1();
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: section1 });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+
+
     section2 = catchAsync(async (req: Request, res: Response) => {
-        console.log(req.body);
         try {
             const section2 = await AdminService.section2(req.body);
             return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: section2 });
@@ -161,6 +172,17 @@ class AdminControllerClass {
         }
     }
     );
+
+    section3 = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const section3 = await AdminService.section3(req.body);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: section3 });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+    
 
 
 
@@ -313,6 +335,19 @@ class AdminControllerClass {
         }
     }
     );
+
+    update_section1 = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const blog = await AdminService.update_section1(req.body,req.files);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Section1 updated successfully", data: blog });  
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+
+
 
 
     complete_process = catchAsync(async (req: Request, res: Response) => {

@@ -19,6 +19,7 @@ import { GetStartedInstance } from "../model/getstarted.model";
 import { GetOnBoardHomeInstance } from "../model/getonboardhome.model";
 import { Section1Instance } from "../model/section1.model";
 import { Section2Instance } from "../model/Section2.model";
+import { Section3Instance } from "../model/section3.model";
 
 
 
@@ -153,10 +154,26 @@ class AdminServiceClass {
         return result;
     }
 
+    get_section1 = async () => {
+        const result = await Section1Instance.findAll();
+        return result;
+    }
+
     section2 = async (body:any) => {
         const result = await Section2Instance.create({
             HEADING: body.HEADING,
             TITLE: body.TITLE,
+            CONTENT: body.CONTENT,
+            NAME: body.NAME,
+            ADDED_BY: 1,
+        })
+
+        return result;
+    }
+
+    section3 = async (body:any) => {
+        const result = await Section3Instance.create({
+            HEADING: body.HEADING,
             CONTENT: body.CONTENT,
             NAME: body.NAME,
             ADDED_BY: 1,
@@ -267,6 +284,28 @@ class AdminServiceClass {
 
         return result;
     }
+
+    update_section1 = async (body: any, files: any) => {
+        let images: any = null
+        if (files.IMAGE) {
+            images = uploadimage(files.IMAGE);
+        }
+        const result = await Section1Instance.update({
+            IMAGE: images,
+            TITLE: body.TITLE,
+            CONTENT: body.CONTENT,
+            NAME: body.NAME,
+            ADDED_BY: 1,
+
+        },{
+            where: {
+                SE_ID: parseInt(body.SE_ID)
+            }
+        })
+
+        return result;
+    }
+
 
     complete_process = (req: any, header: any) => {
         const result = OrderextenseInstance.update({
