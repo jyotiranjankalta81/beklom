@@ -172,6 +172,26 @@ class AdminControllerClass {
         }
     }
     );
+    get_section2 = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const section2 = await AdminService.get_section2();
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: section2 });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+    get_section3 = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const section3 = await AdminService.get_section3();
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: section3 });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+            
 
     section3 = catchAsync(async (req: Request, res: Response) => {
         try {
@@ -337,6 +357,7 @@ class AdminControllerClass {
     );
 
     update_section1 = catchAsync(async (req: Request, res: Response) => {
+        
         try {
             const blog = await AdminService.update_section1(req.body,req.files);
             return res.status(httpStatus.CREATED).send({ success: true, message: "Section1 updated successfully", data: blog });  
@@ -345,6 +366,19 @@ class AdminControllerClass {
         }
     }
     );
+
+    update_section3 = catchAsync(async (req: Request, res: Response) => {
+        
+        try {
+            const blog = await AdminService.update_section3(req.body);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Section3 updated successfully", data: blog });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+
 
 
 

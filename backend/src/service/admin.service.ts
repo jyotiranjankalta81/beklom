@@ -171,6 +171,18 @@ class AdminServiceClass {
         return result;
     }
 
+    get_section2 = async () => {
+        const result = await Section2Instance.findAll();
+        return result;
+    }
+
+    get_section3 = async () => {
+        const result = await Section3Instance.findAll();
+        return result;
+    }
+    
+
+
     section3 = async (body:any) => {
         const result = await Section3Instance.create({
             HEADING: body.HEADING,
@@ -305,6 +317,23 @@ class AdminServiceClass {
 
         return result;
     }
+
+    update_section3 = async (body: any) => {
+
+        const result = await Section3Instance.update({
+            HEADING: body.HEADING,
+            CONTENT: body.CONTENT,
+            NAME: body.NAME,
+            ADDED_BY: 1,
+        },{
+            where: {
+                SE_ID: parseInt(body.SE_ID)
+            }
+        })
+
+        return result;
+    }
+    
 
 
     complete_process = (req: any, header: any) => {

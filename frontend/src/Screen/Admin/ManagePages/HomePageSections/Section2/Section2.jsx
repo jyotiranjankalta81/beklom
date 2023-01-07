@@ -6,26 +6,24 @@ import { useForm } from 'react-hook-form'
 import axiosInstance from '../../../../../API/axiosInstance'
 import { toast } from 'react-toastify'
 
-let initialStates = {
-  HEADING: '',
-  TITLE: '',
-  CONTENT: '',
-  NAME: ''
-}
 const Section2 = props => {
   console.log(props)
-  const [formdata, setFormdata] = React.useState(initialStates)
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors }
-  } = useForm()
+  const [formdata, setFormdata] = React.useState({
+    HEADING: props.rows[0].HEADING,
+    TITLE: props.rows[0].TITLE,
+    CONTENT: props.rows[0].CONTENT,
+    NAME: props.rows[0].NAME
+  })
 
-  const onSubmit = formdata => {
-    console.log(props)
+  const onSubmit = e => {
+    e.preventDefault()
+    return false
+    // console.log(props)
     var data = props.datas[0].name
     formdata.NAME = data
+
+    console.log(formdata)
+    return false
     // return false
 
     axiosInstance.post(`main/${props.datas[0].link}`, formdata).then(res => {
@@ -43,46 +41,32 @@ const Section2 = props => {
   return (
     <>
       <div className='section_container'>
-        <form
-          className='crousel_section_container'
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <div className='crousel_section_container'>
           <OnBoardInput
             label='Heading'
-            errors={errors}
-            validation={{
-              ...register('HEADING', {
-                required: 'Heading is required'
-              })
-            }}
+            value={formdata.HEADING}
+            onChange={e =>
+              setFormdata({ ...formdata, HEADING: e.target.value })
+            }
           />
           <OnBoardInput
             label='Title'
-            errors={errors}
-            validation={{
-              ...register('TITLE', {
-                required: 'Title is required'
-              })
-            }}
+            value={formdata.TITLE}
+            onChange={e => setFormdata({ ...formdata, TITLE: e.target.value })}
           />
           <OnBoardTextArea
             label='Content'
-            errors={errors}
-            validation={{
-              ...register('CONTENT', {
-                required: 'Content is required'
-              })
-            }}
+            value={formdata.CONTENT}
+            onChange={e =>
+              setFormdata({ ...formdata, CONTENT: e.target.value })
+            }
           />
           <div className='btn_section'>
-            <button
-              className='section_submit_btn'
-              onClick={handleSubmit(onSubmit)}
-            >
+            <button className='section_submit_btn' onClick={onSubmit}>
               Submit
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </>
   )

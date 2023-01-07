@@ -39,11 +39,16 @@ mainrouter.delete('/mycreate-blog', auth(), AdminController.delete_my_create_blo
 mainrouter.get('/dashboard-details', auth(), AdminController.dashboard_details);
 mainrouter.get('/register-user',AdminController.get_registerUser);
 
-mainrouter.post('/section1',auth(),AdminController.section1);
+mainrouter.post('/section1',AdminController.section1);
 mainrouter.get('/section1',AdminController.get_section1);
-mainrouter.put('/section1',auth(),AdminController.update_section1);
-mainrouter.post('/section2',auth(),AdminController.section2);
-mainrouter.post('/section3',auth(),AdminController.section3);
+mainrouter.put('/section1',AdminController.update_section1);
+mainrouter.post('/section2',AdminController.section2);
+mainrouter.get('/section2',AdminController.get_section2);
+
+
+mainrouter.post('/section3',AdminController.section3);
+mainrouter.get('/section3',AdminController.get_section3);
+mainrouter.put('/section3',AdminController.update_section3);
 
 mainrouter.post("/extra-request", AdminController.Extra_requests);
 mainrouter.post("/process-log", AdminController.Process_log);

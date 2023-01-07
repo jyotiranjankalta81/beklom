@@ -190,18 +190,21 @@ function EditModal ({ param, Opens }) {
 
   const onSubmit = e => {
     e.preventDefault()
+    var Image = formdata.IMAGE
+    if (file === initialStates.IMAGE) {
+      const response = fetch(file)
+      const blob = response.blob()
+      const name = file.split('/').pop()
+      Image = new File([blob], [name], { type: blob.type })
+    }
+
     const formData = new FormData()
     formData.append('SE_ID', param.row.SE_ID)
     formData.append('TITLE', formdata.TITLE)
     formData.append('CONTENT', formdata.CONTENT)
-    formData.append('IMAGE', formdata.IMAGE)
+    formData.append('IMAGE', Image)
     formData.append('NAME', formdata.NAME)
 
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
-    }
-
-    // return false
     axiosInstance
       .put('main/section1', formData)
       .then(res => {

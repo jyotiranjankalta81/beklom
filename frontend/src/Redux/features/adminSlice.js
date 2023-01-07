@@ -74,6 +74,26 @@ export const Section1 = createAsyncThunk('main/section1', async (data, { rejectW
     }
 })
 
+export const BasicSection2 = createAsyncThunk('main/section2', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/section2', data)
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
+    }
+})
+
+export const BasicSection3 = createAsyncThunk('main/section3', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/section3', data)
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
+    }
+})
+
 const adminSlice = createSlice({
     name: "udata",
     initialState: {
@@ -84,6 +104,8 @@ const adminSlice = createSlice({
         getstarted: [],
         subscribed: [],
         section1: [],
+        section2: [],
+        section3: [],
         loading: false,
         error: false,
         message: " "
@@ -109,7 +131,13 @@ const adminSlice = createSlice({
         ),
         getSection1: (state, action) => (
             state.section1 = action.payload
-        )
+        ),
+        getSection2: (state, action) => (
+            state.section2 = action.payload
+        ),
+        getSection3: (state, action) => (
+            state.section3 = action.payload
+        ),
 
 
     },
@@ -223,10 +251,45 @@ const adminSlice = createSlice({
                 state.message = action.payload?.message
             }
             )
+            .addCase(BasicSection2.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(BasicSection2.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.section2 = action.payload.data.data;
+                state.message = action.payload.data.message;
+            }
+            )
+            .addCase(BasicSection2.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            }
+            )
+            .addCase(BasicSection3.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(BasicSection3.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.section3 = action.payload.data.data;
+                state.message = action.payload.data.message;
+            }
+            )
+            .addCase(BasicSection3.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            }
+            )
+
 
 
     }
 })
 
-export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe, getSection1 } = adminSlice.actions
+export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe, getSection1, getSection2, getSection3 } = adminSlice.actions
 export default adminSlice.reducer

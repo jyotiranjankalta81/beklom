@@ -9,6 +9,8 @@ import CrouselSection from '../HomePageSections/CrouselSection/CrouselSection'
 import HomeSection2 from '../HomePageSections/Section2/Section2'
 import HomeSection3 from '../HomePageSections/Section3/Section3'
 import AboutSection1 from './AboutSection1/AboutSection1'
+import AboutSection2 from './AboutSection2/AboutSection2'
+import CustomerRevies from './CustomerRevies/CustomerRevies'
 
 function TabPanel (props) {
   const { children, value, index, ...other } = props
@@ -102,10 +104,10 @@ export default function AboutPageSection () {
         <AboutSection1 />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <HomeSection2 />
+        <AboutSection2 />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <HomeSection3 />
+        <CustomerRevies />
       </TabPanel>
     </Box>
   )
