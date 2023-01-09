@@ -94,6 +94,16 @@ export const BasicSection3 = createAsyncThunk('main/section3', async (data, { re
     }
 })
 
+export const CustomerReviews = createAsyncThunk('main/customer-reviews', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/customer-reviews', data)
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+    }
+})
+
+
 const adminSlice = createSlice({
     name: "udata",
     initialState: {
@@ -106,6 +116,7 @@ const adminSlice = createSlice({
         section1: [],
         section2: [],
         section3: [],
+        customerReviews: [],
         loading: false,
         error: false,
         message: " "
@@ -138,6 +149,9 @@ const adminSlice = createSlice({
         getSection3: (state, action) => (
             state.section3 = action.payload
         ),
+        getCustomerReviews: (state, action) => (
+            state.customerReviews = action.payload
+        )
 
 
     },
@@ -285,11 +299,22 @@ const adminSlice = createSlice({
                 state.message = action.payload?.message
             }
             )
-
-
-
+            .addCase(CustomerReviews.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(CustomerReviews.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.customerReviews = action.payload.data.data;
+                state.message = action.payload.data.message;
+            })
+            .addCase(CustomerReviews.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+            })
     }
 })
 
-export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe, getSection1, getSection2, getSection3 } = adminSlice.actions
+export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe, getSection1, getSection2, getSection3, getCustomerReviews } = adminSlice.actions
 export default adminSlice.reducer

@@ -89,7 +89,7 @@ export default function OnBoardingTable () {
   const imagecell = params => {
     return (
       <div className='action-wrapper'>
-        <img src={imageBacked + params.row.BODY_FILE} alt='' srcset='' />
+        <img src={imageBacked + params.row.BODY_FILE} alt='' />
       </div>
     )
   }

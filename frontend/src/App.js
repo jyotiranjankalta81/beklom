@@ -1,6 +1,6 @@
 import './App.css';
 import { useLocation } from "react-router-dom"
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainRouter from './Router/MainRouter';
 import AdminRouter from './Router/AdminRouter';
 import Navbar from './components/Navbaar/Navbar';
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { resetAuthNotification, selectAuthErrorStatus, selectAuthMessage } from './Redux/features/authenticationSlice';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthRouter } from './Router/AuthRouter';
+import { BasicSection2, BasicSection3, Section1 } from './Redux/features/adminSlice';
 
 function App() {
   const location = useLocation()
@@ -16,6 +17,12 @@ function App() {
   const authErrorStatus = useSelector(selectAuthErrorStatus);
   const authMessage = useSelector(selectAuthMessage)
   const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(Section1());
+    dispatch(BasicSection2());
+    dispatch(BasicSection3());
+  }, [])
 
   useEffect(() => {
     window.scrollTo(0, 0)

@@ -9,9 +9,25 @@ import CreateBlogPost from '../Blogs/CreateBlogs/CreateBlogs'
 import './ManagePages.css'
 import HomePageTabs from './HomePageSections/HomePageTabs'
 import AboutPageSection from './AboutPageSection/AboutPageSection'
+import { useDispatch } from 'react-redux'
+import {
+  BasicSection2,
+  BasicSection3,
+  Section1
+} from '../../../Redux/features/adminSlice'
+import ServicePageSections from './ServicePageSection/ServicePageSections'
+import FaqSections from './FaqPageSection/FaqSections'
+import BlogPagesection1 from './BlogPageSection/BlogPageSection1/BlogPagesection1'
 
 function TabPanel (props) {
   const { children, value, index, ...other } = props
+  const dispatch = useDispatch()
+
+  React.useEffect(() => {
+    dispatch(BasicSection2())
+    dispatch(BasicSection3())
+    dispatch(Section1())
+  }, [])
 
   return (
     <div
@@ -105,7 +121,7 @@ export default function ManagePages () {
               {...a11yProps(2)}
             />
             <Tab
-              label='Services'
+              label='FAQS'
               sx={{
                 color: '#FFFFFF',
                 textTransform: 'none',
@@ -116,6 +132,18 @@ export default function ManagePages () {
               }}
               {...a11yProps(3)}
             />
+            <Tab
+              label='Blogs'
+              sx={{
+                color: '#FFFFFF',
+                textTransform: 'none',
+                fontWeight: 'bold',
+                borderRadius: '10px',
+                backgroundColor: '#3B85D7',
+                border: '5px solid #FFFFFF'
+              }}
+              {...a11yProps(4)}
+            />
           </Tabs>
         </div>
       </div>
@@ -124,6 +152,15 @@ export default function ManagePages () {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <AboutPageSection />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <ServicePageSections />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <FaqSections />
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <BlogPagesection1 />
       </TabPanel>
     </Box>
   )

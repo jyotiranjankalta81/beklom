@@ -81,7 +81,7 @@ export default function BlogsTable () {
   const imagecell = params => {
     return (
       <div className='action-wrapper'>
-        <img src={imageBacked + params.row.IMAGE} alt='' srcset='' />
+        <img src={imageBacked + params.row.IMAGE} alt='' />
       </div>
     )
   }

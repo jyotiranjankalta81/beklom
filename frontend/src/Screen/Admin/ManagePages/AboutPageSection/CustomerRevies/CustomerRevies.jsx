@@ -4,48 +4,85 @@ import { OnBoardTextArea } from '../../../../../UtilComponents/inputs/PlainTextA
 import Button from '@mui/material/Button'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import { Avatar } from '@mui/material'
+import axiosInstance from '../../../../../API/axiosInstance'
+import { toast } from 'react-toastify'
+import CustomerReviewsTable from './CustomerReviesTable'
 
 const CustomerRevies = () => {
+  const [formdata, setformdata] = React.useState({
+    NAME: '',
+    DESIGNATION: '',
+    IMAGE: '',
+    CONTENT: ''
+  })
+  const [file, setFile] = React.useState(null)
+  const handleChange = e => setFile(URL.createObjectURL(e.target.files[0]))
+  const onChangeText = (name, value) => {
+    setformdata({ ...formdata, [name]: value })
+  }
+  const handleSubmit = () => {
+    console.log(formdata)
+    const formData = new FormData()
+    formData.append('NAME', formdata.NAME)
+    formData.append('DESIGNATION', formdata.DESIGNATION)
+    formData.append('IMAGE', formdata.IMAGE)
+    formData.append('CONTENT', formdata.CONTENT)
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ', ' + pair[1])
+    }
+
+    axiosInstance
+      .post(`main/customer-reviews`, formData)
+      .then(res => {
+        if (res.data.success == 1) {
+          toast.success(res.data.message)
+
+          setTimeout(() => {
+            window.location.reload()
+          }, 3000)
+        } else {
+          toast.error(res.data.message)
+        }
+      })
+      .catch(err => {
+        toast.error(err.message)
+      })
+  }
+
   return (
     <>
       <div className='section_container'>
         <div className='crousel_section_container'>
-          <label htmlFor='' className='crousel_background_image'>
-            Image:
-          </label>
-
+          <h3 style={{ color: 'white' }}>Customer Reviews</h3>
           <Button
             sx={{
-              //   width: '100%',
-              //   height: '6vh',
               justifyContent: 'space-around',
               textTransform: 'none',
-              //   borderRadius: '10px',
-              //   border: '1px dashed #456bb4',
               border: 'none',
-              //   background: '#FFFFFF',
               color: '#000000',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-end',
-              justifyContent: 'flex-end'
-
-              //   '&:hover': {
-              //     backgroundColor: '#e6f1fd',
-              //     border: '1px dashed #456bb4'
-              //   }
+              justifyContent: 'flex-end',
+              '&:hover': {
+                border: 'none',
+                outline: 'none'
+              }
             }}
             color='warning'
             variant='outlined'
             component='label'
           >
             <Avatar
-              src='https://images.unsplash.com/photo-1626126090003-8b2b2e1b2b1a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+              src={file}
               sx={{
                 width: '100px',
                 height: '100px',
                 borderRadius: '50%',
-                border: '1px dashed'
+                '&:hover': {
+                  border: 'none',
+                  outline: 'none'
+                }
               }}
             />
             {/* // {isFile ? isFile.name : 'Drag and Drop or Browse File'} */}
@@ -54,21 +91,41 @@ const CustomerRevies = () => {
               accept='image/*'
               multiple
               type='file'
-              //   onChange={e => setisFile(e.target.files[0])}
+              onChange={e => {
+                handleChange(e)
+                onChangeText('IMAGE', e.target.files[0])
+              }}
             />
             <CloudUploadIcon
               sx={{
                 // color: isFile ? 'green' : '#456bb4',
                 transform: 'scale(1.5)',
-                margin: '-1.5rem 0rem 0rem -1.8rem'
+                margin: '-1.5rem 0rem 0rem -1.8rem',
+                display: file ? 'none' : 'block'
               }}
             />
           </Button>
-          <OnBoardInput />
-          <OnBoardInput />
-          <OnBoardTextArea />
+          <OnBoardInput
+            label='Name'
+            onChange={e => onChangeText('NAME', e.target.value)}
+          />
+          <OnBoardInput
+            label='Desiganation'
+            onChange={e => onChangeText('DESIGNATION', e.target.value)}
+          />
+          <OnBoardTextArea
+            label='Review Content'
+            onChange={e => onChangeText('CONTENT', e.target.value)}
+          />
+          <div className='btn_section'>
+            <button className='section_submit_btn' onClick={handleSubmit}>
+              Submit
+            </button>
+          </div>
         </div>
       </div>
+      <br />
+      <CustomerReviewsTable />
     </>
   )
 }

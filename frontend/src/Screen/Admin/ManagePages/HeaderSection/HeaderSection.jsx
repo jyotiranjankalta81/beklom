@@ -21,30 +21,22 @@ const HeaderSection = props => {
     setformdata({ ...formdata, [name]: value })
   }
 
-  const urlToObject = async (image, name) => {
-    const response = await fetch(image)
-    // here image is url/location of image
-    const blob = await response.blob()
-    const file = new File([blob], [name], { type: blob.type })
-    console.log(file)
-    return file
-  }
   const onSubmit = async e => {
     e.preventDefault()
-    var url = imageBacked + props.rows[0].IMAGE
-    console.log(url.split('/').pop())
-    return false
-    var Image = formdata.IMAGE
     if (isFile == imageBacked + props.rows[0].IMAGE) {
       const response = await fetch(isFile)
-      const blob = await response.blob()
-      Image = new File([blob], [props.rows[0].IMAGE], { type: blob.type })
+        .then(res => res.blob())
+        .then(blob => {
+          const name = isFile.split('/').pop()
+          const Image = new File([blob], [name], { type: blob.type })
+          formdata.IMAGE = Image
+        })
     }
     const formData = new FormData()
     formData.append('SE_ID', formdata.SE_ID)
     formData.append('TITLE', formdata.TITLE)
     formData.append('CONTENT', formdata.CONTENT)
-    formData.append('IMAGE', Image)
+    formData.append('IMAGE', formdata.IMAGE)
     formData.append('NAME', formdata.NAME)
 
     axiosInstance
@@ -109,7 +101,7 @@ const HeaderSection = props => {
               }}
             />
 
-            {isFile ? isFile.name : 'Drag and Drop or Browse File'}
+            {isFile ? formdata.IMAGE : 'Drag and Drop or Browse File'}
             <input
               hidden
               accept='image/*'

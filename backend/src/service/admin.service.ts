@@ -20,6 +20,7 @@ import { GetOnBoardHomeInstance } from "../model/getonboardhome.model";
 import { Section1Instance } from "../model/section1.model";
 import { Section2Instance } from "../model/Section2.model";
 import { Section3Instance } from "../model/section3.model";
+import { CustomerReviewsInstance } from "../model/reviews.model";
 
 
 
@@ -154,6 +155,41 @@ class AdminServiceClass {
         return result;
     }
 
+    customer_reviews = async(body:any,files:any) => {
+        let images: any = null
+        if (files.IMAGE) {
+            images = uploadimage(files.IMAGE);
+        }
+        const result = await CustomerReviewsInstance.create({
+            IMAGE: images,
+            NAME: body.NAME,
+            CONTENT: body.CONTENT,
+            DESIGNATION: body.DESIGNATION,
+            ADDED_BY: 1,
+        })
+
+        return result;
+    }
+
+    get_customer_reviews = async () => {
+        const result = await CustomerReviewsInstance.findAll();
+        return result;
+    }
+
+    delete_customer_reviews = async (header: any) => {
+        console.log(header)
+        const result = await CustomerReviewsInstance.destroy({
+            where: {
+                RE_ID:parseInt(header.RE_ID)
+            }
+        })
+        return result;
+    }
+
+
+
+
+
     get_section1 = async () => {
         const result = await Section1Instance.findAll();
         return result;
@@ -193,6 +229,19 @@ class AdminServiceClass {
 
         return result;
     }
+
+    delete_section1 = async (header: any) => {
+        const result = await Section1Instance.destroy({
+            where: {
+                SE_ID: parseInt(header.SE_ID)
+
+            }
+        })
+
+        return result;
+
+    }
+    
 
 
     my_create_blog = async (header: any) => {

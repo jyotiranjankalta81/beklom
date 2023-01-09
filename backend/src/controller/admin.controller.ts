@@ -151,6 +151,37 @@ class AdminControllerClass {
     }
     );
 
+    customer_reviews = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const customer_reviews = await AdminService.customer_reviews(req.body, req.files);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: customer_reviews });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+    get_customer_reviews = catchAsync(async (req: Request, res: Response) => {
+        try {
+            const customer_reviews = await AdminService.get_customer_reviews();
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: customer_reviews });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+
+
+    }
+    );
+    delete_customer_reviews = catchAsync(async (req: Request, res: Response) => {
+        const header: any = req.query;
+        try {
+            const customer_reviews = await AdminService.delete_customer_reviews(header);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "created successsfuly successfully", data: customer_reviews });
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
     get_section1 = catchAsync(async (req: Request, res: Response) => {
         try {
             const section1 = await AdminService.get_section1();
@@ -357,10 +388,23 @@ class AdminControllerClass {
     );
 
     update_section1 = catchAsync(async (req: Request, res: Response) => {
+        console.log(req.body)
+        console.log(req.files)
         
         try {
             const blog = await AdminService.update_section1(req.body,req.files);
             return res.status(httpStatus.CREATED).send({ success: true, message: "Section1 updated successfully", data: blog });  
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+    );
+
+    delete_section1 = catchAsync(async (req: Request, res: Response) => {
+        const header: any = req.query;
+        try {
+            const blog = await AdminService.delete_section1(header);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Section1 deleted successfully", data: blog });
         } catch (error) {
             return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
         }

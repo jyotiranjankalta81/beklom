@@ -42,6 +42,24 @@ export default function ManagePageTable () {
         })
       })
       setrow(datas)
+
+      // var sectiondata = []
+      // var newArray = section1.filter(function (el) {
+      //   return el.NAME == 'HOME_CROUSEL'
+      // })
+      // if (newArray?.length !== 0) {
+      //   newArray.forEach((data, index) => {
+      //     sectiondata.push({
+      //       id: index + 1,
+      //       SE_ID: data.SE_ID,
+      //       HEADING: data.HEADING,
+      //       TITLE: data.TITLE,
+      //       CONTENT: data.CONTENT,
+      //       NAME: data.NAME
+      //     })
+      //   })
+      //   setrow(sectiondata)
+      // }
     }
   }, [section1])
 
@@ -95,7 +113,6 @@ export default function ManagePageTable () {
           src={imageBacked + params.row.IMAGE}
           style={{ width: '100%', height: '100%' }}
           alt=''
-          srcset=''
         />
       </div>
     )
@@ -104,7 +121,7 @@ export default function ManagePageTable () {
   const handleDelete = params => {
     if (window.confirm('Do You really want to delete blog') === true) {
       axiosInstance
-        .delete('main/mycreate-blog?BLOG_ID=' + params.row.id)
+        .delete('main/section1?SE_ID=' + params.row.SE_ID)
         .then(res => {
           if (res.data.success) {
             toast.success(res.data.message)
@@ -133,24 +150,28 @@ export default function ManagePageTable () {
   )
 
   return (
-    <Box
-      sx={{
-        height: 400,
-        width: '100%',
-        '& .super-app-theme--header': {
-          backgroundColor: '#CADEF5'
-        }
-      }}
-    >
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        disableSelectionOnClick
-        experimentalFeatures={{ newEditingApi: true }}
-      />
-    </Box>
+    <>
+      {/* {rows.length !== 0 && ( */}
+      <Box
+        sx={{
+          height: 400,
+          width: '100%',
+          '& .super-app-theme--header': {
+            backgroundColor: '#CADEF5'
+          }
+        }}
+      >
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          disableSelectionOnClick
+          experimentalFeatures={{ newEditingApi: true }}
+        />
+      </Box>
+      {/* )} */}
+    </>
   )
 }
 
@@ -190,19 +211,21 @@ function EditModal ({ param, Opens }) {
 
   const onSubmit = e => {
     e.preventDefault()
-    var Image = formdata.IMAGE
     if (file === initialStates.IMAGE) {
       const response = fetch(file)
-      const blob = response.blob()
-      const name = file.split('/').pop()
-      Image = new File([blob], [name], { type: blob.type })
+        .then(res => res.blob())
+        .then(blob => {
+          const name = file.split('/').pop()
+          formdata.IMAGE = new File([blob], [name], { type: blob.type })
+          console.log(formdata.IMAGE)
+        })
     }
 
     const formData = new FormData()
     formData.append('SE_ID', param.row.SE_ID)
     formData.append('TITLE', formdata.TITLE)
     formData.append('CONTENT', formdata.CONTENT)
-    formData.append('IMAGE', Image)
+    formData.append('IMAGE', formdata.IMAGE)
     formData.append('NAME', formdata.NAME)
 
     axiosInstance

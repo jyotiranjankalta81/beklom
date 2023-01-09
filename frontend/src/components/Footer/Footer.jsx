@@ -132,17 +132,17 @@ function Footer () {
         <div className='footer_main_containers'>
           <div className='footer_content_section'>
             <div className='footer_img'>
-              <img src='/Images/Footer/FooterPrimary.png' alt='' srcset='' />
+              <img src='/Images/Footer/FooterPrimary.png' alt='' />
             </div>
           </div>
           <div className='footer_content_sectionsss'>
             <div className='footer_img'>
-              <img src='/Images/Footer/FooterSecondary.png' alt='' srcset='' />
+              <img src='/Images/Footer/FooterSecondary.png' alt='' />
             </div>
           </div>
           <div className='footer_content_section'>
             <div className='footer_img'>
-              <img src='/Images/Footer/FooterTertairy.png' alt='' srcset='' />
+              <img src='/Images/Footer/FooterTertairy.png' alt='' />
             </div>
           </div>
         </div>
