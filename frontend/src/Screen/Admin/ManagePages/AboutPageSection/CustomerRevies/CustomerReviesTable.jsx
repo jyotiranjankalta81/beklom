@@ -15,7 +15,7 @@ import { useForm } from 'react-hook-form'
 import CardMedia from '@mui/material/CardMedia'
 import { OnBoardTextArea } from '../../../../../UtilComponents/inputs/PlainTextArea'
 import {
-  CustomerReviews,
+  CustomersReviews,
   getblog,
   Section1
 } from '../../../../../Redux/features/adminSlice'
@@ -29,7 +29,7 @@ export default function CustomerReviewsTable () {
   const [open, setOpen] = React.useState(false)
 
   React.useEffect(() => {
-    dispatch(CustomerReviews())
+    dispatch(CustomersReviews())
   }, [])
 
   React.useEffect(() => {

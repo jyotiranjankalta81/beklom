@@ -1,30 +1,48 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { BasicSection3 } from '../../../Redux/features/adminSlice'
 import './AboutSection.css'
 
 const AboutSection = () => {
+  const { section3 } = useSelector(state => state.admin)
+  const [row, setrow] = React.useState([])
+  const dispatch = useDispatch()
+  React.useEffect(() => {
+    if (section3?.length !== 0) {
+      var sectiondata = []
+      var newArray = section3.filter(function (el) {
+        return el.NAME == 'ABOUT_SECTION2'
+      })
+      if (newArray?.length !== 0) {
+        newArray.forEach((data, index) => {
+          sectiondata.push({
+            id: index + 1,
+            SE_ID: data.SE_ID,
+            HEADING: data.HEADING,
+            NAME: data.NAME,
+            CONTENT: data.CONTENT
+          })
+        })
+        setrow(sectiondata)
+      }
+    }
+  }, [section3])
+
   return (
     <>
-      <div className='about_container'>
-        <div className='about_main_container'>
-          <div className='about_left_container'>
-            <img src='/Images/About/aboutleftbg.png' alt='' />
-          </div>
-          <div className='about_right_container'>
-            <h1>About</h1>
-            <p>
-              Call us now to check how we can help you expand your business and
-              save money at the same time. (770) 400 - 0401 is our number and we
-              are available between 9AM to 6PM, Monday - Friday.
-            </p>
-            <p>
-              We are a leading provider of outsourced services in the area of
-              customer service, cold calling, data processing, technical and
-              non-technical recruitment, social media marketing, digital
-              marketing, etc.
-            </p>
+      {row.length !== 0 && (
+        <div className='about_container'>
+          <div className='about_main_container'>
+            <div className='about_left_container'>
+              <img src='/Images/About/aboutleftbg.png' alt='' />
+            </div>
+            <div className='about_right_container'>
+              <h1>{row[0].HEADING}</h1>
+              <p>{row[0].CONTENT}</p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   )
 }

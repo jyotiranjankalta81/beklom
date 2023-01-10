@@ -7,30 +7,36 @@ import axiosInstance, { imageBacked } from '../../../../API/axiosInstance'
 import { toast } from 'react-toastify'
 
 const HeaderSection = props => {
-  // console.log(props)
-  const [formdata, setformdata] = React.useState({
-    SE_ID: props.rows[0].SE_ID,
-    TITLE: props.rows[0].TITLE,
-    CONTENT: props.rows[0].CONTENT,
-    NAME: props.rows[0].NAME,
-    IMAGE: props.rows[0].IMAGE
-  })
-  const [isFile, setisFile] = React.useState(imageBacked + props.rows[0].IMAGE)
-  const handleChange = e => setisFile(URL.createObjectURL(e.target.files[0]))
+  console.log(props)
+
+  const [formdata, setformdata] = React.useState({})
+  const [isFile, setisFile] = React.useState(null)
+  const [isImage, setisImage] = React.useState(null)
+  const handleChange = e => {
+    // onChangeText('IMAGE', e.target.files[0])
+    setisImage(e.target.files[0])
+    setisFile(URL.createObjectURL(e.target.files[0]))
+  }
+
   const onChangeText = (name, value) => {
     setformdata({ ...formdata, [name]: value })
   }
 
+  React.useEffect(() => {
+    setformdata({
+      SE_ID: props?.rows[0].SE_ID,
+      TITLE: props?.rows[0].TITLE,
+      CONTENT: props?.rows[0].CONTENT,
+      NAME: props?.rows[0].NAME,
+      IMAGE: props?.rows[0].IMAGE
+    })
+    setisFile(imageBacked + props?.rows[0].IMAGE)
+  }, [])
+
   const onSubmit = async e => {
     e.preventDefault()
-    if (isFile == imageBacked + props.rows[0].IMAGE) {
-      const response = await fetch(isFile)
-        .then(res => res.blob())
-        .then(blob => {
-          const name = isFile.split('/').pop()
-          const Image = new File([blob], [name], { type: blob.type })
-          formdata.IMAGE = Image
-        })
+    if (isFile !== imageBacked + props.rows[0].IMAGE) {
+      formdata.IMAGE = isImage
     }
     const formData = new FormData()
     formData.append('SE_ID', formdata.SE_ID)
@@ -56,25 +62,25 @@ const HeaderSection = props => {
         toast.error(err.response.data.message)
       })
   }
-
   return (
     <>
       <div className='section_container'>
         <div className='crousel_section_container'>
           <OnBoardInput
             label='Title'
+            name='TITLE'
             value={formdata.TITLE}
             onChange={e => onChangeText('TITLE', e.target.value)}
           />
           <OnBoardTextArea
             label='Content'
             value={formdata.CONTENT}
+            name='CONTENT'
             onChange={e => onChangeText('CONTENT', e.target.value)}
           />
           <label htmlFor='' className='crousel_background_image'>
             Image:
           </label>
-
           <Button
             sx={{
               width: '100%',
@@ -100,27 +106,30 @@ const HeaderSection = props => {
                 transform: 'scale(1.5)'
               }}
             />
-
-            {isFile ? formdata.IMAGE : 'Drag and Drop or Browse File'}
+            <>
+              {formdata.IMAGE ? formdata.IMAGE : 'Drag and Drop or Browse File'}
+            </>
             <input
               hidden
               accept='image/*'
               multiple
               type='file'
+              name='IMAGE'
               onChange={e => {
-                onChangeText('IMAGE', e.target.files[0])
                 handleChange(e)
+                // onChangeText('IMAGE', e.target.files[0])
               }}
             />
           </Button>
           <img
-            src={isFile}
+            src={isFile ? isFile : ''}
             crossorigin='anonymous'
             style={{
               width: '100%',
               height: '250px',
               border: '2px solid black',
-              borderRadius: '10px'
+              borderRadius: '10px',
+              display: isFile ? 'block' : 'none'
             }}
             alt='none'
           />

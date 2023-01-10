@@ -27,9 +27,6 @@ const CustomerRevies = () => {
     formData.append('DESIGNATION', formdata.DESIGNATION)
     formData.append('IMAGE', formdata.IMAGE)
     formData.append('CONTENT', formdata.CONTENT)
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
-    }
 
     axiosInstance
       .post(`main/customer-reviews`, formData)
@@ -37,9 +34,9 @@ const CustomerRevies = () => {
         if (res.data.success == 1) {
           toast.success(res.data.message)
 
-          setTimeout(() => {
-            window.location.reload()
-          }, 3000)
+          // setTimeout(() => {
+          //   window.location.reload()
+          // }, 3000)
         } else {
           toast.error(res.data.message)
         }

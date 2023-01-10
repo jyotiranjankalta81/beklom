@@ -14,6 +14,12 @@
   align-items: center;
   gap: 0.5rem;
 }
+.WhatClientSays {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* .customer_review_main_container h1 {
   font-family: "Red Hat Display", sans-serif;
   font-style: normal;

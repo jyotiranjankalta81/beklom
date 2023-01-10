@@ -94,7 +94,7 @@ export const BasicSection3 = createAsyncThunk('main/section3', async (data, { re
     }
 })
 
-export const CustomerReviews = createAsyncThunk('main/customer-reviews', async (data, { rejectWithValue }) => {
+export const CustomersReviews = createAsyncThunk('main/customer-reviews', async (data, { rejectWithValue }) => {
     try {
         let response = await axiosInstance.get('main/customer-reviews', data)
         return response
@@ -299,16 +299,16 @@ const adminSlice = createSlice({
                 state.message = action.payload?.message
             }
             )
-            .addCase(CustomerReviews.pending, (state) => {
+            .addCase(CustomersReviews.pending, (state) => {
                 state.loading = true;
             })
-            .addCase(CustomerReviews.fulfilled, (state, action) => {
+            .addCase(CustomersReviews.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = !action.payload;
                 state.customerReviews = action.payload.data.data;
                 state.message = action.payload.data.message;
             })
-            .addCase(CustomerReviews.rejected, (state, action) => {
+            .addCase(CustomersReviews.rejected, (state, action) => {
                 state.loading = false;
                 state.error = true;
                 state.message = action.payload?.message

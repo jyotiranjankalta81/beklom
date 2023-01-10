@@ -34,7 +34,7 @@ const AboutSection1 = () => {
     }
   }, [section1])
 
-  return <>{row.length !== 0 && <HeaderSection datas={data} rows={row} />}</>
+  return <>{row.length !== 0 && <HeaderSection rows={row} />}</>
 }
 
 export default AboutSection1
