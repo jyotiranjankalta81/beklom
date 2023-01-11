@@ -8,25 +8,22 @@ import { toast } from 'react-toastify'
 
 const Section2 = props => {
   console.log(props)
-  const [formdata, setFormdata] = React.useState({
-    HEADING: props.rows[0].HEADING,
-    TITLE: props.rows[0].TITLE,
-    CONTENT: props.rows[0].CONTENT,
-    NAME: props.rows[0].NAME
-  })
+  const [formdata, setFormdata] = React.useState({})
+
+  React.useEffect(() => {
+    setFormdata({
+      HEADING: props.rows[0].HEADING,
+      TITLE: props.rows[0].TITLE,
+      CONTENT: props.rows[0].CONTENT,
+      NAME: props.rows[0].NAME,
+      SE_ID: props.rows[0].SE_ID
+    })
+  }, [props.rows])
 
   const onSubmit = e => {
     e.preventDefault()
-    return false
-    // console.log(props)
-    var data = props.datas[0].name
-    formdata.NAME = data
 
-    console.log(formdata)
-    return false
-    // return false
-
-    axiosInstance.post(`main/${props.datas[0].link}`, formdata).then(res => {
+    axiosInstance.put('main/section2', formdata).then(res => {
       if (res.data.success == 1) {
         toast.success(res.data.message)
         setTimeout(() => {

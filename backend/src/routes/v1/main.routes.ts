@@ -32,10 +32,10 @@ mainrouter.post("/partner-us", MainController.create_patner);
 mainrouter.get("/patner-with-us", AdminController.get_partnerus);
 
 
-mainrouter.post('/create-blog',auth(), AdminController.create_blog);
+mainrouter.post('/create-blog', AdminController.create_blog);
 mainrouter.get('/blogs',auth(), AdminController.get_blogs);
 mainrouter.get('/mycreate-blog', AdminController.my_create_blog);
-mainrouter.delete('/mycreate-blog', auth(), AdminController.delete_my_create_blog);
+mainrouter.delete('/mycreate-blog', AdminController.delete_my_create_blog);
 mainrouter.get('/dashboard-details', auth(), AdminController.dashboard_details);
 mainrouter.get('/register-user',AdminController.get_registerUser);
 
@@ -46,6 +46,7 @@ mainrouter.delete('/section1',AdminController.delete_section1);
 
 mainrouter.post('/section2',AdminController.section2);
 mainrouter.get('/section2',AdminController.get_section2);
+mainrouter.put('/section2',AdminController.update_section2);
 
 
 mainrouter.post('/section3',AdminController.section3);

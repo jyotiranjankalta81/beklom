@@ -9,6 +9,7 @@ import GetStarted from '../Screen/Admin/GetStarted/GetStarted'
 import ProtectedRoutes from '../Screen/Admin/Gaurds/ProtectedRoutes'
 import GetInTouchHomeTable from '../Screen/Admin/GetInTouchHome/GetInTouchHomeTable'
 import ManagePages from '../Screen/Admin/ManagePages/ManagePages'
+import SubscribeTable from '../Screen/Admin/SubscribeTable/SubscribeTable'
 
 export default function AdminRouter () {
   return (
@@ -21,6 +22,7 @@ export default function AdminRouter () {
           <Route path='on-boarding' element={<OnBoardingTable />} />
           <Route path='get-in-touch' element={<GetInTouchHomeTable />} />
           <Route path='get-started' element={<GetStarted />} />
+          <Route path='subscribe-mail' element={<SubscribeTable />} />
           <Route path='*' element={<h1>404: Not Found</h1>} />
         </Route>
       </Route>

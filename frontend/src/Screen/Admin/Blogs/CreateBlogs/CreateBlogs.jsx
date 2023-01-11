@@ -43,7 +43,9 @@ const CreateBlogPost = () => {
   const [isFile, setisFile] = useState(null)
   const [tag, settag] = useState('')
 
-  const submitblog = () => {
+  const submitblog = e => {
+    e.preventDefault()
+
     // console.log(isheading, iscontent, isFile);
 
     // return false;
@@ -55,9 +57,9 @@ const CreateBlogPost = () => {
     axiosInstance.post('main/create-blog', formdata).then(res => {
       if (res.data.success == 1) {
         toast.success(res.data.message)
-        setTimeout(() => {
-          window.location.reload()
-        }, 3000)
+        // setTimeout(() => {
+        //   window.location.reload()
+        // }, 3000)
       } else {
         toast.error(res.data.message)
       }

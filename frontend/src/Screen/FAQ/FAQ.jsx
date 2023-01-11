@@ -11,7 +11,7 @@ const FAQ = () => {
     if (section1?.length !== 0) {
       var sectiondata = []
       var newArray = section1.filter(function (el) {
-        return el.NAME == 'SERVICE_SECTION1'
+        return el.NAME == 'FAQ_SECTION1'
       })
       if (newArray?.length !== 0) {
         newArray.forEach((data, index) => {
@@ -31,20 +31,19 @@ const FAQ = () => {
   console.log(row)
   return (
     <>
-      <div className='intro_container'>
-        <div className='mail_intro_container'>
-          <div className='left_intro'>
-            <h1>FAQ</h1>
-            <p>
-              Leading Resource for Recruitment in Technical and Non-Technical
-              backgrounds !
-            </p>
-          </div>
-          <div className='right_intro'>
-            <img src='/Images/FAQ/faqbg.png' alt='' />
+      {row?.length !== 0 && (
+        <div className='intro_container'>
+          <div className='mail_intro_container'>
+            <div className='left_intro'>
+              <h1>{row[0].TITLE}</h1>
+              <p>{row[0].CONTENT}</p>
+            </div>
+            <div className='right_intro'>
+              <img src={row[0].IMAGE} alt='' crossOrigin='anonymous' />
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <FaqContent />
       <Footer />
     </>

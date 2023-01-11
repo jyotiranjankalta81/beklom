@@ -13,19 +13,19 @@ ContactusInstance.init({
         allowNull: false,
         autoIncrement: true
     },
-    FULLNAME: {
+    FIRSTNAME: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    LASTNAME: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false,
+    },
+    PHONE: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
     EMAIL: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-    },
-    SUBJECT: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-    },
-    TRACKINGID: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },

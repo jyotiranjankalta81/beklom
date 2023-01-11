@@ -103,6 +103,17 @@ export const CustomersReviews = createAsyncThunk('main/customer-reviews', async 
     }
 })
 
+export const subscribeMail = createAsyncThunk('main/subscribe-mail', async (data, { rejectWithValue }) => {
+    try {
+        let response = await axiosInstance.get('main/subscribe', data)
+        return response
+    } catch (err) {
+        return rejectWithValue(err.response.data)
+
+    }
+})
+
+
 
 const adminSlice = createSlice({
     name: "udata",
@@ -113,6 +124,7 @@ const adminSlice = createSlice({
         onboarding: [],
         getstarted: [],
         subscribed: [],
+        subscribemail: [],
         section1: [],
         section2: [],
         section3: [],
@@ -151,6 +163,9 @@ const adminSlice = createSlice({
         ),
         getCustomerReviews: (state, action) => (
             state.customerReviews = action.payload
+        ),
+        getSubscribeMail: (state, action) => (
+            state.subscribemail = action.payload
         )
 
 
@@ -313,8 +328,25 @@ const adminSlice = createSlice({
                 state.error = true;
                 state.message = action.payload?.message
             })
+            .addCase(subscribeMail.pending, (state) => {
+                state.loading = true;
+            })
+
+            .addCase(subscribeMail.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = !action.payload;
+                state.subscribemail = action.payload.data.data;
+                state.message = action.payload.data.message;
+            }
+            )
+            .addCase(subscribeMail.rejected, (state, action) => {
+                state.loading = false;
+                state.error = true;
+                state.message = action.payload?.message
+
+            })
     }
 })
 
-export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe, getSection1, getSection2, getSection3, getCustomerReviews } = adminSlice.actions
+export const { getBlogs, getInTouchhome, getContactUs, getOnboarding, getGetStarted, getSubscribe, getSection1, getSection2, getSection3, getCustomerReviews, getSubscribeMail } = adminSlice.actions
 export default adminSlice.reducer

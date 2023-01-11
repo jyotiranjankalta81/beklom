@@ -22,14 +22,6 @@ UserInstance.init({
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
     },
-    F_NAME: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-    },
-    L_NAME: {
-        type: sequelize_1.DataTypes.STRING,
-        allowNull: false,
-    },
     EMAIL: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,

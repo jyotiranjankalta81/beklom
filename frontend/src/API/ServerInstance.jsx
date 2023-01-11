@@ -1,4 +1,5 @@
-const baseURL = 'http://localhost:8000/api/'
+// const baseURL = 'http://localhost:8000/api/'
+const baseURL = 'http://jyotiranjankalta.tech/api/'
 
 let token = ''
 if (localStorage.getItem('token')) {

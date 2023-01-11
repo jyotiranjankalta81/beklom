@@ -13,6 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mainService = void 0;
+const getstarted_model_1 = require("./../model/getstarted.model");
+const onboarding_model_1 = require("../model/onboarding.model");
 const contactus_1 = require("../model/contactus");
 const order_model_1 = require("../model/order.model");
 const randomnumber_1 = require("../utils/randomnumber");
@@ -30,16 +32,55 @@ const moment_1 = __importDefault(require("moment"));
 const db_connection_1 = require("../db/db-connection");
 const sequelize_1 = require("sequelize");
 const uploadconsent_1 = require("../template/uploadconsent");
+const getonboardhome_model_1 = require("../model/getonboardhome.model");
+const subscribe_model_1 = require("../model/subscribe.model");
 dotenv_1.default.config({ path: path_1.default.join(__dirname, '../../.env') });
 class mainServiceClass {
     constructor() {
         this.create_contactus = (req) => __awaiter(this, void 0, void 0, function* () {
             const result = yield contactus_1.ContactusInstance.create({
-                FULLNAME: req.body.FULLNAME,
+                FIRSTNAME: req.body.FIRSTNAME,
+                LASTNAME: req.body.LASTNAME,
+                PHONE: req.body.PHONE,
                 EMAIL: req.body.EMAIL,
-                SUBJECT: req.body.SUBJECT,
-                TRACKINGID: req.body.TRACKINGID,
                 MESSAGE: req.body.MESSAGE,
+            });
+            return result;
+        });
+        this.get_started = (req) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield getstarted_model_1.GetStartedInstance.create({
+                FIRSTNAME: req.body.FIRSTNAME,
+                LASTNAME: req.body.LASTNAME,
+                EMAIL: req.body.EMAIL,
+                PHONE: req.body.PHONE,
+            });
+            return result;
+        });
+        this.subscribe = (req) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield subscribe_model_1.SubscribeInstance.create({
+                EMAIL: req.body.EMAIL,
+            });
+            return result;
+        });
+        this.get_subscribe = (req) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield subscribe_model_1.SubscribeInstance.findAll();
+            return result;
+        });
+        this.get_Started = (req) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield getstarted_model_1.GetStartedInstance.findAll();
+            return result;
+        });
+        this.get_in_touch = (body, files) => __awaiter(this, void 0, void 0, function* () {
+            let images = null;
+            if (files.BODY_FILE) {
+                images = (0, imageupload_1.uploadimage)(files.BODY_FILE);
+            }
+            const result = yield onboarding_model_1.OnBoardingInstance.create({
+                FIRSTNAME: body.FIRSTNAME,
+                LASTNAME: body.LASTNAME,
+                EMAIL: body.EMAIL,
+                ABOUT: body.ABOUT,
+                BODY_FILE: images,
             });
             return result;
         });
@@ -47,6 +88,16 @@ class mainServiceClass {
             const result = yield db_connection_1.sequelizeDB.query(`SELECT tbl_order.STATUS FROM tbl_order LEFT JOIN tbl_ordeextense ON tbl_ordeextense.ORDER_ID  = tbl_order.ORDER_ID WHERE tbl_ordeextense.NORMAL_ID = '${req.body.ORDER_ID}' OR tbl_ordeextense.SPECIAL_ID = '${req.body.ORDER_ID}'`, {
                 nest: true,
                 type: sequelize_1.QueryTypes.SELECT,
+            });
+            return result;
+        });
+        this.get_onboard_home = (req) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield getonboardhome_model_1.GetOnBoardHomeInstance.create({
+                NAME: req.body.NAME,
+                EMAIL: req.body.EMAIL,
+                CONTACTUS: req.body.CONTACTUS,
+                ADDRESS: req.body.ADDRESS,
+                MESSAGE: req.body.MESSAGE,
             });
             return result;
         });

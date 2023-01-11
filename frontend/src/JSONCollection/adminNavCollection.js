@@ -13,8 +13,8 @@ export default [
         link: '/admin-panel/get-in-touch'
     },
     {
-        title: "Blog Pages",
-        link: '/admin-panel/blogpages'
+        title: "Subscribe mail",
+        link: '/admin-panel/subscribe-mail'
     },
     {
         title: "On Boarding",

@@ -15,6 +15,33 @@ const Blogs = () => {
   const { blogs } = useSelector(state => state.admin)
   const [rows, setrow] = React.useState([])
 
+  const { section1 } = useSelector(state => state.admin)
+  const [row, setrows] = React.useState([])
+
+  React.useEffect(() => {
+    if (section1?.length !== 0) {
+      var sectiondata = []
+      var newArray = section1.filter(function (el) {
+        return el.NAME == 'BLOG_SECTION1'
+      })
+      if (newArray?.length !== 0) {
+        newArray.forEach((data, index) => {
+          sectiondata.push({
+            id: index + 1,
+            SE_ID: data.SE_ID,
+            IMAGE: imageBacked + data.IMAGE,
+            TITLE: data.TITLE,
+            CONTENT: data.CONTENT,
+            NAME: data.NAME
+          })
+        })
+        setrows(sectiondata)
+      }
+    }
+  }, [section1])
+
+  console.log(row)
+
   React.useEffect(() => {
     dispatch(getblog())
   }, [])
@@ -46,24 +73,22 @@ const Blogs = () => {
   }
   return (
     <>
-      <div className='intro_container'>
-        <div className='mail_intro_container'>
-          <div className='left_intro'>
-            <h1>Blogs</h1>
-            <p>
-              Beklom Technologies has the greatest tools and people to help you
-              grow your business. Does this seem like something you're
-              interested in? Start your onboarding process today!.
-            </p>
-            <Link to='/getstarted' className='Link_btn'>
-              <div className='get_started'>GET STARTED</div>
-            </Link>
-          </div>
-          <div className='right_intro'>
-            <img src='/Images/Home/blogsrightbg.png' alt='' />
+      {row?.length !== 0 && (
+        <div className='intro_container'>
+          <div className='mail_intro_container'>
+            <div className='left_intro'>
+              <h1>{row[0].TITLE}</h1>
+              <p>{row[0].CONTENT}</p>
+              <Link to='/getstarted' className='Link_btn'>
+                <div className='get_started'>GET STARTED</div>
+              </Link>
+            </div>
+            <div className='right_intro'>
+              <img src={row[0].IMAGE} crossOrigin='anonymous' alt='' />
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div className='blogs_container'>
         <div className='blogs_card_container'>
           {rows

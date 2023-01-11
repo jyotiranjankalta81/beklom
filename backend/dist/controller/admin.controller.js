@@ -47,6 +47,24 @@ class AdminControllerClass {
                 return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
             }
         }));
+        this.get_in_touch_home = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const contacts = yield admin_service_1.AdminService.get_in_touch_home();
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: contacts });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_onboarding = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const contacts = yield admin_service_1.AdminService.get_onboarding();
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: contacts });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
         this.get_partnerus = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const partners = yield admin_service_1.AdminService.get_partnerus();
@@ -109,9 +127,94 @@ class AdminControllerClass {
             }
         }));
         this.create_blog = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            console.log(req.body);
+            console.log(req.files);
             try {
                 const blog = yield admin_service_1.AdminService.create_blog(req.body, req.files);
                 return res.status(http_status_1.default.CREATED).send({ success: true, message: "blog created successsfuly successfully", data: blog });
+            }
+            catch (error) {
+                console.log(error);
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.section1 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const section1 = yield admin_service_1.AdminService.section1(req.body, req.files);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: section1 });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.customer_reviews = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const customer_reviews = yield admin_service_1.AdminService.customer_reviews(req.body, req.files);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: customer_reviews });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_customer_reviews = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const customer_reviews = yield admin_service_1.AdminService.get_customer_reviews();
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: customer_reviews });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.delete_customer_reviews = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            const header = req.query;
+            try {
+                const customer_reviews = yield admin_service_1.AdminService.delete_customer_reviews(header);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: customer_reviews });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_section1 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const section1 = yield admin_service_1.AdminService.get_section1();
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: section1 });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.section2 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const section2 = yield admin_service_1.AdminService.section2(req.body);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: section2 });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_section2 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const section2 = yield admin_service_1.AdminService.get_section2();
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: section2 });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_section3 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const section3 = yield admin_service_1.AdminService.get_section3();
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: section3 });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.section3 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const section3 = yield admin_service_1.AdminService.section3(req.body);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "created successsfuly successfully", data: section3 });
             }
             catch (error) {
                 return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
@@ -137,6 +240,8 @@ class AdminControllerClass {
         this.my_create_blog = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
             const reqheader = req.header("authorization");
             const header = (0, jwt_decode_1.default)(reqheader);
+            // console.log(header)
+            // return false;
             try {
                 const blog = yield admin_service_1.AdminService.my_create_blog(header);
                 return res.status(http_status_1.default.CREATED).send({ success: true, message: "blog created successsfuly successfully", data: blog });
@@ -146,9 +251,40 @@ class AdminControllerClass {
             }
         }));
         this.delete_contact = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            const header = req.query;
             try {
-                const blog = yield admin_service_1.AdminService.delete_contact(req.query.CONTACTUS_ID);
+                const blog = yield admin_service_1.AdminService.delete_contact(header);
                 return res.status(http_status_1.default.CREATED).send({ success: true, message: "Contact deleted successfully", data: blog });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.delete_onboarding = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            const header = req.query;
+            try {
+                const blog = yield admin_service_1.AdminService.delete_onboarding(header);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Onboarding deleted successfully", data: blog });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.delete_Started = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            const header = req.query;
+            try {
+                const blog = yield admin_service_1.AdminService.delete_Started(header);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Started deleted successfully", data: blog });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.delete_in_touch_home = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            const header = req.query;
+            try {
+                const blog = yield admin_service_1.AdminService.delete_in_touch_home(header);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "In touch home deleted successfully", data: blog });
             }
             catch (error) {
                 return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
@@ -182,6 +318,17 @@ class AdminControllerClass {
                 return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
             }
         }));
+        this.delete_subscribe = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            const header = req.query;
+            console.log(header);
+            try {
+                const blog = yield admin_service_1.AdminService.delete_subscribe(header);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Subscribe deleted successfully", data: blog });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
         this.notes_applied = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
             const reqheader = req.header("authorization");
             const header = (0, jwt_decode_1.default)(reqheader);
@@ -200,6 +347,45 @@ class AdminControllerClass {
                         }
                     }
                 }
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.update_section1 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            // console.log(req.body)
+            try {
+                const blog = yield admin_service_1.AdminService.update_section1(req.body, req.files);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Section1 updated successfully", data: blog });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.delete_section1 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            const header = req.query;
+            try {
+                const blog = yield admin_service_1.AdminService.delete_section1(header);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Section1 deleted successfully", data: blog });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.update_section3 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const blog = yield admin_service_1.AdminService.update_section3(req.body);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Section3 updated successfully", data: blog });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.update_section2 = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            console.log(req.body);
+            try {
+                const blog = yield admin_service_1.AdminService.update_section2(req.body);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Section2 updated successfully", data: blog });
             }
             catch (error) {
                 return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });

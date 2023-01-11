@@ -21,7 +21,7 @@ const verifyCallback = (req, resolve, reject, requiredRights) => (err, user, inf
     //     return reject(new ApiError(httpStatus.UNAUTHORIZED, 'Please authenticate'));
     // }    
     // const getheader: any = req.header("authorization");
-    // const users = jwt_decode<jwttoken>(getheader);    
+    // const users = jwt_decode<jwttoken>(getheader);
     // const userRights = get_accessrights(users.role, requiredRights[0]);
     // userRights.then((data: any) => {
     //     if (data) {

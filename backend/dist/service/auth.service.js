@@ -45,8 +45,6 @@ class UserServiceClass {
             const result = yield user_model_1.UserInstance.create({
                 USERROLE: 0,
                 USERNAME: request.USERNAME,
-                F_NAME: request.F_NAME,
-                L_NAME: request.L_NAME,
                 EMAIL: request.EMAIL,
                 PASSWORD: hashedpassword,
                 EMAILSTATUS: false,

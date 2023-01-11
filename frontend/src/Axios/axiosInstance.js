@@ -6,7 +6,8 @@ const headers = {
     'Content-Type': 'application/json',
 }
 
-const backendURL = "http://localhost:8000/api/"
+// const backendURL = "http://localhost:8000/api/"
+const backendURL = "http://jyotiranjankalta.tech/api/"
 
 export const axiosInstance = axios.create({
     baseURL: backendURL,

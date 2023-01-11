@@ -25,6 +25,10 @@ BlogsInstance.init({
         type: sequelize_1.DataTypes.TEXT,
         allowNull: false,
     },
+    TAGS: {
+        type: sequelize_1.DataTypes.TEXT,
+        allowNull: false,
+    },
     LIKE: {
         type: sequelize_1.DataTypes.INTEGER,
         allowNull: false,

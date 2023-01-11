@@ -18,6 +18,7 @@ import {
 import ServicePageSections from './ServicePageSection/ServicePageSections'
 import FaqSections from './FaqPageSection/FaqSections'
 import BlogPagesection1 from './BlogPageSection/BlogPageSection1/BlogPagesection1'
+import BlogPageSections from './BlogPageSection/BlogPageSections'
 
 function TabPanel (props) {
   const { children, value, index, ...other } = props
@@ -160,7 +161,7 @@ export default function ManagePages () {
         <FaqSections />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <BlogPagesection1 />
+        <BlogPageSections />
       </TabPanel>
     </Box>
   )

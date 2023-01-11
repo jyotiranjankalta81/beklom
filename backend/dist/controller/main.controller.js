@@ -29,10 +29,67 @@ class MainControllerClass {
                 return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
             }
         }));
+        this.get_started = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const insertcollection = yield main_service_1.mainService.get_started(req);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: insertcollection });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_Started = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const insertcollection = yield main_service_1.mainService.get_Started(req);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: insertcollection });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.subscribe = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            console.log(req.body);
+            try {
+                const insertcollection = yield main_service_1.mainService.subscribe(req);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: insertcollection });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_subscribe = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const blog = yield main_service_1.mainService.get_subscribe(req.body);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Message send successfully", data: blog });
+            }
+            catch (error) {
+                console.log(error);
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_in_touch = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const blog = yield main_service_1.mainService.get_in_touch(req.body, req.files);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Message send successfully", data: blog });
+            }
+            catch (error) {
+                console.log(error);
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
         this.create_patner = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const insertcollection = yield main_service_1.mainService.create_patner(req);
                 return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: insertcollection });
+            }
+            catch (error) {
+                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+            }
+        }));
+        this.get_onboard_home = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const getdata = yield main_service_1.mainService.get_onboard_home(req);
+                return res.status(http_status_1.default.CREATED).send({ success: true, message: "Your Form has subbmitted successfully", data: getdata });
             }
             catch (error) {
                 return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });

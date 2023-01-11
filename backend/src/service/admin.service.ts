@@ -347,24 +347,40 @@ class AdminServiceClass {
     }
 
     update_section1 = async (body: any, files: any) => {
+        console.log(body)
+        console.log(files)
         let images: any = null
         if (files.IMAGE) {
             images = uploadimage(files.IMAGE);
+            const result = await Section1Instance.update({
+                IMAGE: images,
+                TITLE: body.TITLE,
+                CONTENT: body.CONTENT,
+                NAME: body.NAME,
+                ADDED_BY: 1,
+    
+            },{
+                where: {
+                    SE_ID: parseInt(body.SE_ID)
+                }
+            })
+    
+            return result;
+        }else{
+            const result = await Section1Instance.update({
+                TITLE: body.TITLE,
+                CONTENT: body.CONTENT,
+                NAME: body.NAME,
+                ADDED_BY: 1,
+    
+            },{
+                where: {
+                    SE_ID: parseInt(body.SE_ID)
+                }
+            })
+    
+            return result;
         }
-        const result = await Section1Instance.update({
-            IMAGE: images,
-            TITLE: body.TITLE,
-            CONTENT: body.CONTENT,
-            NAME: body.NAME,
-            ADDED_BY: 1,
-
-        },{
-            where: {
-                SE_ID: parseInt(body.SE_ID)
-            }
-        })
-
-        return result;
     }
 
     update_section3 = async (body: any) => {
@@ -378,6 +394,24 @@ class AdminServiceClass {
             where: {
                 SE_ID: parseInt(body.SE_ID)
             }
+        })
+
+        return result;
+    }
+
+    update_section2 = async (body: any) => {
+
+        const result = await Section2Instance.update({
+            HEADING: body.HEADING,
+            CONTENT: body.CONTENT,
+            TITLE: body.TITLE,
+            NAME: body.NAME,
+            ADDED_BY: 1,
+        },{
+            where: {
+                SE_ID: parseInt(body.SE_ID)
+            }
+
         })
 
         return result;

@@ -28,6 +28,14 @@ const order_model_1 = require("../model/order.model");
 const user_model_1 = require("../model/user.model");
 const emaillog_model_1 = require("../model/emaillog.model");
 const contactus_1 = require("../model/contactus");
+const subscribe_model_1 = require("../model/subscribe.model");
+const onboarding_model_1 = require("../model/onboarding.model");
+const getstarted_model_1 = require("../model/getstarted.model");
+const getonboardhome_model_1 = require("../model/getonboardhome.model");
+const section1_model_1 = require("../model/section1.model");
+const Section2_model_1 = require("../model/Section2.model");
+const section3_model_1 = require("../model/section3.model");
+const reviews_model_1 = require("../model/reviews.model");
 class AdminServiceClass {
     constructor() {
         this.AllGetOrder = () => __awaiter(this, void 0, void 0, function* () {
@@ -46,7 +54,21 @@ class AdminServiceClass {
             return result;
         });
         this.get_contactus = () => __awaiter(this, void 0, void 0, function* () {
-            const result = yield db_connection_1.sequelizeDB.query('SELECT  `CONTACTUS_ID`,`FULLNAME`, `EMAIL`, `SUBJECT`, `TRACKINGID`, `MESSAGE`, `createdAt` FROM `tbl_contactus`', {
+            const result = yield db_connection_1.sequelizeDB.query('SELECT  `CONTACTUS_ID`,`FIRSTNAME`,`LASTNAME`, `PHONE`, `EMAIL`, `MESSAGE`, `createdAt` FROM `tbl_contactus`', {
+                nest: true,
+                type: sequelize_1.QueryTypes.SELECT,
+            });
+            return result;
+        });
+        this.get_in_touch_home = () => __awaiter(this, void 0, void 0, function* () {
+            const result = yield db_connection_1.sequelizeDB.query('SELECT  `OBH_ID`,`NAME`, `EMAIL`, `CONTACTUS`, `ADDRESS`, `MESSAGE`, `createdAt` FROM `tbl_get_onboard_home`', {
+                nest: true,
+                type: sequelize_1.QueryTypes.SELECT,
+            });
+            return result;
+        });
+        this.get_onboarding = () => __awaiter(this, void 0, void 0, function* () {
+            const result = yield db_connection_1.sequelizeDB.query('SELECT  `OB_ID`,`FIRSTNAME`,LASTNAME, `EMAIL`, `ABOUT`, `BODY_FILE`, `createdAt` FROM `tbl_onboarding`', {
                 nest: true,
                 type: sequelize_1.QueryTypes.SELECT,
             });
@@ -89,8 +111,89 @@ class AdminServiceClass {
                 IMAGE: images,
                 HEADING: body.HEADING,
                 CONTENT: body.CONTENT,
+                TAGS: body.TAGS,
                 LIKE: 0,
                 ADDED_BY: 1,
+            });
+            return result;
+        });
+        this.section1 = (body, files) => __awaiter(this, void 0, void 0, function* () {
+            let images = null;
+            if (files.IMAGE) {
+                images = (0, imageupload_1.uploadimage)(files.IMAGE);
+            }
+            const result = yield section1_model_1.Section1Instance.create({
+                IMAGE: images,
+                TITLE: body.TITLE,
+                CONTENT: body.CONTENT,
+                NAME: body.NAME,
+                ADDED_BY: 1,
+            });
+            return result;
+        });
+        this.customer_reviews = (body, files) => __awaiter(this, void 0, void 0, function* () {
+            let images = null;
+            if (files.IMAGE) {
+                images = (0, imageupload_1.uploadimage)(files.IMAGE);
+            }
+            const result = yield reviews_model_1.CustomerReviewsInstance.create({
+                IMAGE: images,
+                NAME: body.NAME,
+                CONTENT: body.CONTENT,
+                DESIGNATION: body.DESIGNATION,
+                ADDED_BY: 1,
+            });
+            return result;
+        });
+        this.get_customer_reviews = () => __awaiter(this, void 0, void 0, function* () {
+            const result = yield reviews_model_1.CustomerReviewsInstance.findAll();
+            return result;
+        });
+        this.delete_customer_reviews = (header) => __awaiter(this, void 0, void 0, function* () {
+            console.log(header);
+            const result = yield reviews_model_1.CustomerReviewsInstance.destroy({
+                where: {
+                    RE_ID: parseInt(header.RE_ID)
+                }
+            });
+            return result;
+        });
+        this.get_section1 = () => __awaiter(this, void 0, void 0, function* () {
+            const result = yield section1_model_1.Section1Instance.findAll();
+            return result;
+        });
+        this.section2 = (body) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield Section2_model_1.Section2Instance.create({
+                HEADING: body.HEADING,
+                TITLE: body.TITLE,
+                CONTENT: body.CONTENT,
+                NAME: body.NAME,
+                ADDED_BY: 1,
+            });
+            return result;
+        });
+        this.get_section2 = () => __awaiter(this, void 0, void 0, function* () {
+            const result = yield Section2_model_1.Section2Instance.findAll();
+            return result;
+        });
+        this.get_section3 = () => __awaiter(this, void 0, void 0, function* () {
+            const result = yield section3_model_1.Section3Instance.findAll();
+            return result;
+        });
+        this.section3 = (body) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield section3_model_1.Section3Instance.create({
+                HEADING: body.HEADING,
+                CONTENT: body.CONTENT,
+                NAME: body.NAME,
+                ADDED_BY: 1,
+            });
+            return result;
+        });
+        this.delete_section1 = (header) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield section1_model_1.Section1Instance.destroy({
+                where: {
+                    SE_ID: parseInt(header.SE_ID)
+                }
             });
             return result;
         });
@@ -102,10 +205,34 @@ class AdminServiceClass {
             });
             return result;
         });
-        this.delete_contact = (CONTACTUS_ID) => __awaiter(this, void 0, void 0, function* () {
+        this.delete_contact = (header) => __awaiter(this, void 0, void 0, function* () {
             const result = yield contactus_1.ContactusInstance.destroy({
                 where: {
-                    CONTACTUS_ID: CONTACTUS_ID
+                    CONTACTUS_ID: parseInt(header.CONTACTUS_ID)
+                }
+            });
+            return result;
+        });
+        this.delete_onboarding = (header) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield onboarding_model_1.OnBoardingInstance.destroy({
+                where: {
+                    OB_ID: parseInt(header.OB_ID)
+                }
+            });
+            return result;
+        });
+        this.delete_Started = (header) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield getstarted_model_1.GetStartedInstance.destroy({
+                where: {
+                    GS_ID: parseInt(header.GS_ID)
+                }
+            });
+            return result;
+        });
+        this.delete_in_touch_home = (header) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield getonboardhome_model_1.GetOnBoardHomeInstance.destroy({
+                where: {
+                    OBH_ID: parseInt(header.OBH_ID)
                 }
             });
             return result;
@@ -129,6 +256,14 @@ class AdminServiceClass {
             });
             return result;
         });
+        this.delete_subscribe = (header) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield subscribe_model_1.SubscribeInstance.destroy({
+                where: {
+                    SB_ID: parseInt(header.SB_ID)
+                }
+            });
+            return result;
+        });
         this.notes_applied = (req, header) => {
             const dateTime = (0, moment_1.default)(new Date()).format("YYYY-MM-DD HH:mm:ss");
             const result = orderextense_model_1.OrderextenseInstance.update({
@@ -142,6 +277,66 @@ class AdminServiceClass {
             });
             return result;
         };
+        this.update_section1 = (body, files) => __awaiter(this, void 0, void 0, function* () {
+            console.log(body);
+            console.log(files);
+            let images = null;
+            if (files.IMAGE) {
+                images = (0, imageupload_1.uploadimage)(files.IMAGE);
+                const result = yield section1_model_1.Section1Instance.update({
+                    IMAGE: images,
+                    TITLE: body.TITLE,
+                    CONTENT: body.CONTENT,
+                    NAME: body.NAME,
+                    ADDED_BY: 1,
+                }, {
+                    where: {
+                        SE_ID: parseInt(body.SE_ID)
+                    }
+                });
+                return result;
+            }
+            else {
+                const result = yield section1_model_1.Section1Instance.update({
+                    TITLE: body.TITLE,
+                    CONTENT: body.CONTENT,
+                    NAME: body.NAME,
+                    ADDED_BY: 1,
+                }, {
+                    where: {
+                        SE_ID: parseInt(body.SE_ID)
+                    }
+                });
+                return result;
+            }
+        });
+        this.update_section3 = (body) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield section3_model_1.Section3Instance.update({
+                HEADING: body.HEADING,
+                CONTENT: body.CONTENT,
+                NAME: body.NAME,
+                ADDED_BY: 1,
+            }, {
+                where: {
+                    SE_ID: parseInt(body.SE_ID)
+                }
+            });
+            return result;
+        });
+        this.update_section2 = (body) => __awaiter(this, void 0, void 0, function* () {
+            const result = yield Section2_model_1.Section2Instance.update({
+                HEADING: body.HEADING,
+                CONTENT: body.CONTENT,
+                TITLE: body.TITLE,
+                NAME: body.NAME,
+                ADDED_BY: 1,
+            }, {
+                where: {
+                    SE_ID: parseInt(body.SE_ID)
+                }
+            });
+            return result;
+        });
         this.complete_process = (req, header) => {
             const result = orderextense_model_1.OrderextenseInstance.update({
                 COMPLETED_BY: header.sub,

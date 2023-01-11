@@ -1,55 +1,58 @@
-import axios from "axios";
+import axios from 'axios'
 
-export const backendUrl = "http://localhost:8000/api/";
-export const imageBacked = "http://localhost:8000/";
+// export const backendUrl = "http://localhost:8000/api/";
+// export const imageBacked = "http://localhost:8000/";
 
-let headers = {};
-var token = "";
+export const backendUrl = 'http://jyotiranjankalta.tech/api/'
+export const imageBacked = 'http://jyotiranjankalta.tech/'
+
+let headers = {}
+var token = ''
 
 const gettoken = () => {
-  if (localStorage.getItem("token")) {
-    token = JSON.parse(localStorage.getItem("token")).access.token;
+  if (localStorage.getItem('token')) {
+    token = JSON.parse(localStorage.getItem('token')).access.token
   }
-  return;
-};
-gettoken();
+  return
+}
+gettoken()
 const axiosInstance = axios.create({
   baseURL: backendUrl,
-  headers,
-});
+  headers
+})
 
 axiosInstance.interceptors.request.use(
-  async (config) => {
+  async config => {
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = `Bearer ${token}`
     }
-    return config;
+    return config
   },
-  (error) => {
-    return Promise.reject(error);
+  error => {
+    return Promise.reject(error)
   }
-);
+)
 
 axiosInstance.interceptors.response.use(
-  (response) =>
+  response =>
     new Promise((resolve, reject) => {
-      resolve(response);
+      resolve(response)
     }),
-  (error) => {
+  error => {
     if (!error.response) {
       return new Promise((resolve, reject) => {
-        reject(error);
-      });
+        reject(error)
+      })
     }
 
     if (error.response.status === 403) {
       // navigate(LOGOUT, {tokenExpired: true});
     } else {
       return new Promise((resolve, reject) => {
-        reject(error);
-      });
+        reject(error)
+      })
     }
   }
-);
+)
 
-export default axiosInstance;
+export default axiosInstance

@@ -4,6 +4,7 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { BasicSection3 } from '../../Redux/features/adminSlice'
+import { Link } from 'react-router-dom'
 
 const Tech = () => {
   const { section3 } = useSelector(state => state.admin)
@@ -45,23 +46,58 @@ const Tech = () => {
               <p>{row[0].CONTENT}</p>
               <div className='technology'>
                 <div className='button_slide slide_right_services'>
-                  Customer Services <ArrowCircleRightOutlinedIcon />
+                  Customer Services
+                  <Link
+                    to='/services'
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <ArrowCircleRightOutlinedIcon />
+                  </Link>
                 </div>
                 <div className='button_slide slide_right_success'>
-                  Customer Success <ArrowCircleRightOutlinedIcon />
+                  Customer Success
+                  <Link
+                    to='/services'
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <ArrowCircleRightOutlinedIcon />
+                  </Link>
                 </div>
                 <div className='button_slide slide_right_workforce'>
                   Workforce Management Consultancy
-                  <ArrowCircleRightOutlinedIcon />
+                  <Link
+                    to='/services'
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <ArrowCircleRightOutlinedIcon />
+                  </Link>
                 </div>
                 <div className='button_slide slide_right_contact'>
-                  Contact Center Consultancy <ArrowCircleRightOutlinedIcon />
+                  Contact Center Consultancy
+                  <Link
+                    to='/services'
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <ArrowCircleRightOutlinedIcon />
+                  </Link>
                 </div>
                 <div className='button_slide slide_right_Cyber'>
-                  Cyber Security Consulting <ArrowCircleRightOutlinedIcon />
+                  Cyber Security Consulting
+                  <Link
+                    to='/services'
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <ArrowCircleRightOutlinedIcon />
+                  </Link>
                 </div>
                 <div className='button_slide slide_right_website'>
-                  Website Developement <ArrowCircleRightOutlinedIcon />
+                  Website Developement
+                  <Link
+                    to='/services'
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <ArrowCircleRightOutlinedIcon />
+                  </Link>
                 </div>
               </div>
             </div>

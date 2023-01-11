@@ -43,22 +43,13 @@ const WhyChoose = () => {
               <img src='/Images/Home/whychooseusleft.png' alt='' />
             </div>
             <div className='choose_right_container'>
-              <h1> Why Choose Us</h1>
-              <h2>
-                You can think of Beklom Technologies as a one-stop solution.
-              </h2>
-              <p>
-                Web development, Social Media management, US Taxation,
-                Book-keeping, Technical/Non-Technical recruitment, Graphic
-                Designing, and Lead generation are all areas in which we
-                specialize. After that, we perform all of the cold outreach to
-                qualify prospects, generate interest, and open sales
-                conversations for you.
-              </p>
+              <h1> {row[0].HEADING}</h1>
+              <h2>{row[0].TITLE}</h2>
+              <p>{row[0].CONTENT}</p>
               <button className='start_btn'>Get Started</button>
             </div>
             <div className='far_right_container'>
-              <img src='/Images/Home/choosebg.png' alt='' />
+              <img src={row[0].IMAGE} crossOrigin='anonymous' alt='' />
             </div>
           </div>
         </div>

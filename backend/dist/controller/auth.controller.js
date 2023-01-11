@@ -54,6 +54,8 @@ class AuthControllerClass {
             }
         }));
         this.LoginUser = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
+            // console.log(req.body);
+            // return false
             try {
                 const checkuser = yield auth_service_1.UserService.GetuserbyEmail(req.body.EMAIL);
                 if (!checkuser)

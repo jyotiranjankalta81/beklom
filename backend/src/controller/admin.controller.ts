@@ -132,10 +132,13 @@ class AdminControllerClass {
 
 
     create_blog = catchAsync(async (req: Request, res: Response) => {
+        console.log(req.body);
+        console.log(req.files);
         try {
             const blog = await AdminService.create_blog(req.body, req.files);
             return res.status(httpStatus.CREATED).send({ success: true, message: "blog created successsfuly successfully", data: blog });
         } catch (error) {
+            console.log(error);
             return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
         }
     }
@@ -388,8 +391,8 @@ class AdminControllerClass {
     );
 
     update_section1 = catchAsync(async (req: Request, res: Response) => {
-        console.log(req.body)
-        console.log(req.files)
+        // console.log(req.body)
+        
         
         try {
             const blog = await AdminService.update_section1(req.body,req.files);
@@ -420,6 +423,19 @@ class AdminControllerClass {
             return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
         }
     }
+    );
+
+    update_section2 = catchAsync(async (req: Request, res: Response) => {
+        console.log(req.body)
+        try {
+            const blog = await AdminService.update_section2(req.body);
+            return res.status(httpStatus.CREATED).send({ success: true, message: "Section2 updated successfully", data: blog });
+
+        } catch (error) {
+            return res.status(httpStatus.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+        }
+    }
+
     );
 
 
