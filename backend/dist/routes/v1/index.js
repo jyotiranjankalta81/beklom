@@ -9,7 +9,7 @@ const auth_routes_1 = __importDefault(require("./auth.routes"));
 const main_routes_1 = require("./main.routes");
 exports.router = express_1.default.Router();
 exports.router.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '15.206.217.142');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     if (req.method == 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
