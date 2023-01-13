@@ -36,7 +36,7 @@ export default function AdminLayout () {
             <li className='layer'></li>
             <li className='layer'></li>
           </ul>
-          <Link to='/admin-panel/dashboard' className='header-logo-wrapper'>
+          <Link to='/admin-panel/manage-pages' className='header-logo-wrapper'>
             <img
               src='/Images/Navbar/BeklomLogo.png'
               className='header-logo'

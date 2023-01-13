@@ -52,7 +52,7 @@ export const authenticationSlice = createSlice({
                 state.sessionID = action.payload.data.sessionid
                 localStorage.setItem("token", JSON.stringify(action.payload.data.tokens));
                 localStorage.setItem("user_role", action.payload.data.userrole);
-                action.meta.arg.navigate('/admin-panel');
+                action.meta.arg.navigate('/admin-panel/manage-pages');
                 // window.location.reload();
             })
             .addCase(userLogin.rejected, (state, action) => {

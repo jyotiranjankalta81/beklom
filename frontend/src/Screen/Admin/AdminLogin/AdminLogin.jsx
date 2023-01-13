@@ -38,6 +38,7 @@ const AdminLogin = () => {
             />
             <PlainInput
               label='Password'
+              type='password'
               name='PASSWORD'
               onChange={handleFieldChange}
             />

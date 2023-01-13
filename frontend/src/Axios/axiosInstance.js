@@ -7,7 +7,7 @@ const headers = {
 }
 
 // const backendURL = "http://localhost:8000/api/"
-const backendURL = "http://jyotiranjankalta.tech/api/"
+const backendURL = "https://backlom.techjainsupport.co.in/api/"
 
 export const axiosInstance = axios.create({
     baseURL: backendURL,

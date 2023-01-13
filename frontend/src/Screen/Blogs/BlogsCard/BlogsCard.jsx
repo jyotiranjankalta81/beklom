@@ -1,7 +1,6 @@
 import { Avatar } from '@mui/material'
 import React from 'react'
 import '../blogs.css'
-import { htmlToText } from 'html-to-text'
 
 const BlogsCard = props => {
   console.log(props.IMAGE)
@@ -15,7 +14,7 @@ const BlogsCard = props => {
           <p className='blog_tag'>{props.TAGS}</p>
           <h6>{props.HEADING}</h6>
           <p className='describe_blog'>
-            {htmlToText(props.CONTENT)}
+            {props.CONTENT}
             <span>Read More</span>
           </p>
         </div>
