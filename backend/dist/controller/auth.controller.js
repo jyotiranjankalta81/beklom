@@ -23,12 +23,26 @@ class AuthControllerClass {
             try {
                 const checkuser = yield auth_service_1.UserService.GetuserbyEmail(req.body.EMAIL);
                 if (checkuser)
-                    return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "email is already in use", data: [] });
+                    return res
+                        .status(http_status_1.default.BAD_REQUEST)
+                        .send({
+                        success: false,
+                        message: "email is already in use",
+                        data: [],
+                    });
                 const createuser = yield auth_service_1.UserService.CreateUser(req.body);
-                return res.status(http_status_1.default.CREATED).send({ success: true, message: "User created successfully", data: createuser });
+                return res
+                    .status(http_status_1.default.CREATED)
+                    .send({
+                    success: true,
+                    message: "User created successfully",
+                    data: createuser,
+                });
             }
             catch (e) {
-                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: e });
+                return res
+                    .status(http_status_1.default.BAD_REQUEST)
+                    .send({ success: false, message: "Somthing went wrong!", data: e });
             }
         }));
         this.ForgotPassword = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
@@ -38,19 +52,39 @@ class AuthControllerClass {
                     const checkotp = yield auth_service_1.UserService.checkotp(req.body.EMAIL);
                     if (checkotp) {
                         const createotp = yield auth_service_1.UserService.updateOpt(req.body.EMAIL);
-                        return res.status(http_status_1.default.CREATED).send({ success: true, message: "Requested successfully", data: createotp });
+                        return res
+                            .status(http_status_1.default.CREATED)
+                            .send({
+                            success: true,
+                            message: "Requested successfully",
+                            data: createotp,
+                        });
                     }
                     else {
                         const createotp = yield auth_service_1.UserService.createOpt(req.body.EMAIL);
-                        return res.status(http_status_1.default.CREATED).send({ success: true, message: "Requested successfully", data: createotp });
+                        return res
+                            .status(http_status_1.default.CREATED)
+                            .send({
+                            success: true,
+                            message: "Requested successfully",
+                            data: createotp,
+                        });
                     }
                 }
                 else {
-                    return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "no User Found With this email", data: [] });
+                    return res
+                        .status(http_status_1.default.BAD_REQUEST)
+                        .send({
+                        success: false,
+                        message: "no User Found With this email",
+                        data: [],
+                    });
                 }
             }
             catch (error) {
-                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: error });
+                return res
+                    .status(http_status_1.default.BAD_REQUEST)
+                    .send({ success: false, message: "Somthing went wrong!", data: error });
             }
         }));
         this.LoginUser = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(this, void 0, void 0, function* () {
@@ -59,14 +93,18 @@ class AuthControllerClass {
             try {
                 const checkuser = yield auth_service_1.UserService.GetuserbyEmail(req.body.EMAIL);
                 if (!checkuser)
-                    return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "user dosenot exist!!", data: [] });
+                    return res
+                        .status(http_status_1.default.BAD_REQUEST)
+                        .send({ success: false, message: "user dosenot exist!!", data: [] });
                 const loginuserdata = yield auth_service_1.UserService.LoginUser(req.body.EMAIL, req.body.PASSWORD, checkuser.PASSWORD);
                 if (!loginuserdata)
-                    return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "invalid passowrd", data: [] });
+                    return res
+                        .status(http_status_1.default.BAD_REQUEST)
+                        .send({ success: false, message: "invalid passowrd", data: [] });
                 const tokens = yield (0, tokens_1.generateAuthTokens)(checkuser.dataValues);
                 if (tokens) {
                     const closesession = yield auth_service_1.UserService.CloseOldSession({
-                        USERID: checkuser.dataValues.ID
+                        USERID: checkuser.dataValues.ID,
                     });
                     const insertsession = yield auth_service_1.UserService.CresteSession({
                         USERAGENT: req.get("user-agent"),
@@ -76,18 +114,22 @@ class AuthControllerClass {
                     });
                     if (insertsession) {
                         return res.status(http_status_1.default.CREATED).send({
-                            success: true, message: "login successful", data: {
+                            success: true,
+                            message: "login successful",
+                            data: {
                                 email: checkuser.dataValues.EMAIL,
                                 sessionid: insertsession.SESSION_ID,
                                 userrole: checkuser.dataValues.USERROLE,
-                                tokens: tokens
-                            }
+                                tokens: tokens,
+                            },
                         });
                     }
                 }
             }
             catch (e) {
-                return res.status(http_status_1.default.BAD_REQUEST).send({ success: false, message: "Somthing went wrong!", data: e });
+                return res
+                    .status(http_status_1.default.BAD_REQUEST)
+                    .send({ success: false, message: "Somthing went wrong!", data: e });
             }
         }));
     }

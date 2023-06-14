@@ -1,22 +1,22 @@
-import express, { Express } from 'express'
-import helmet from 'helmet'
-import compression from 'compression'
-import cors from 'cors'
-import httpStatus from 'http-status'
-import { config } from './config/config'
-import { morgans } from './config/morgan'
-import { authLimiter } from './middlewares/rateLimiter'
-import { errorConverter, errorHandler } from './middlewares/error'
-import { ApiError } from './utils/ApiError'
-import router from './routes/v1'
-import passport from 'passport'
-import { jwtStrategy } from './config/passport'
-const expressFileUpload = require('express-fileupload');
+import express, { Express } from "express";
+import helmet from "helmet";
+import compression from "compression";
+import cors from "cors";
+import httpStatus from "http-status";
+import { config } from "./config/config";
+import { morgans } from "./config/morgan";
+import { authLimiter } from "./middlewares/rateLimiter";
+import { errorConverter, errorHandler } from "./middlewares/error";
+import { ApiError } from "./utils/ApiError";
+import router from "./routes/v1";
+import passport from "passport";
+import { jwtStrategy } from "./config/passport";
+const expressFileUpload = require("express-fileupload");
 
 export const app: Express = express();
-if (config.env !== 'test') {
-    app.use(morgans.successHandler);
-    app.use(morgans.errorHandler);
+if (config.env !== "test") {
+  app.use(morgans.successHandler);
+  app.use(morgans.errorHandler);
 }
 
 app.use(expressFileUpload());
@@ -32,27 +32,30 @@ app.use(express.urlencoded({ extended: true }));
 app.use(compression());
 // enable cors
 app.use(cors());
-app.options('*', cors());
+app.options("*", cors());
 
 //pasport
 app.use(passport.initialize());
-passport.use('jwt', jwtStrategy);
+passport.use("jwt", jwtStrategy);
 
 // limit repeated failed requests to auth endpoints
-if (config.env === 'production') {
-    app.use('/api/auth', authLimiter);
+if (config.env === "production") {
+  app.use("/api/auth", authLimiter);
 }
 
 // v1 api routes
-app.use('/api', router);
+app.use("/api", router);
+app.get("/demo", async (req, res) => {
+  res.send("server working properly");
+});
 
 //upload image
-app.use('*/images', express.static('public/uploads'));
-app.use('*/consent', express.static('public/attachments'));
+app.use("*/images", express.static("public/uploads"));
+app.use("*/consent", express.static("public/attachments"));
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
-    next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
+  next(new ApiError(httpStatus.NOT_FOUND, "Not found"));
 });
 
 // convert error to ApiError, if needed
@@ -60,6 +63,3 @@ app.use(errorConverter);
 
 // handle error
 app.use(errorHandler);
-
-
-

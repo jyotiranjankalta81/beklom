@@ -48,6 +48,9 @@ function Navbar () {
             className={isMobile ? 'nav-links nav-links-mobile' : 'nav-links'}
             onClick={() => setIsMobile(false)}
           >
+            <NavLink to='/' className='services'>
+              <li>HOME</li>
+            </NavLink>
             <NavLink to='/about' className='services'>
               <li>ABOUT US</li>
             </NavLink>

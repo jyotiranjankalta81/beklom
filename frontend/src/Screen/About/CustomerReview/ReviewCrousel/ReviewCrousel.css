@@ -21,7 +21,7 @@
   padding: 2rem;
 }
 .small_card p {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -46,7 +46,7 @@
   border-radius: 2px;
   padding: 0.3rem 3rem 0.3rem 2rem;
   margin-left: -7%;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -57,7 +57,7 @@
   flex-direction: column;
 }
 .review_header p > span {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 350;
   font-size: 12px;

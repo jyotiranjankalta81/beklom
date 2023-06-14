@@ -5,7 +5,7 @@
   align-items: center;
 }
 .crousel_background_image {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -41,7 +41,7 @@
   margin-top: 1rem;
   outline: none;
   color: #ffffff;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

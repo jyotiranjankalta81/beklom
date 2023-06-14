@@ -39,7 +39,7 @@
   width: fit-content;
   background-size: cover;
   padding: 1.7% 5%;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -50,7 +50,7 @@
   border-radius: 20px;
 }
 .describe_blog {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -59,7 +59,7 @@
   color: #6a6a6a;
 }
 .describe_blog span {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -109,7 +109,7 @@
 }
 .subscribe_right_container p {
   margin: 0%;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -132,7 +132,7 @@
   background-repeat: no-repeat;
 }
 .input_box input::placeholder {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;

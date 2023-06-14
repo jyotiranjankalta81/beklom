@@ -7,7 +7,7 @@
   justify-content: flex-end;
 }
 .our_team_container h1 {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
@@ -70,7 +70,7 @@
   height: auto;
   max-height: 9999px;
   border-radius: 8px;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

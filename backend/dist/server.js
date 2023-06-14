@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -17,9 +26,9 @@ const ApiError_1 = require("./utils/ApiError");
 const v1_1 = __importDefault(require("./routes/v1"));
 const passport_1 = __importDefault(require("passport"));
 const passport_2 = require("./config/passport");
-const expressFileUpload = require('express-fileupload');
+const expressFileUpload = require("express-fileupload");
 exports.app = (0, express_1.default)();
-if (config_1.config.env !== 'test') {
+if (config_1.config.env !== "test") {
     exports.app.use(morgan_1.morgans.successHandler);
     exports.app.use(morgan_1.morgans.errorHandler);
 }
@@ -36,22 +45,25 @@ exports.app.use(express_1.default.urlencoded({ extended: true }));
 exports.app.use((0, compression_1.default)());
 // enable cors
 exports.app.use((0, cors_1.default)());
-exports.app.options('*', (0, cors_1.default)());
+exports.app.options("*", (0, cors_1.default)());
 //pasport
 exports.app.use(passport_1.default.initialize());
-passport_1.default.use('jwt', passport_2.jwtStrategy);
+passport_1.default.use("jwt", passport_2.jwtStrategy);
 // limit repeated failed requests to auth endpoints
-if (config_1.config.env === 'production') {
-    exports.app.use('/api/auth', rateLimiter_1.authLimiter);
+if (config_1.config.env === "production") {
+    exports.app.use("/api/auth", rateLimiter_1.authLimiter);
 }
 // v1 api routes
-exports.app.use('/api', v1_1.default);
+exports.app.use("/api", v1_1.default);
+exports.app.get("/demo", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.send("server working properly");
+}));
 //upload image
-exports.app.use('*/images', express_1.default.static('public/uploads'));
-exports.app.use('*/consent', express_1.default.static('public/attachments'));
+exports.app.use("*/images", express_1.default.static("public/uploads"));
+exports.app.use("*/consent", express_1.default.static("public/attachments"));
 // send back a 404 error for any unknown api request
 exports.app.use((req, res, next) => {
-    next(new ApiError_1.ApiError(http_status_1.default.NOT_FOUND, 'Not found'));
+    next(new ApiError_1.ApiError(http_status_1.default.NOT_FOUND, "Not found"));
 });
 // convert error to ApiError, if needed
 exports.app.use(error_1.errorConverter);

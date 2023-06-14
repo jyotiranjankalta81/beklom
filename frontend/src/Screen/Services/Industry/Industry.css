@@ -74,7 +74,7 @@
   border-radius: 20px;
 }
 .industry_heading {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
@@ -84,7 +84,7 @@
   margin: auto 0% 0% 0%;
 }
 .industry_para {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

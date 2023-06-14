@@ -21,7 +21,7 @@
 }
 .left_main_container p {
   margin: 0%;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -45,7 +45,7 @@
 }
 .button_slide {
   color: #000000;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "ITC Avant Garde" !important;
   font-size: 12px;
   letter-spacing: 1px;
   cursor: pointer;

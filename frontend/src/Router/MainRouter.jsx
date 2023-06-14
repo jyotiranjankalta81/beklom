@@ -12,7 +12,9 @@ import Services from '../Screen/Services/Services'
 export default function MainRouter () {
   return (
     <Fragment>
+      {/* routes is used for routing */}
       <Routes>
+        {/* this is the routing structure */}
         <Route exact path='/' element={<Home />} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/services' element={<Services />} />
