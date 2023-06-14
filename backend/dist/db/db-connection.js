@@ -18,8 +18,8 @@ else {
 }
 exports.sequelizeDB = new sequelize_1.Sequelize(dbname, username, password, {
     host: host,
-    dialect: 'mysql',
+    dialect: "mysql",
     logging: true,
-    pool: { max: 5, min: 0, idle: 10000 },
+    pool: { max: 15, min: 5, idle: 20000, evict: 15000, acquire: 30000 },
 });
 //# sourceMappingURL=db-connection.js.map
