@@ -9,6 +9,8 @@
     "start": "cross-env NODE_ENV=development & nodemon dist/index.js",
     "dev-start": "pm2 start ecosystem.config.json",
     "start-dev": "pm2 start ecosystem.config-dev.json",
+    "dev-stop": "pm2 stop ecosystem.config-dev.json",
+    "dev-restart": "pm2 restart ecosystem.config-dev.json",
     "dev": "cross-env NODE_ENV=development & nodemon src/index.ts",
     "dev-prod": "cross-env NODE_ENV=development & nodemon dist/index.js",
     "test": "jest -i",
