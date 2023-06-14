@@ -1,10 +1,13 @@
 import axios from 'axios'
 
-export const backendUrl = 'http://localhost:8000/api/'
-export const imageBacked = 'http://localhost:8000/'
+// export const backendUrl = 'http://localhost:8000/api/'
+// export const imageBacked = 'http://localhost:8000/'
 
 // export const backendUrl = 'https://backlom.techjainsupport.co.in/api/'
 // export const imageBacked = 'https://backlom.techjainsupport.co.in/'
+
+export const backendUrl = 'http://jyotiranjankalta.tech:8000/api/'
+export const imageBacked = 'http://jyotiranjankalta.tech:8000/'
 
 let headers = {}
 var token = ''

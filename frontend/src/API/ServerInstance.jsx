@@ -1,5 +1,7 @@
-const baseURL = 'http://localhost:8000/api/'
+// const baseURL = 'http://localhost:8000/api/'
 // const baseURL = 'https://backlom.techjainsupport.co.in/api/'
+export const baseURL = 'http://jyotiranjankalta.tech:8000/api/'
+// export const imageBacked = 'http://jyotiranjankalta.tech:8000/'
 
 let token = ''
 if (localStorage.getItem('token')) {

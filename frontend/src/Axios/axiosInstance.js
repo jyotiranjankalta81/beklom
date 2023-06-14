@@ -6,8 +6,10 @@ const headers = {
     'Content-Type': 'application/json',
 }
 
-const backendURL = "http://localhost:8000/api/"
+// const backendURL = "http://localhost:8000/api/"
 // const backendURL = "https://backlom.techjainsupport.co.in/api/"
+const backendURL = 'http://jyotiranjankalta.tech:8000/api/'
+// export const imageBacked = 'http://jyotiranjankalta.tech:8000/'
 
 export const axiosInstance = axios.create({
     baseURL: backendURL,
