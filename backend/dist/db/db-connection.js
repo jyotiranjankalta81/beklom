@@ -19,6 +19,9 @@ else {
 exports.sequelizeDB = new sequelize_1.Sequelize(dbname, username, password, {
     host: host,
     dialect: "mysql",
+    dialectOptions: {
+        connectTimeout: 60000,
+    },
     logging: true,
     pool: { max: 15, min: 5, idle: 20000, evict: 15000, acquire: 30000 },
 });
